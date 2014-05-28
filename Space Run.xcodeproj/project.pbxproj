@@ -1,0 +1,501 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CA88915119366836002E9EDE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA88915019366836002E9EDE /* Foundation.framework */; };
+		CA88915319366836002E9EDE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA88915219366836002E9EDE /* CoreGraphics.framework */; };
+		CA88915519366836002E9EDE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA88915419366836002E9EDE /* UIKit.framework */; };
+		CA88915719366836002E9EDE /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA88915619366836002E9EDE /* SpriteKit.framework */; };
+		CA88915D19366836002E9EDE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CA88915B19366836002E9EDE /* InfoPlist.strings */; };
+		CA88915F19366836002E9EDE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CA88915E19366836002E9EDE /* main.m */; };
+		CA88916319366836002E9EDE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CA88916219366836002E9EDE /* AppDelegate.m */; };
+		CA88916619366836002E9EDE /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA88916419366836002E9EDE /* Main_iPhone.storyboard */; };
+		CA88916919366836002E9EDE /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA88916719366836002E9EDE /* Main_iPad.storyboard */; };
+		CA88916C19366836002E9EDE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA88916B19366836002E9EDE /* ViewController.m */; };
+		CA88916F19366836002E9EDE /* MyScene.m in Sources */ = {isa = PBXBuildFile; fileRef = CA88916E19366836002E9EDE /* MyScene.m */; };
+		CA88917119366836002E9EDE /* Spaceship.png in Resources */ = {isa = PBXBuildFile; fileRef = CA88917019366836002E9EDE /* Spaceship.png */; };
+		CA88917319366836002E9EDE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CA88917219366836002E9EDE /* Images.xcassets */; };
+		CA88917A19366836002E9EDE /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA88917919366836002E9EDE /* XCTest.framework */; };
+		CA88917B19366836002E9EDE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA88915019366836002E9EDE /* Foundation.framework */; };
+		CA88917C19366836002E9EDE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA88915419366836002E9EDE /* UIKit.framework */; };
+		CA88918419366836002E9EDE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CA88918219366836002E9EDE /* InfoPlist.strings */; };
+		CA88918619366836002E9EDE /* Space_RunTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CA88918519366836002E9EDE /* Space_RunTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CA88917D19366836002E9EDE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CA88914519366835002E9EDE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CA88914C19366836002E9EDE;
+			remoteInfo = "Space Run";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		CA88914D19366836002E9EDE /* Space Run.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Space Run.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CA88915019366836002E9EDE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		CA88915219366836002E9EDE /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		CA88915419366836002E9EDE /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		CA88915619366836002E9EDE /* SpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpriteKit.framework; path = System/Library/Frameworks/SpriteKit.framework; sourceTree = SDKROOT; };
+		CA88915A19366836002E9EDE /* Space Run-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Space Run-Info.plist"; sourceTree = "<group>"; };
+		CA88915C19366836002E9EDE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		CA88915E19366836002E9EDE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		CA88916019366836002E9EDE /* Space Run-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Space Run-Prefix.pch"; sourceTree = "<group>"; };
+		CA88916119366836002E9EDE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		CA88916219366836002E9EDE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		CA88916519366836002E9EDE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
+		CA88916819366836002E9EDE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
+		CA88916A19366836002E9EDE /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		CA88916B19366836002E9EDE /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		CA88916D19366836002E9EDE /* MyScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyScene.h; sourceTree = "<group>"; };
+		CA88916E19366836002E9EDE /* MyScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyScene.m; sourceTree = "<group>"; };
+		CA88917019366836002E9EDE /* Spaceship.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Spaceship.png; sourceTree = "<group>"; };
+		CA88917219366836002E9EDE /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		CA88917819366836002E9EDE /* Space RunTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Space RunTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CA88917919366836002E9EDE /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		CA88918119366836002E9EDE /* Space RunTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Space RunTests-Info.plist"; sourceTree = "<group>"; };
+		CA88918319366836002E9EDE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		CA88918519366836002E9EDE /* Space_RunTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Space_RunTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CA88914A19366836002E9EDE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CA88915319366836002E9EDE /* CoreGraphics.framework in Frameworks */,
+				CA88915519366836002E9EDE /* UIKit.framework in Frameworks */,
+				CA88915719366836002E9EDE /* SpriteKit.framework in Frameworks */,
+				CA88915119366836002E9EDE /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CA88917519366836002E9EDE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CA88917A19366836002E9EDE /* XCTest.framework in Frameworks */,
+				CA88917C19366836002E9EDE /* UIKit.framework in Frameworks */,
+				CA88917B19366836002E9EDE /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CA88914419366835002E9EDE = {
+			isa = PBXGroup;
+			children = (
+				CA88915819366836002E9EDE /* Space Run */,
+				CA88917F19366836002E9EDE /* Space RunTests */,
+				CA88914F19366836002E9EDE /* Frameworks */,
+				CA88914E19366836002E9EDE /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		CA88914E19366836002E9EDE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CA88914D19366836002E9EDE /* Space Run.app */,
+				CA88917819366836002E9EDE /* Space RunTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CA88914F19366836002E9EDE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CA88915019366836002E9EDE /* Foundation.framework */,
+				CA88915219366836002E9EDE /* CoreGraphics.framework */,
+				CA88915419366836002E9EDE /* UIKit.framework */,
+				CA88915619366836002E9EDE /* SpriteKit.framework */,
+				CA88917919366836002E9EDE /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CA88915819366836002E9EDE /* Space Run */ = {
+			isa = PBXGroup;
+			children = (
+				CA88916119366836002E9EDE /* AppDelegate.h */,
+				CA88916219366836002E9EDE /* AppDelegate.m */,
+				CA88916419366836002E9EDE /* Main_iPhone.storyboard */,
+				CA88916719366836002E9EDE /* Main_iPad.storyboard */,
+				CA88916A19366836002E9EDE /* ViewController.h */,
+				CA88916B19366836002E9EDE /* ViewController.m */,
+				CA88916D19366836002E9EDE /* MyScene.h */,
+				CA88916E19366836002E9EDE /* MyScene.m */,
+				CA88917019366836002E9EDE /* Spaceship.png */,
+				CA88917219366836002E9EDE /* Images.xcassets */,
+				CA88915919366836002E9EDE /* Supporting Files */,
+			);
+			path = "Space Run";
+			sourceTree = "<group>";
+		};
+		CA88915919366836002E9EDE /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				CA88915A19366836002E9EDE /* Space Run-Info.plist */,
+				CA88915B19366836002E9EDE /* InfoPlist.strings */,
+				CA88915E19366836002E9EDE /* main.m */,
+				CA88916019366836002E9EDE /* Space Run-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		CA88917F19366836002E9EDE /* Space RunTests */ = {
+			isa = PBXGroup;
+			children = (
+				CA88918519366836002E9EDE /* Space_RunTests.m */,
+				CA88918019366836002E9EDE /* Supporting Files */,
+			);
+			path = "Space RunTests";
+			sourceTree = "<group>";
+		};
+		CA88918019366836002E9EDE /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				CA88918119366836002E9EDE /* Space RunTests-Info.plist */,
+				CA88918219366836002E9EDE /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CA88914C19366836002E9EDE /* Space Run */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CA88918919366836002E9EDE /* Build configuration list for PBXNativeTarget "Space Run" */;
+			buildPhases = (
+				CA88914919366836002E9EDE /* Sources */,
+				CA88914A19366836002E9EDE /* Frameworks */,
+				CA88914B19366836002E9EDE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Space Run";
+			productName = "Space Run";
+			productReference = CA88914D19366836002E9EDE /* Space Run.app */;
+			productType = "com.apple.product-type.application";
+		};
+		CA88917719366836002E9EDE /* Space RunTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CA88918C19366836002E9EDE /* Build configuration list for PBXNativeTarget "Space RunTests" */;
+			buildPhases = (
+				CA88917419366836002E9EDE /* Sources */,
+				CA88917519366836002E9EDE /* Frameworks */,
+				CA88917619366836002E9EDE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CA88917E19366836002E9EDE /* PBXTargetDependency */,
+			);
+			name = "Space RunTests";
+			productName = "Space RunTests";
+			productReference = CA88917819366836002E9EDE /* Space RunTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CA88914519366835002E9EDE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Bruno Rodrigues de Andrade";
+				TargetAttributes = {
+					CA88917719366836002E9EDE = {
+						TestTargetID = CA88914C19366836002E9EDE;
+					};
+				};
+			};
+			buildConfigurationList = CA88914819366835002E9EDE /* Build configuration list for PBXProject "Space Run" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CA88914419366835002E9EDE;
+			productRefGroup = CA88914E19366836002E9EDE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CA88914C19366836002E9EDE /* Space Run */,
+				CA88917719366836002E9EDE /* Space RunTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CA88914B19366836002E9EDE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CA88917119366836002E9EDE /* Spaceship.png in Resources */,
+				CA88917319366836002E9EDE /* Images.xcassets in Resources */,
+				CA88916919366836002E9EDE /* Main_iPad.storyboard in Resources */,
+				CA88916619366836002E9EDE /* Main_iPhone.storyboard in Resources */,
+				CA88915D19366836002E9EDE /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CA88917619366836002E9EDE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CA88918419366836002E9EDE /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CA88914919366836002E9EDE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CA88916F19366836002E9EDE /* MyScene.m in Sources */,
+				CA88916C19366836002E9EDE /* ViewController.m in Sources */,
+				CA88916319366836002E9EDE /* AppDelegate.m in Sources */,
+				CA88915F19366836002E9EDE /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CA88917419366836002E9EDE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CA88918619366836002E9EDE /* Space_RunTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CA88917E19366836002E9EDE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CA88914C19366836002E9EDE /* Space Run */;
+			targetProxy = CA88917D19366836002E9EDE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		CA88915B19366836002E9EDE /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CA88915C19366836002E9EDE /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		CA88916419366836002E9EDE /* Main_iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CA88916519366836002E9EDE /* Base */,
+			);
+			name = Main_iPhone.storyboard;
+			sourceTree = "<group>";
+		};
+		CA88916719366836002E9EDE /* Main_iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CA88916819366836002E9EDE /* Base */,
+			);
+			name = Main_iPad.storyboard;
+			sourceTree = "<group>";
+		};
+		CA88918219366836002E9EDE /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CA88918319366836002E9EDE /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		CA88918719366836002E9EDE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CA88918819366836002E9EDE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CA88918A19366836002E9EDE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Space Run/Space Run-Prefix.pch";
+				INFOPLIST_FILE = "Space Run/Space Run-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		CA88918B19366836002E9EDE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Space Run/Space Run-Prefix.pch";
+				INFOPLIST_FILE = "Space Run/Space Run-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		CA88918D19366836002E9EDE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Space Run.app/Space Run";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Space Run/Space Run-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Space RunTests/Space RunTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		CA88918E19366836002E9EDE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Space Run.app/Space Run";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Space Run/Space Run-Prefix.pch";
+				INFOPLIST_FILE = "Space RunTests/Space RunTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CA88914819366835002E9EDE /* Build configuration list for PBXProject "Space Run" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CA88918719366836002E9EDE /* Debug */,
+				CA88918819366836002E9EDE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CA88918919366836002E9EDE /* Build configuration list for PBXNativeTarget "Space Run" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CA88918A19366836002E9EDE /* Debug */,
+				CA88918B19366836002E9EDE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		CA88918C19366836002E9EDE /* Build configuration list for PBXNativeTarget "Space RunTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CA88918D19366836002E9EDE /* Debug */,
+				CA88918E19366836002E9EDE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CA88914519366835002E9EDE /* Project object */;
+}
