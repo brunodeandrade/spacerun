@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C39949281937CADE0018B484 /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = C39949271937CADE0018B484 /* background.png */; };
 		CA88915119366836002E9EDE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA88915019366836002E9EDE /* Foundation.framework */; };
 		CA88915319366836002E9EDE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA88915219366836002E9EDE /* CoreGraphics.framework */; };
 		CA88915519366836002E9EDE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA88915419366836002E9EDE /* UIKit.framework */; };
@@ -38,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C39949271937CADE0018B484 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = background.png; path = ../../background.png; sourceTree = "<group>"; };
 		CA88914D19366836002E9EDE /* Space Run.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Space Run.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA88915019366836002E9EDE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		CA88915219366836002E9EDE /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -89,6 +91,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C39949251937CABD0018B484 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				C39949261937CAC40018B484 /* Fundos */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+		C39949261937CAC40018B484 /* Fundos */ = {
+			isa = PBXGroup;
+			children = (
+				C39949271937CADE0018B484 /* background.png */,
+			);
+			name = Fundos;
+			sourceTree = "<group>";
+		};
 		CA88914419366835002E9EDE = {
 			isa = PBXGroup;
 			children = (
@@ -123,6 +141,7 @@
 		CA88915819366836002E9EDE /* Space Run */ = {
 			isa = PBXGroup;
 			children = (
+				C39949251937CABD0018B484 /* Images */,
 				CA88916119366836002E9EDE /* AppDelegate.h */,
 				CA88916219366836002E9EDE /* AppDelegate.m */,
 				CA88916419366836002E9EDE /* Main_iPhone.storyboard */,
@@ -244,6 +263,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CA88917119366836002E9EDE /* Spaceship.png in Resources */,
+				C39949281937CADE0018B484 /* background.png in Resources */,
 				CA88917319366836002E9EDE /* Images.xcassets in Resources */,
 				CA88916919366836002E9EDE /* Main_iPad.storyboard in Resources */,
 				CA88916619366836002E9EDE /* Main_iPhone.storyboard in Resources */,
@@ -407,6 +427,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Space Run/Space Run-Prefix.pch";
 				INFOPLIST_FILE = "Space Run/Space Run-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
 				WRAPPER_EXTENSION = app;
@@ -421,6 +442,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Space Run/Space Run-Prefix.pch";
 				INFOPLIST_FILE = "Space Run/Space Run-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
 				WRAPPER_EXTENSION = app;
@@ -443,6 +465,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = "Space RunTests/Space RunTests-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
@@ -461,6 +484,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Space Run/Space Run-Prefix.pch";
 				INFOPLIST_FILE = "Space RunTests/Space RunTests-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
@@ -486,6 +510,7 @@
 				CA88918B19366836002E9EDE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CA88918C19366836002E9EDE /* Build configuration list for PBXNativeTarget "Space RunTests" */ = {
 			isa = XCConfigurationList;
@@ -494,6 +519,7 @@
 				CA88918E19366836002E9EDE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

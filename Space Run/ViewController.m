@@ -19,8 +19,7 @@
     SKView * skView = (SKView *)self.view;
     skView.showsFPS = YES;
     skView.showsNodeCount = YES;
-    
-    //nada
+    //PUSHHH
     
     // Create and configure the scene.
     SKScene * scene = [MyScene sceneWithSize:skView.bounds.size];
@@ -31,6 +30,31 @@
     
     // adicionando comentário inútil
 }
+//Codigos adicionados--inicio--
+
+-(BOOL)prefersStatusBarHidden{
+    return YES;
+}
+
+-(void)viewWillLayoutSubviews{
+    [super viewWillLayoutSubviews];
+    //Configuracao da view
+    SKView *skView = (SKView *) self.view;
+    
+    if(!skView.scene){
+        skView.showsFPS = YES;
+        skView.showsNodeCount = YES;
+        
+        //Criar e configurar cena
+        SKScene *scene = [MyScene sceneWithSize:skView.bounds.size];
+        scene.scaleMode = SKSceneScaleModeAspectFill;
+        
+        [skView presentScene:scene];
+    }
+}
+//Fim--fim--
+
+
 
 - (BOOL)shouldAutorotate
 {

@@ -10,4 +10,8 @@
 
 @interface MyScene : SKScene
 
+@property NSTimeInterval lastUpdateTime;
+@property NSTimeInterval  dt;
+@property CGPoint velocity;
+
 @end
