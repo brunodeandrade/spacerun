@@ -26,6 +26,8 @@
     
     // Present the scene.
     [skView presentScene:scene];
+    
+    // adicionando comentário inútil
 }
 
 - (BOOL)shouldAutorotate
