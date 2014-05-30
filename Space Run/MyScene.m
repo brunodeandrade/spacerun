@@ -38,7 +38,6 @@ static inline CGPoint CGPointAdd(const CGPoint a, const CGPoint b)
     return self;
 }
 
-
 //Metodo responsavel por mover o background na tela
 - (void)moveBg {
     [self enumerateChildNodesWithName:@"bg" usingBlock: ^(SKNode *node, BOOL *stop) {
