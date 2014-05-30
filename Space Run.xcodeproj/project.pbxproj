@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CA70F68519391F0200E49539 /* astr1_runing0.png in Resources */ = {isa = PBXBuildFile; fileRef = CA70F67C19391F0200E49539 /* astr1_runing0.png */; };
+		CA70F68619391F0200E49539 /* astr1_runing1.png in Resources */ = {isa = PBXBuildFile; fileRef = CA70F67D19391F0200E49539 /* astr1_runing1.png */; };
+		CA70F68719391F0200E49539 /* astr1_runing2.png in Resources */ = {isa = PBXBuildFile; fileRef = CA70F67E19391F0200E49539 /* astr1_runing2.png */; };
+		CA70F68819391F0200E49539 /* astr1_runing3.png in Resources */ = {isa = PBXBuildFile; fileRef = CA70F67F19391F0200E49539 /* astr1_runing3.png */; };
+		CA70F68919391F0200E49539 /* astr1_runing4.png in Resources */ = {isa = PBXBuildFile; fileRef = CA70F68019391F0200E49539 /* astr1_runing4.png */; };
+		CA70F68A19391F0200E49539 /* astr1_runing5.png in Resources */ = {isa = PBXBuildFile; fileRef = CA70F68119391F0200E49539 /* astr1_runing5.png */; };
+		CA70F68B19391F0200E49539 /* astr1_runing6.png in Resources */ = {isa = PBXBuildFile; fileRef = CA70F68219391F0200E49539 /* astr1_runing6.png */; };
+		CA70F68C19391F0200E49539 /* astr1_runing7.png in Resources */ = {isa = PBXBuildFile; fileRef = CA70F68319391F0200E49539 /* astr1_runing7.png */; };
+		CA70F68D19391F0200E49539 /* astr1_runing8.png in Resources */ = {isa = PBXBuildFile; fileRef = CA70F68419391F0200E49539 /* astr1_runing8.png */; };
 		CA88915119366836002E9EDE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA88915019366836002E9EDE /* Foundation.framework */; };
 		CA88915319366836002E9EDE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA88915219366836002E9EDE /* CoreGraphics.framework */; };
 		CA88915519366836002E9EDE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA88915419366836002E9EDE /* UIKit.framework */; };
@@ -26,14 +35,6 @@
 		CA88918419366836002E9EDE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CA88918219366836002E9EDE /* InfoPlist.strings */; };
 		CA88918619366836002E9EDE /* Space_RunTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CA88918519366836002E9EDE /* Space_RunTests.m */; };
 		CA91EE23193912EA0060774C /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = CA91EE22193912EA0060774C /* background.png */; };
-		CA91EE3E193915C60060774C /* astr_runing1.png in Resources */ = {isa = PBXBuildFile; fileRef = CA91EE36193915C60060774C /* astr_runing1.png */; };
-		CA91EE3F193915C60060774C /* astr_runing2.png in Resources */ = {isa = PBXBuildFile; fileRef = CA91EE37193915C60060774C /* astr_runing2.png */; };
-		CA91EE40193915C60060774C /* astr_runing3.png in Resources */ = {isa = PBXBuildFile; fileRef = CA91EE38193915C60060774C /* astr_runing3.png */; };
-		CA91EE41193915C60060774C /* astr_runing4.png in Resources */ = {isa = PBXBuildFile; fileRef = CA91EE39193915C60060774C /* astr_runing4.png */; };
-		CA91EE42193915C60060774C /* astr_runing5.png in Resources */ = {isa = PBXBuildFile; fileRef = CA91EE3A193915C60060774C /* astr_runing5.png */; };
-		CA91EE43193915C60060774C /* astr_runing6.png in Resources */ = {isa = PBXBuildFile; fileRef = CA91EE3B193915C60060774C /* astr_runing6.png */; };
-		CA91EE44193915C60060774C /* astr_runing7.png in Resources */ = {isa = PBXBuildFile; fileRef = CA91EE3C193915C60060774C /* astr_runing7.png */; };
-		CA91EE45193915C60060774C /* astr_runing8.png in Resources */ = {isa = PBXBuildFile; fileRef = CA91EE3D193915C60060774C /* astr_runing8.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CA70F67C19391F0200E49539 /* astr1_runing0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = astr1_runing0.png; sourceTree = "<group>"; };
+		CA70F67D19391F0200E49539 /* astr1_runing1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = astr1_runing1.png; sourceTree = "<group>"; };
+		CA70F67E19391F0200E49539 /* astr1_runing2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = astr1_runing2.png; sourceTree = "<group>"; };
+		CA70F67F19391F0200E49539 /* astr1_runing3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = astr1_runing3.png; sourceTree = "<group>"; };
+		CA70F68019391F0200E49539 /* astr1_runing4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = astr1_runing4.png; sourceTree = "<group>"; };
+		CA70F68119391F0200E49539 /* astr1_runing5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = astr1_runing5.png; sourceTree = "<group>"; };
+		CA70F68219391F0200E49539 /* astr1_runing6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = astr1_runing6.png; sourceTree = "<group>"; };
+		CA70F68319391F0200E49539 /* astr1_runing7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = astr1_runing7.png; sourceTree = "<group>"; };
+		CA70F68419391F0200E49539 /* astr1_runing8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = astr1_runing8.png; sourceTree = "<group>"; };
 		CA88914D19366836002E9EDE /* Space Run.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Space Run.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA88915019366836002E9EDE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		CA88915219366836002E9EDE /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -72,14 +82,6 @@
 		CA88918319366836002E9EDE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		CA88918519366836002E9EDE /* Space_RunTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Space_RunTests.m; sourceTree = "<group>"; };
 		CA91EE22193912EA0060774C /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = background.png; path = Images/Fundos/background.png; sourceTree = "<group>"; };
-		CA91EE36193915C60060774C /* astr_runing1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = astr_runing1.png; sourceTree = "<group>"; };
-		CA91EE37193915C60060774C /* astr_runing2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = astr_runing2.png; sourceTree = "<group>"; };
-		CA91EE38193915C60060774C /* astr_runing3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = astr_runing3.png; sourceTree = "<group>"; };
-		CA91EE39193915C60060774C /* astr_runing4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = astr_runing4.png; sourceTree = "<group>"; };
-		CA91EE3A193915C60060774C /* astr_runing5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = astr_runing5.png; sourceTree = "<group>"; };
-		CA91EE3B193915C60060774C /* astr_runing6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = astr_runing6.png; sourceTree = "<group>"; };
-		CA91EE3C193915C60060774C /* astr_runing7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = astr_runing7.png; sourceTree = "<group>"; };
-		CA91EE3D193915C60060774C /* astr_runing8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = astr_runing8.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -214,14 +216,15 @@
 		CA91EE251939139C0060774C /* Astronauta */ = {
 			isa = PBXGroup;
 			children = (
-				CA91EE36193915C60060774C /* astr_runing1.png */,
-				CA91EE37193915C60060774C /* astr_runing2.png */,
-				CA91EE38193915C60060774C /* astr_runing3.png */,
-				CA91EE39193915C60060774C /* astr_runing4.png */,
-				CA91EE3A193915C60060774C /* astr_runing5.png */,
-				CA91EE3B193915C60060774C /* astr_runing6.png */,
-				CA91EE3C193915C60060774C /* astr_runing7.png */,
-				CA91EE3D193915C60060774C /* astr_runing8.png */,
+				CA70F67C19391F0200E49539 /* astr1_runing0.png */,
+				CA70F67D19391F0200E49539 /* astr1_runing1.png */,
+				CA70F67E19391F0200E49539 /* astr1_runing2.png */,
+				CA70F67F19391F0200E49539 /* astr1_runing3.png */,
+				CA70F68019391F0200E49539 /* astr1_runing4.png */,
+				CA70F68119391F0200E49539 /* astr1_runing5.png */,
+				CA70F68219391F0200E49539 /* astr1_runing6.png */,
+				CA70F68319391F0200E49539 /* astr1_runing7.png */,
+				CA70F68419391F0200E49539 /* astr1_runing8.png */,
 			);
 			name = Astronauta;
 			sourceTree = "<group>";
@@ -303,19 +306,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				CA88917119366836002E9EDE /* Spaceship.png in Resources */,
-				CA91EE3F193915C60060774C /* astr_runing2.png in Resources */,
-				CA91EE44193915C60060774C /* astr_runing7.png in Resources */,
-				CA91EE42193915C60060774C /* astr_runing5.png in Resources */,
+				CA70F68519391F0200E49539 /* astr1_runing0.png in Resources */,
+				CA70F68B19391F0200E49539 /* astr1_runing6.png in Resources */,
+				CA70F68D19391F0200E49539 /* astr1_runing8.png in Resources */,
+				CA70F68619391F0200E49539 /* astr1_runing1.png in Resources */,
+				CA70F68919391F0200E49539 /* astr1_runing4.png in Resources */,
 				CA91EE23193912EA0060774C /* background.png in Resources */,
-				CA91EE40193915C60060774C /* astr_runing3.png in Resources */,
 				CA88917319366836002E9EDE /* Images.xcassets in Resources */,
+				CA70F68A19391F0200E49539 /* astr1_runing5.png in Resources */,
+				CA70F68C19391F0200E49539 /* astr1_runing7.png in Resources */,
 				CA88916919366836002E9EDE /* Main_iPad.storyboard in Resources */,
+				CA70F68719391F0200E49539 /* astr1_runing2.png in Resources */,
 				CA88916619366836002E9EDE /* Main_iPhone.storyboard in Resources */,
+				CA70F68819391F0200E49539 /* astr1_runing3.png in Resources */,
 				CA88915D19366836002E9EDE /* InfoPlist.strings in Resources */,
-				CA91EE43193915C60060774C /* astr_runing6.png in Resources */,
-				CA91EE3E193915C60060774C /* astr_runing1.png in Resources */,
-				CA91EE41193915C60060774C /* astr_runing4.png in Resources */,
-				CA91EE45193915C60060774C /* astr_runing8.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
