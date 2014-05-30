@@ -9,6 +9,7 @@
 
 //Constante relativa ao movimento do background
 static const float BG_POINTS_PER_SEC = 50;
+SKAction *astronautAnimation;
 
 @implementation MyScene
 
@@ -31,8 +32,53 @@ static inline CGPoint CGPointAdd(const CGPoint a, const CGPoint b)
             bg.anchorPoint = CGPointZero;
             bg.position = CGPointMake(i * bg.size.width, 0);
             bg.name = @"bg";
+            //[bg setScale:0.8];
             [self addChild:bg];
         }
+        
+        
+        SKSpriteNode *astr = [SKSpriteNode spriteNodeWithImageNamed:@"astr_runing1"];
+        
+        [self addChild:astr];
+        
+        
+        
+        NSMutableArray *textures = [NSMutableArray arrayWithCapacity:10];
+        
+        
+        
+        for (int i = 1; i < 9; i++) {
+            
+            NSString *textureName = [NSString stringWithFormat:@"astr_runing%d", i];
+            
+            SKTexture *texture = [SKTexture textureWithImageNamed:textureName];
+            
+            [textures addObject:texture];
+            
+        }
+        
+        
+        
+        astronautAnimation = [SKAction animateWithTextures:textures timePerFrame:0.08];
+        
+        [astr runAction:[SKAction repeatActionForever:astronautAnimation]];
+        
+        /*Descobre o tamanho*/
+        
+        CGSize mySize = astr.size;
+        
+        NSLog(@"Size: %@",NSStringFromCGSize(mySize));
+        
+        
+        
+        astr.position = CGPointMake(self.size.width / 2, self.size.height / 2);
+        
+        astr.anchorPoint = CGPointMake(0.5, 0.5);
+     
+        [astr setScale:0.8];
+        
+        
+        
         
     }
     return self;
