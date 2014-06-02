@@ -9,14 +9,19 @@
 
 //Constante relativa ao movimento do background
 static const float BG_POINTS_PER_SEC = 50;
-static const float ASTR_POINTS_PER_SEC = 50;
+static const float ASTR_POINTS_PER_SEC = 480;
+static const float GRAVIDADE = 20;
+
+
 SKAction *astronautAnimation;
 SKSpriteNode *astr;
+CGPoint _velocity;
 int pulou = 0;
 int pulando = 0;
 int caindo = 0;
 
 @implementation MyScene
+
 
 static inline CGPoint CGPointMultiplyScalar(const CGPoint a,const CGFloat b)
 {
@@ -87,20 +92,6 @@ static inline CGPoint CGPointAdd(const CGPoint a, const CGPoint b)
 - (void)moveBg {
     [self enumerateChildNodesWithName:@"bg" usingBlock: ^(SKNode *node, BOOL *stop) {
         SKSpriteNode * bg = (SKSpriteNode *) node;
-        CGPoint bgVelocity = CGPointMake(-ASTR_POINTS_PER_SEC, 0);
-        CGPoint amtToMove = CGPointMultiplyScalar(bgVelocity, _dt);
-        bg.position = CGPointAdd(bg.position, amtToMove);
-        
-        if (bg.position.x <= -bg.size.width) {
-            bg.position = CGPointMake(bg.position.x + bg.size.width*2,bg.position.y);
-        }
-    }];
-    
-}
-
--(void) pulaAstronauta{
-    [self enumerateChildNodesWithName:@"astr1_runing0" usingBlock: ^(SKNode *node, BOOL *stop) {
-        SKSpriteNode * bg = (SKSpriteNode *) node;
         CGPoint bgVelocity = CGPointMake(-BG_POINTS_PER_SEC, 0);
         CGPoint amtToMove = CGPointMultiplyScalar(bgVelocity, _dt);
         bg.position = CGPointAdd(bg.position, amtToMove);
@@ -111,6 +102,7 @@ static inline CGPoint CGPointAdd(const CGPoint a, const CGPoint b)
     }];
     
 }
+
 //Adiciona obstaculos ao jogo
 -(void)addObstaculo{
     SKSpriteNode * ball =
@@ -151,6 +143,73 @@ static inline CGPoint CGPointAdd(const CGPoint a, const CGPoint b)
     }];
 }
 
+
+-(void) pulaAstronauta:(SKSpriteNode *)sprite velocity:(CGPoint)velocity{
+    // 1
+    CGPoint amountToMove = CGPointMake(velocity.x * _dt, velocity.y * _dt);
+    //NSLog(@"Amount to move: %@", NSStringFromCGPoint(amountToMove));
+    // 2
+    sprite.position =
+    CGPointMake(sprite.position.x + amountToMove.x,
+                sprite.position.y + amountToMove.y);
+    
+}
+
+- (void)moveAteh:(CGPoint)location {
+    CGPoint offset = CGPointMake(location.x - astr.position.x, /*location.y -*/ astr.position.y);
+    CGFloat length =
+    sqrtf(offset.x * offset.x + offset.y * offset.y);
+    
+    CGPoint direction = CGPointMake(offset.x / length, offset.y / length);
+    _velocity =
+    CGPointMake(direction.x * ASTR_POINTS_PER_SEC,
+                direction.y * ASTR_POINTS_PER_SEC);
+}
+
+- (void)caiAstronauta {
+    int limitEmCima = (self.size.height / 2)-28 + 100;
+    CGPoint newPosition = astr.position;
+    CGPoint newVelocity = _velocity;
+    // 2
+    CGPoint limite = CGPointMake(astr.position.x,limitEmCima);
+    
+    //Chegou ao limite em cima
+    /*
+    if (newPosition.y >= limite.y) {
+        newPosition.y = limite.y;
+        newVelocity.y = -newVelocity.y;
+        pulando = 1;
+    }*/
+    
+    //Caiu o suficiente
+    if(newPosition.y <= (self.size.height / 2)-28  && newVelocity.y < 0){
+        newVelocity.y = 0;
+        newPosition.y = (self.size.height / 2)-28;
+
+        pulando = 0;
+    }
+    
+    if(newVelocity.y < 0){
+        newVelocity.y -= GRAVIDADE;
+    }
+    
+    //Subindo
+    if(newVelocity.y > 0){
+        newVelocity.y -= GRAVIDADE;
+        pulando = 1;
+        if(newVelocity.y<=0){
+            //newVelocity.y -= 50;
+            newVelocity.y = -GRAVIDADE;
+        }
+        
+    }
+    _velocity = newVelocity;
+    astr.position = newPosition;
+    
+}
+
+
+
 //Metodo responsavel por executar mudanças a cada frame passado
 -(void)update:(NSTimeInterval)currentTime{
     
@@ -168,32 +227,20 @@ static inline CGPoint CGPointAdd(const CGPoint a, const CGPoint b)
         _dt = 0;
     }
     _lastUpdateTime = currentTime;
-    NSLog(@"%0.2f milliseconds since last update", _dt * 1000);
     
     
-    if(pulou && pulando <= 10){
-        
-        //[self pulaAstronauta];
-        astr.position = CGPointMake(astr.position.x, astr.position.y+pulando+2);
-        pulando++;
-        caindo = pulando;
-    }
-    else if (pulando >=10 && caindo >0) {
-        astr.position = CGPointMake(astr.position.x, astr.position.y-caindo);
-        caindo--;
-    }
-    else if (caindo == 0){
-        pulando = 0;
-        pulou=0;
-    }
+    [self pulaAstronauta:astr velocity:_velocity];
+    [self caiAstronauta];
+    
 }
 
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
-    UITouch *touch = [touches anyObject];
-    CGPoint touchLocation = [touch locationInNode:self];
-    pulou = 1;
-    //[self moveZombieToward:touchLocation];
+    //UITouch *touch = [touches anyObject];
+    CGPoint touchLocation = CGPointMake(astr.position.x, astr.position.y+1);
+    //pulou = 1;
+    if(!pulando)
+        [self moveAteh:touchLocation];
 }
 
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
