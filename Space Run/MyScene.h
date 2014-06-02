@@ -13,5 +13,6 @@
 @property NSTimeInterval lastUpdateTime;
 @property NSTimeInterval  dt;
 @property CGPoint velocity;
+@property int velocidade;
 
 @end

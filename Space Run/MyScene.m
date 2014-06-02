@@ -37,8 +37,19 @@ static inline CGPoint CGPointAdd(const CGPoint a, const CGPoint b)
             bg.anchorPoint = CGPointZero;
             bg.position = CGPointMake(i * bg.size.width, 0);
             bg.name = @"bg";
-            //[bg setScale:0.8];
+            [bg setScale:0.8];
             [self addChild:bg];
+        }
+        
+        //Adiciona o ground a imagem
+        for (int i = 0; i < 9; i++) {
+            SKSpriteNode * gd =
+            [SKSpriteNode spriteNodeWithImageNamed:[NSString stringWithFormat:@"ground%d",i]];
+            gd.anchorPoint = CGPointZero;
+            [gd setScale:0.32];
+            gd.position = CGPointMake(i * gd.size.width, 195);
+            gd.name = @"gd";
+            [self addChild:gd];
         }
         
         
@@ -47,15 +58,12 @@ static inline CGPoint CGPointAdd(const CGPoint a, const CGPoint b)
         [self addChild:astr];
         NSMutableArray *textures = [NSMutableArray arrayWithCapacity:10];
         
-        
-        
         for (int i = 1; i < 9; i++) {
             NSString *textureName = [NSString stringWithFormat:@"astr1_runing%d", i];
             SKTexture *texture = [SKTexture textureWithImageNamed:textureName];
             [textures addObject:texture];
         }
         
-    
         astronautAnimation = [SKAction animateWithTextures:textures timePerFrame:0.1];
         [astr runAction:[SKAction repeatActionForever:astronautAnimation]];
         
@@ -65,16 +73,11 @@ static inline CGPoint CGPointAdd(const CGPoint a, const CGPoint b)
         
         NSLog(@"Size: %@",NSStringFromCGSize(mySize));
         
-        
-        
-        astr.position = CGPointMake(self.size.width / 2, self.size.height / 2);
+        astr.position = CGPointMake(self.size.width / 2, (self.size.height / 2)-28);
         
         astr.anchorPoint = CGPointMake(0.5, 0.5);
      
-        [astr setScale:0.8];
-        
-        
-        
+        [astr setScale:0.3];
         
     }
     return self;
@@ -108,11 +111,56 @@ static inline CGPoint CGPointAdd(const CGPoint a, const CGPoint b)
     }];
     
 }
+//Adiciona obstaculos ao jogo
+-(void)addObstaculo{
+    SKSpriteNode * ball =
+    [SKSpriteNode spriteNodeWithImageNamed:@"meteoro"];
+    ball.anchorPoint = CGPointZero;
+    [ball setScale:0.2];
+    ball.name = @"meteoro";
+    ball.position = CGPointMake(ball.size.width+(arc4random() % 600)+70, 102);
+    [self addChild:ball];
+}
+
+//Move o solo no jogo, em tempo diferente ao do background
+-(void)moveGround{
+    
+    [self enumerateChildNodesWithName:@"gd" usingBlock: ^(SKNode *node, BOOL *stop) {
+        SKSpriteNode * gd = (SKSpriteNode *) node;
+        CGPoint gdVelocity = CGPointMake(-75+_velocidade, 0);
+        CGPoint amtToMove = CGPointMultiplyScalar(gdVelocity, _dt);
+        gd.position = CGPointAdd(gd.position, amtToMove);
+        
+        if (gd.position.x <= -gd.size.width) {
+            gd.position = CGPointMake(gd.position.x + gd.size.width*9,gd.position.y);
+        }
+    }];
+}
+
+//Movimenta o meteoro junto ao Ground
+-(void)moveMeteoro{
+    [self enumerateChildNodesWithName:@"meteoro" usingBlock: ^(SKNode *node, BOOL *stop) {
+        SKSpriteNode * mt = (SKSpriteNode *) node;
+        CGPoint mtVelocity = CGPointMake(-75+_velocidade, 0);
+        CGPoint amtToMove = CGPointMultiplyScalar(mtVelocity, _dt);
+        mt.position = CGPointAdd(mt.position, amtToMove);
+        
+        if (mt.position.x <= -mt.size.width) {
+            mt.position = CGPointMake(mt.position.x + mt.size.width*2,mt.position.y);
+        }
+    }];
+}
 
 //Metodo responsavel por executar mudanças a cada frame passado
 -(void)update:(NSTimeInterval)currentTime{
+    
     //Movimenta o background a cada frame
     [self moveBg];
+    //Movimenta o meteoro
+    [self moveMeteoro];
+    //Movimenta o solo
+    [self moveGround];
+    
     //Calcula o tempo percorrido por frame
     if (_lastUpdateTime) {
         _dt = currentTime - _lastUpdateTime;
@@ -121,6 +169,7 @@ static inline CGPoint CGPointAdd(const CGPoint a, const CGPoint b)
     }
     _lastUpdateTime = currentTime;
     NSLog(@"%0.2f milliseconds since last update", _dt * 1000);
+    
     
     if(pulou && pulando <= 10){
         
