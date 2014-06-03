@@ -58,13 +58,13 @@ static inline CGPoint CGPointAdd(const CGPoint a, const CGPoint b)
         }
         
         
-        astr = [SKSpriteNode spriteNodeWithImageNamed:@"astr_runing0"];
+        astr = [SKSpriteNode spriteNodeWithImageNamed:@"astrruning0"];
         
         [self addChild:astr];
         NSMutableArray *textures = [NSMutableArray arrayWithCapacity:10];
         
         for (int i = 1; i < 9; i++) {
-            NSString *textureName = [NSString stringWithFormat:@"astr1_runing%d", i];
+            NSString *textureName = [NSString stringWithFormat:@"astr1runing%d", i];
             SKTexture *texture = [SKTexture textureWithImageNamed:textureName];
             [textures addObject:texture];
         }
@@ -78,7 +78,7 @@ static inline CGPoint CGPointAdd(const CGPoint a, const CGPoint b)
         
         NSLog(@"Size: %@",NSStringFromCGSize(mySize));
         
-        astr.position = CGPointMake(self.size.width / 2, (self.size.height / 2)-28);
+        astr.position = CGPointMake((self.size.width / 2) - 120, (self.size.height / 2)-28);
         
         astr.anchorPoint = CGPointMake(0.5, 0.5);
      
@@ -156,7 +156,7 @@ static inline CGPoint CGPointAdd(const CGPoint a, const CGPoint b)
 }
 
 - (void)moveAteh:(CGPoint)location {
-    CGPoint offset = CGPointMake(location.x - astr.position.x, /*location.y -*/ astr.position.y);
+    CGPoint offset = CGPointMake(location.x - astr.position.x, astr.position.y);
     CGFloat length =
     sqrtf(offset.x * offset.x + offset.y * offset.y);
     
@@ -173,13 +173,7 @@ static inline CGPoint CGPointAdd(const CGPoint a, const CGPoint b)
     // 2
     CGPoint limite = CGPointMake(astr.position.x,limitEmCima);
     
-    //Chegou ao limite em cima
-    /*
-    if (newPosition.y >= limite.y) {
-        newPosition.y = limite.y;
-        newVelocity.y = -newVelocity.y;
-        pulando = 1;
-    }*/
+    
     
     //Caiu o suficiente
     if(newPosition.y <= (self.size.height / 2)-28  && newVelocity.y < 0){
@@ -189,7 +183,7 @@ static inline CGPoint CGPointAdd(const CGPoint a, const CGPoint b)
         pulando = 0;
     }
     
-    if(newVelocity.y < 0){
+    if(newVelocity.y < 0 || newPosition.y >= limite.y){
         newVelocity.y -= GRAVIDADE;
     }
     
@@ -198,7 +192,6 @@ static inline CGPoint CGPointAdd(const CGPoint a, const CGPoint b)
         newVelocity.y -= GRAVIDADE;
         pulando = 1;
         if(newVelocity.y<=0){
-            //newVelocity.y -= 50;
             newVelocity.y = -GRAVIDADE;
         }
         
@@ -209,6 +202,50 @@ static inline CGPoint CGPointAdd(const CGPoint a, const CGPoint b)
 }
 
 
+-(void) atira{
+    
+    SKSpriteNode *tiro;
+    SKSpriteNode *bala;
+    SKAction *actionTiro;
+    
+    tiro = [SKSpriteNode spriteNodeWithImageNamed:@"tiro_arma"];
+    [self addChild:tiro];
+    tiro.position = CGPointMake(astr.position.x*1.4, astr.position.y);
+    tiro.anchorPoint = CGPointMake(0.5, 0.5);
+    //[tiro removeFromParent];
+    //[tiro setScale:0.3];
+    
+    bala = [SKSpriteNode spriteNodeWithImageNamed:@"tiro1" ];
+    [self addChild:bala];
+    bala.position = CGPointMake(astr.position.x*1.5, astr.position.y);
+    bala.anchorPoint = CGPointMake(0.5, 0.5);
+    
+    
+    
+    NSMutableArray *textures = [NSMutableArray arrayWithCapacity:10];
+    NSMutableArray *textures1 = [NSMutableArray arrayWithCapacity:10];
+    
+    
+    NSString *textureName = @"tiro_arma";
+    SKTexture *texture = [SKTexture textureWithImageNamed:textureName];
+    [textures addObject:texture];
+    
+    textureName = @"nada";
+    texture = [SKTexture textureWithImageNamed:textureName];
+    [textures addObject:texture];
+    actionTiro = [SKAction animateWithTextures:textures timePerFrame:0.05];
+    
+    //actionTiro = [SKAction moveToX:astr.position.x*4 duration:0.5];
+    [tiro runAction:[SKAction repeatAction:actionTiro count:1]];
+    
+    
+    actionTiro = [SKAction moveToX:self.size.width*1.2 duration:0.5];
+    [bala runAction:[SKAction repeatAction:actionTiro count:1]];
+    
+    
+    
+    
+}
 
 //Metodo responsavel por executar mudanças a cada frame passado
 -(void)update:(NSTimeInterval)currentTime{
@@ -230,22 +267,27 @@ static inline CGPoint CGPointAdd(const CGPoint a, const CGPoint b)
     
     
     [self pulaAstronauta:astr velocity:_velocity];
+    
     [self caiAstronauta];
     
 }
 
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
-    //UITouch *touch = [touches anyObject];
-    CGPoint touchLocation = CGPointMake(astr.position.x, astr.position.y+1);
+    UITouch *touch = [touches anyObject];
+    CGPoint ate = CGPointMake(astr.position.x, astr.position.y+1);
+    CGPoint touchLocation = [touch locationInNode:self];
     //pulou = 1;
-    if(!pulando)
-        [self moveAteh:touchLocation];
+    if(!pulando && touchLocation.x > self.size.width/2)
+        [self moveAteh:ate];
+    if(touchLocation.x < self.size.width/2){
+        [self atira];
+    }
 }
 
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
     UITouch *touch = [touches anyObject];
-    CGPoint touchLocation = [touch locationInNode:self];
+    
     //[self moveZombieToward:touchLocation];
 }
 
