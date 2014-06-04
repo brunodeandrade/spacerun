@@ -23,6 +23,8 @@ int caindo = 0;
 @implementation MyScene
 
 
+
+
 static inline CGPoint CGPointMultiplyScalar(const CGPoint a,const CGFloat b)
 {
     return CGPointMake(a.x * b, a.y * b);
@@ -31,6 +33,13 @@ static inline CGPoint CGPointMultiplyScalar(const CGPoint a,const CGFloat b)
 static inline CGPoint CGPointAdd(const CGPoint a, const CGPoint b)
 {
     return CGPointMake(a.x + b.x, a.y + b.y);
+}
+
+
+#define ARC4RANDOM_MAX      0x100000000
+static inline CGFloat ScalarRandomRange(CGFloat min, CGFloat max)
+{
+    return floorf(((double)arc4random() / ARC4RANDOM_MAX) * (max - min) + min);
 }
 
 //Metodo de inicializaçao, usado para adicionar sprites ao app(Atentar-se a ordem dos sprites)
@@ -84,9 +93,28 @@ static inline CGPoint CGPointAdd(const CGPoint a, const CGPoint b)
      
         [astr setScale:0.3];
         
+        
+        
+        [self runAction:[SKAction repeatActionForever:
+        [SKAction sequence:@[[SKAction performSelector:@selector(spawnEnemy) onTarget:self],[SKAction waitForDuration:2.0]]]]];
+//        
+//        _enemyCollisionSound =
+//        [SKAction playSoundFileNamed:@"hitCatLady.wav"
+//                   waitForCompletion:NO];
+        
+        
     }
     return self;
 }
+
+
+
+- (void)didEvaluateActions {
+    [self checkCollisions];
+}
+
+
+
 
 //Metodo responsavel por mover o background na tela
 - (void)moveBg {
@@ -104,14 +132,33 @@ static inline CGPoint CGPointAdd(const CGPoint a, const CGPoint b)
 }
 
 //Adiciona obstaculos ao jogo
--(void)addObstaculo{
-    SKSpriteNode * ball =
-    [SKSpriteNode spriteNodeWithImageNamed:@"meteoro"];
-    ball.anchorPoint = CGPointZero;
-    [ball setScale:0.2];
-    ball.name = @"meteoro";
-    ball.position = CGPointMake(ball.size.width+(arc4random() % 600)+70, 102);
-    [self addChild:ball];
+//-(void)addObstaculo{
+//    SKSpriteNode * ball =
+//    [SKSpriteNode spriteNodeWithImageNamed:@"meteoro"];
+//    ball.anchorPoint = CGPointZero;
+//    [ball setScale:0.2];
+//    ball.name = @"meteoro";
+//    ball.position = CGPointMake(ball.size.width+(arc4random() % 600)+70, 102);
+//    [self addChild:ball];
+//}
+
+
+// Adiciona inimigos e obstaculos
+
+
+- (void)spawnEnemy {
+    SKSpriteNode *enemy = [SKSpriteNode spriteNodeWithImageNamed:@"asteroid"];
+    enemy.name = @"asteroid";
+    enemy.position = CGPointMake(self.size.width + enemy.size.height,
+                                 ScalarRandomRange(enemy.size.height/3,
+                                                   self.size.height-enemy.size.height/3));
+    [self addChild:enemy];
+    
+    SKAction *actionMove = [SKAction moveToX:-enemy.size.width/1 duration:2.0];
+    SKAction *actionRemove = [SKAction removeFromParent];
+    [enemy runAction:
+     [SKAction sequence:@[actionMove, actionRemove]]];
+    
 }
 
 //Move o solo no jogo, em tempo diferente ao do background
@@ -223,8 +270,6 @@ static inline CGPoint CGPointAdd(const CGPoint a, const CGPoint b)
     
     
     NSMutableArray *textures = [NSMutableArray arrayWithCapacity:10];
-    NSMutableArray *textures1 = [NSMutableArray arrayWithCapacity:10];
-    
     
     NSString *textureName = @"tiro_arma";
     SKTexture *texture = [SKTexture textureWithImageNamed:textureName];
@@ -269,6 +314,48 @@ static inline CGPoint CGPointAdd(const CGPoint a, const CGPoint b)
     [self pulaAstronauta:astr velocity:_velocity];
     
     [self caiAstronauta];
+    
+}
+
+- (void)checkCollisions {
+    
+    [self enumerateChildNodesWithName:@"asteroid"
+    usingBlock:^(SKNode *node, BOOL *stop){
+    SKSpriteNode *enemy = (SKSpriteNode *)node;
+    CGRect smallerFrame = CGRectInset(enemy.frame, 20, 20);
+        
+    // se ocorrer a colisão, o obstaculo é removido, e ação de som da colisão.
+    if (CGRectIntersectsRect(smallerFrame, astr.frame)) {
+                                   
+    // Chamada do sprit de colisão.
+    _explosao = [SKSpriteNode spriteNodeWithImageNamed:@"exp3_0"];
+    _explosao.position = CGPointMake(100, 100);
+   [self addChild:_explosao];
+                                   
+    // Declaracao e instanciacao do array de sprits (animacao)
+    NSMutableArray *textures = [NSMutableArray arrayWithCapacity:20];
+    // 2
+    for (int i = 0; i < 15; i++) {
+    NSString *textureName = [NSString stringWithFormat:@"exp3_%d", i];
+    SKTexture *texture = [SKTexture textureWithImageNamed:textureName];
+    [textures addObject:texture];
+                                   }
+                                   
+                                   
+                                   // 4
+    _explosaoAnimation = [SKAction animateWithTextures:textures timePerFrame:0.5];
+                                   
+                                   
+                                   
+                                   
+    NSLog(@"COLIDIU");
+                                   
+   [enemy removeFromParent];
+                                   
+   //[self runAction:_enemyCollisionSound];
+                                   
+    }
+    }];
     
 }
 
