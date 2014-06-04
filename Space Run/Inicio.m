@@ -8,10 +8,14 @@
 
 #import "Inicio.h"
 #import "MyScene.h"
+#import <AVFoundation/AVFoundation.h>
 
 @implementation Inicio
 static const float BG_POINTS_PER_SEC = 30;
 int foi = 0;
+SKAction *somInicio;
+SKSpriteNode *musica;
+AVAudioPlayer *_backgroundMusicPlayer;
 
 static inline CGPoint CGPointMultiplyScalar(const CGPoint a,const CGFloat b)
 {
@@ -42,9 +46,7 @@ SKSpriteNode *sp;
             [bg setScale:0.5];
         }
         
-        
-        
-        
+        [self playBackgroundMusic:@"som_inicio_menor.mp3"];
         
         sp = [SKSpriteNode spriteNodeWithImageNamed:@"Space"];
         sp.anchorPoint = CGPointZero;
@@ -60,6 +62,18 @@ SKSpriteNode *sp;
     return self;
 }
 
+
+- (void)playBackgroundMusic:(NSString *)filename
+{
+    NSError *error;
+    NSURL *backgroundMusicURL = [[NSBundle mainBundle] URLForResource:filename withExtension:nil];
+    _backgroundMusicPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:backgroundMusicURL error:&error];
+    _backgroundMusicPlayer.numberOfLoops = -1;
+    _backgroundMusicPlayer.volume = 0.8;
+    _backgroundMusicPlayer.delegate = self;
+    [_backgroundMusicPlayer prepareToPlay];
+    [_backgroundMusicPlayer play];
+}
 
 
 - (void)moveBg {
@@ -106,8 +120,9 @@ SKSpriteNode *sp;
 }
 
 
+
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
-    
+        
     // 1
     SKScene * comecaJogo = [[MyScene alloc] initWithSize:self.size];
     // 2
@@ -117,6 +132,7 @@ SKSpriteNode *sp;
     SKTransition *reveal = [SKTransition fadeWithDuration:3];
     // 3
     [self.view presentScene:comecaJogo transition:reveal];
+    [_backgroundMusicPlayer stop];
 }
 
 

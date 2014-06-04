@@ -31,6 +31,8 @@
 		406EC6E7193FA133003A6BE6 /* rocket animated.png in Resources */ = {isa = PBXBuildFile; fileRef = 406EC6D1193FA133003A6BE6 /* rocket animated.png */; };
 		CA40268F193FA3B10018A0BF /* Inicio.m in Sources */ = {isa = PBXBuildFile; fileRef = CA40268D193FA3B10018A0BF /* Inicio.m */; };
 		CA402690193FA3B10018A0BF /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA40268E193FA3B10018A0BF /* ViewController.m */; };
+		CA402694193FAD500018A0BF /* som_inicio_menor.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CA402693193FAD500018A0BF /* som_inicio_menor.mp3 */; };
+		CA402696193FB9E30018A0BF /* somFase1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CA402695193FB9E30018A0BF /* somFase1.mp3 */; };
 		CA88915119366836002E9EDE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA88915019366836002E9EDE /* Foundation.framework */; };
 		CA88915319366836002E9EDE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA88915219366836002E9EDE /* CoreGraphics.framework */; };
 		CA88915519366836002E9EDE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA88915419366836002E9EDE /* UIKit.framework */; };
@@ -109,6 +111,8 @@
 		CA40268D193FA3B10018A0BF /* Inicio.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Inicio.m; sourceTree = "<group>"; };
 		CA40268E193FA3B10018A0BF /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		CA402691193FA3E10018A0BF /* Inicio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Inicio.h; sourceTree = "<group>"; };
+		CA402693193FAD500018A0BF /* som_inicio_menor.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = som_inicio_menor.mp3; sourceTree = "<group>"; };
+		CA402695193FB9E30018A0BF /* somFase1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = somFase1.mp3; sourceTree = "<group>"; };
 		CA88914D19366836002E9EDE /* Space Run.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Space Run.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA88915019366836002E9EDE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		CA88915219366836002E9EDE /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -246,6 +250,15 @@
 			name = Fundos;
 			sourceTree = "<group>";
 		};
+		CA402692193FAD250018A0BF /* Sons */ = {
+			isa = PBXGroup;
+			children = (
+				CA402693193FAD500018A0BF /* som_inicio_menor.mp3 */,
+				CA402695193FB9E30018A0BF /* somFase1.mp3 */,
+			);
+			name = Sons;
+			sourceTree = "<group>";
+		};
 		CA88914419366835002E9EDE = {
 			isa = PBXGroup;
 			children = (
@@ -280,6 +293,7 @@
 		CA88915819366836002E9EDE /* Space Run */ = {
 			isa = PBXGroup;
 			children = (
+				CA402692193FAD250018A0BF /* Sons */,
 				C39949251937CABD0018B484 /* Images */,
 				CA88916119366836002E9EDE /* AppDelegate.h */,
 				CA88916219366836002E9EDE /* AppDelegate.m */,
@@ -444,6 +458,7 @@
 				406EC6E2193FA133003A6BE6 /* exp3_9.png in Resources */,
 				CAC1B30E193E3AFD00A00D36 /* astr1runing7.png in Resources */,
 				406EC6DC193FA133003A6BE6 /* exp3_3.png in Resources */,
+				CA402694193FAD500018A0BF /* som_inicio_menor.mp3 in Resources */,
 				CAC1B30C193E3AFD00A00D36 /* astr1runing5.png in Resources */,
 				CAC1B314193E43C000A00D36 /* nada.png in Resources */,
 				CAC1B308193E3AFD00A00D36 /* astr1runing1.png in Resources */,
@@ -451,6 +466,7 @@
 				CA91EE23193912EA0060774C /* background.png in Resources */,
 				CAA559BC193D05800097B42B /* ground6.png in Resources */,
 				CA88917319366836002E9EDE /* Images.xcassets in Resources */,
+				CA402696193FB9E30018A0BF /* somFase1.mp3 in Resources */,
 				406EC6E1193FA133003A6BE6 /* exp3_8.png in Resources */,
 				406EC6DF193FA133003A6BE6 /* exp3_6.png in Resources */,
 				CAA559BA193D05800097B42B /* ground4.png in Resources */,

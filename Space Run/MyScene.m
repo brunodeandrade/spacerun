@@ -6,6 +6,7 @@
 //  Copyright (c) 2014 Bruno Rodrigues de Andrade. All rights reserved.
 
 #import "MyScene.h"
+#import <AVFoundation/AVFoundation.h>
 
 //Constante relativa ao movimento do background
 static const float BG_POINTS_PER_SEC = 50;
@@ -19,6 +20,8 @@ CGPoint _velocity;
 int pulou = 0;
 int pulando = 0;
 int caindo = 0;
+AVAudioPlayer *_backgroundMusicPlayer1;
+
 
 @implementation MyScene
 
@@ -45,6 +48,11 @@ static inline CGFloat ScalarRandomRange(CGFloat min, CGFloat max)
 //Metodo de inicializaçao, usado para adicionar sprites ao app(Atentar-se a ordem dos sprites)
 -(id)initWithSize:(CGSize)size{
     if(self = [super initWithSize:size]){
+        
+        
+        [self playBackgroundMusic:@"somFase1.mp3"];
+        
+        
         //Adiciona background a imagem
         for (int i = 0; i < 2; i++) {
             SKSpriteNode * bg = [SKSpriteNode spriteNodeWithImageNamed:@"background"];
@@ -54,6 +62,7 @@ static inline CGFloat ScalarRandomRange(CGFloat min, CGFloat max)
             [bg setScale:0.8];
             [self addChild:bg];
         }
+        
         
         //Adiciona o ground a imagem
         for (int i = 0; i < 9; i++) {
@@ -112,6 +121,21 @@ static inline CGFloat ScalarRandomRange(CGFloat min, CGFloat max)
 - (void)didEvaluateActions {
     [self checkCollisions];
 }
+
+
+
+- (void)playBackgroundMusic:(NSString *)filename
+{
+    NSError *error;
+    NSURL *backgroundMusicURL = [[NSBundle mainBundle] URLForResource:filename withExtension:nil];
+    _backgroundMusicPlayer1 = [[AVAudioPlayer alloc] initWithContentsOfURL:backgroundMusicURL error:&error];
+    _backgroundMusicPlayer1.numberOfLoops = -1;
+    _backgroundMusicPlayer1.volume = 0.8;
+    _backgroundMusicPlayer1.delegate = self;
+    [_backgroundMusicPlayer1 prepareToPlay];
+    [_backgroundMusicPlayer1 play];
+}
+
 
 
 
@@ -337,10 +361,10 @@ static inline CGFloat ScalarRandomRange(CGFloat min, CGFloat max)
     NSMutableArray *textures = [NSMutableArray arrayWithCapacity:20];
     // 2
     for (int i = 0; i < 15; i++) {
-    NSString *textureName = [NSString stringWithFormat:@"exp3_%d", i];
-    SKTexture *texture = [SKTexture textureWithImageNamed:textureName];
-    [textures addObject:texture];
-                                   }
+        NSString *textureName = [NSString stringWithFormat:@"exp3_%d", i];
+        SKTexture *texture = [SKTexture textureWithImageNamed:textureName];
+        [textures addObject:texture];
+    }
                                    
                                    
                                    // 4
