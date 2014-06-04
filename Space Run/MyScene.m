@@ -285,9 +285,10 @@ static inline CGFloat ScalarRandomRange(CGFloat min, CGFloat max)
     
     
     actionTiro = [SKAction moveToX:self.size.width*1.2 duration:0.5];
-    [bala runAction:[SKAction repeatAction:actionTiro count:1]];
-    
-    
+    [bala runAction:[SKAction repeatAction:actionTiro count:1] completion:^{
+        [bala removeFromParent];
+        [tiro removeFromParent];
+    }];
     
     
 }
@@ -373,14 +374,14 @@ static inline CGFloat ScalarRandomRange(CGFloat min, CGFloat max)
 }
 
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
-    UITouch *touch = [touches anyObject];
+    //UITouch *touch = [touches anyObject];
     
     //[self moveZombieToward:touchLocation];
 }
 
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
-    UITouch *touch = [touches anyObject];
-    CGPoint touchLocation = [touch locationInNode:self];
+    //UITouch *touch = [touches anyObject];
+    //CGPoint touchLocation = [touch locationInNode:self];
     //[self moveZombieToward:touchLocation];
 }
 

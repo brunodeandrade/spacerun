@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "MyScene.h"
+#import "Inicio.h"
 
 @implementation ViewController
 
@@ -15,20 +16,33 @@
 {
     [super viewDidLoad];
 
+    
+    NSLog(@"Opaaaaaaa");
+    
+    
     // Configure the view.
     SKView * skView = (SKView *)self.view;
+    
     skView.showsFPS = YES;
     skView.showsNodeCount = YES;
-    //PUSHHH
     
     // Create and configure the scene.
-    SKScene * scene = [MyScene sceneWithSize:skView.bounds.size];
+    SKScene * scene = [Inicio sceneWithSize:skView.bounds.size];
+    //scene.scaleMode = SKSceneScaleModeAspectFill;
     scene.scaleMode = SKSceneScaleModeAspectFill;
     
-    // Present the scene.
-    [skView presentScene:scene];
+    if(!skView.scene){
+        NSLog(@"Sai do Inicio");
+        skView.showsFPS = YES;
+        skView.showsNodeCount = YES;
+        
+        //Criar e configurar cena
+        //SKScene *scene = [Inicio sceneWithSize:skView.bounds.size];
+        scene.scaleMode = SKSceneScaleModeAspectFill;
+        [skView presentScene:scene];
+        
+    }
     
-    // adicionando comentário inútil
 }
 //Codigos adicionados--inicio--
 
@@ -36,22 +50,6 @@
     return YES;
 }
 
--(void)viewWillLayoutSubviews{
-    [super viewWillLayoutSubviews];
-    //Configuracao da view
-    SKView *skView = (SKView *) self.view;
-    
-    if(!skView.scene){
-        skView.showsFPS = YES;
-        skView.showsNodeCount = YES;
-        
-        //Criar e configurar cena
-        SKScene *scene = [MyScene sceneWithSize:skView.bounds.size];
-        scene.scaleMode = SKSceneScaleModeAspectFill;
-        
-        [skView presentScene:scene];
-    }
-}
 //Fim--fim--
 
 
