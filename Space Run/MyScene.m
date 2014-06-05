@@ -116,7 +116,7 @@ static inline CGFloat ScalarRandomRange(CGFloat min, CGFloat max)
 //        [SKAction playSoundFileNamed:@"hitCatLady.wav"
 //                   waitForCompletion:NO];
         
-        
+        //[self escreveTexto];
     }
     return self;
 }
@@ -124,7 +124,7 @@ static inline CGFloat ScalarRandomRange(CGFloat min, CGFloat max)
 
 - (void) escreveTexto{
     
-    SKLabelNode * label = [SKLabelNode labelNodeWithFontNamed:@"8bitoperator"];
+    SKLabelNode * label = [SKLabelNode labelNodeWithFontNamed:@"Arial"];
     label.text = @"opaaa";
     label.position = CGPointMake(self.size.width/2,
                                  (self.size.height)/2);
