@@ -16,6 +16,8 @@ static const float GRAVIDADE = 20;
 
 SKAction *astronautAnimation;
 SKSpriteNode *astr;
+SKSpriteNode *tiro;
+SKSpriteNode *bala;
 CGPoint _velocity;
 int pulou = 0;
 int pulando = 0;
@@ -122,7 +124,11 @@ static inline CGFloat ScalarRandomRange(CGFloat min, CGFloat max)
 
 
 - (void)didEvaluateActions {
-    [self checkCollisions];
+    [self checkCollisions:@"asteroid" andOther:astr];
+    [self checkCollisions:@"alien" andOther:astr];
+    [self checkCollisions:@"alien" andOther:astr];
+    [self checkCollisions:@"asteroid" andOther:bala];
+    [self checkCollisions:@"alien" andOther:bala];
 }
 
 
@@ -202,13 +208,13 @@ AVAudioPlayer *_somTiro;
 
 - (void)spawnAlien {
     SKSpriteNode *enemy = [SKSpriteNode spriteNodeWithImageNamed:[NSString stringWithFormat:@"alien%d",arc4random()%2]];
-    enemy.name = @"alien%d";
-    [enemy setScale:1];
+    enemy.name = @"alien";
+    [enemy setScale:0.8];
     enemy.position = CGPointMake(enemy.size.width + 300, ScalarRandomRange(enemy.size.height/5,
                                                                            self.size.height-enemy.size.height/4));
     [self addChild:enemy];
     
-    SKAction *actionMove = [SKAction moveToX:-enemy.size.width/1 duration:_velocidadeMeteoro];
+    SKAction *actionMove = [SKAction moveToX:-enemy.size.width/1 duration:_velocidadeMeteoro-(0.4)];
     SKAction *actionRemove = [SKAction removeFromParent];
     [enemy runAction:
      [SKAction sequence:@[actionMove, actionRemove]]];
@@ -305,8 +311,6 @@ AVAudioPlayer *_somTiro;
 
 -(void) atira{
     
-    SKSpriteNode *tiro;
-    SKSpriteNode *bala;
     SKAction *actionTiro;
     
     tiro = [SKSpriteNode spriteNodeWithImageNamed:@"tiro_arma"];
@@ -407,34 +411,34 @@ AVAudioPlayer *_somTiro;
     
 }
 
-- (void)checkCollisions {
+- (void)checkCollisions:(NSString *)objeto andOther : (SKSpriteNode *) outro {
     
-    [self enumerateChildNodesWithName:@"asteroid"
+    [self enumerateChildNodesWithName:objeto
     usingBlock:^(SKNode *node, BOOL *stop){
     SKSpriteNode *enemy = (SKSpriteNode *)node;
     CGRect smallerFrame = CGRectInset(enemy.frame, 10, 10);
         
     // se ocorrer a colisão, o obstaculo é removido, e ação de som da colisão.
-    if (CGRectIntersectsRect(smallerFrame, astr.frame)) {
+    if (CGRectIntersectsRect(smallerFrame, outro.frame)) {
                                    
-    // Chamada do sprit de colisão.
-    _explosao = [SKSpriteNode spriteNodeWithImageNamed:@"exp3_0"];
-    _explosao.position = CGPointMake(100, 100);
-   [self addChild:_explosao];
+//    // Chamada do sprit de colisão.
+//    _explosao = [SKSpriteNode spriteNodeWithImageNamed:@"exp3_0"];
+//    _explosao.position = CGPointMake(100, 100);
+//   [self addChild:_explosao];
+//                                   
+//    // Declaracao e instanciacao do array de sprits (animacao)
+//    NSMutableArray *textures = [NSMutableArray arrayWithCapacity:20];
+//    // 2
+//    for (int i = 0; i < 15; i++) {
+//        NSString *textureName = [NSString stringWithFormat:@"exp3_%d", i];
+//        SKTexture *texture = [SKTexture textureWithImageNamed:textureName];
+//        [textures addObject:texture];
+//    }
+        
                                    
-    // Declaracao e instanciacao do array de sprits (animacao)
-    NSMutableArray *textures = [NSMutableArray arrayWithCapacity:20];
-    // 2
-    for (int i = 0; i < 15; i++) {
-        NSString *textureName = [NSString stringWithFormat:@"exp3_%d", i];
-        SKTexture *texture = [SKTexture textureWithImageNamed:textureName];
-        [textures addObject:texture];
-    }
-                                   
-                                   
-                                   // 4
-    _explosaoAnimation = [SKAction animateWithTextures:textures timePerFrame:0.5];
-                                   
+//                                   // 4
+//    _explosaoAnimation = [SKAction animateWithTextures:textures timePerFrame:0.5];
+        
                                    
                                    
                                    
