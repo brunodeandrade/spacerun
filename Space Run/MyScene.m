@@ -200,6 +200,21 @@ AVAudioPlayer *_somTiro;
     
 }
 
+- (void)spawnAlien {
+    SKSpriteNode *enemy = [SKSpriteNode spriteNodeWithImageNamed:[NSString stringWithFormat:@"alien%d",arc4random()%2]];
+    enemy.name = @"alien%d";
+    [enemy setScale:1];
+    enemy.position = CGPointMake(enemy.size.width + 300, ScalarRandomRange(enemy.size.height/5,
+                                                                           self.size.height-enemy.size.height/4));
+    [self addChild:enemy];
+    
+    SKAction *actionMove = [SKAction moveToX:-enemy.size.width/1 duration:_velocidadeMeteoro];
+    SKAction *actionRemove = [SKAction removeFromParent];
+    [enemy runAction:
+     [SKAction sequence:@[actionMove, actionRemove]]];
+    
+}
+
 //Move o solo no jogo, em tempo diferente ao do background
 -(void)moveGround{
     
@@ -371,10 +386,10 @@ AVAudioPlayer *_somTiro;
             }else{
                 _velocidadeMeteoro = _velocidadeMeteoro - 0.09;
             }
-            [self spawnEnemy];
+            [self spawnAlien];
             
         }else{
-            [self spawnEnemy];
+            [self spawnAlien];
             NSLog(@"entra");
             
         }

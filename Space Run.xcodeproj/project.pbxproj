@@ -24,8 +24,8 @@
 		406EC6E0193FA133003A6BE6 /* exp3_7.png in Resources */ = {isa = PBXBuildFile; fileRef = 406EC6CA193FA133003A6BE6 /* exp3_7.png */; };
 		406EC6E1193FA133003A6BE6 /* exp3_8.png in Resources */ = {isa = PBXBuildFile; fileRef = 406EC6CB193FA133003A6BE6 /* exp3_8.png */; };
 		406EC6E2193FA133003A6BE6 /* exp3_9.png in Resources */ = {isa = PBXBuildFile; fileRef = 406EC6CC193FA133003A6BE6 /* exp3_9.png */; };
-		406EC6E3193FA133003A6BE6 /* eyebot.png in Resources */ = {isa = PBXBuildFile; fileRef = 406EC6CD193FA133003A6BE6 /* eyebot.png */; };
-		406EC6E4193FA133003A6BE6 /* eyelander.png in Resources */ = {isa = PBXBuildFile; fileRef = 406EC6CE193FA133003A6BE6 /* eyelander.png */; };
+		406EC6E3193FA133003A6BE6 /* alien1.png in Resources */ = {isa = PBXBuildFile; fileRef = 406EC6CD193FA133003A6BE6 /* alien1.png */; };
+		406EC6E4193FA133003A6BE6 /* alien0.png in Resources */ = {isa = PBXBuildFile; fileRef = 406EC6CE193FA133003A6BE6 /* alien0.png */; };
 		406EC6E5193FA133003A6BE6 /* fireball.png in Resources */ = {isa = PBXBuildFile; fileRef = 406EC6CF193FA133003A6BE6 /* fireball.png */; };
 		406EC6E6193FA133003A6BE6 /* mine.png in Resources */ = {isa = PBXBuildFile; fileRef = 406EC6D0193FA133003A6BE6 /* mine.png */; };
 		406EC6E7193FA133003A6BE6 /* rocket animated.png in Resources */ = {isa = PBXBuildFile; fileRef = 406EC6D1193FA133003A6BE6 /* rocket animated.png */; };
@@ -107,8 +107,8 @@
 		406EC6CA193FA133003A6BE6 /* exp3_7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = exp3_7.png; sourceTree = "<group>"; };
 		406EC6CB193FA133003A6BE6 /* exp3_8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = exp3_8.png; sourceTree = "<group>"; };
 		406EC6CC193FA133003A6BE6 /* exp3_9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = exp3_9.png; sourceTree = "<group>"; };
-		406EC6CD193FA133003A6BE6 /* eyebot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = eyebot.png; sourceTree = "<group>"; };
-		406EC6CE193FA133003A6BE6 /* eyelander.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = eyelander.png; sourceTree = "<group>"; };
+		406EC6CD193FA133003A6BE6 /* alien1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = alien1.png; sourceTree = "<group>"; };
+		406EC6CE193FA133003A6BE6 /* alien0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = alien0.png; sourceTree = "<group>"; };
 		406EC6CF193FA133003A6BE6 /* fireball.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fireball.png; sourceTree = "<group>"; };
 		406EC6D0193FA133003A6BE6 /* mine.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mine.png; sourceTree = "<group>"; };
 		406EC6D1193FA133003A6BE6 /* rocket animated.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "rocket animated.png"; sourceTree = "<group>"; };
@@ -199,8 +199,8 @@
 			children = (
 				406EC6BB193FA133003A6BE6 /* asteroid.png */,
 				406EC6BC193FA133003A6BE6 /* Explosao */,
-				406EC6CD193FA133003A6BE6 /* eyebot.png */,
-				406EC6CE193FA133003A6BE6 /* eyelander.png */,
+				406EC6CD193FA133003A6BE6 /* alien1.png */,
+				406EC6CE193FA133003A6BE6 /* alien0.png */,
 				406EC6CF193FA133003A6BE6 /* fireball.png */,
 				406EC6D0193FA133003A6BE6 /* mine.png */,
 				406EC6D1193FA133003A6BE6 /* rocket animated.png */,
@@ -491,7 +491,7 @@
 				406EC6D9193FA133003A6BE6 /* exp3_14.png in Resources */,
 				CAA559BE193D05800097B42B /* ground8.png in Resources */,
 				CAA559BF193D05800097B42B /* ground9.png in Resources */,
-				406EC6E4193FA133003A6BE6 /* eyelander.png in Resources */,
+				406EC6E4193FA133003A6BE6 /* alien0.png in Resources */,
 				CA88916919366836002E9EDE /* Main_iPad.storyboard in Resources */,
 				CAA559BB193D05800097B42B /* ground5.png in Resources */,
 				CAA559B7193D05800097B42B /* ground1.png in Resources */,
@@ -505,7 +505,7 @@
 				CA88916619366836002E9EDE /* Main_iPhone.storyboard in Resources */,
 				406EC6DD193FA133003A6BE6 /* exp3_4.png in Resources */,
 				CA6DA6E81940E4EB00424737 /* somFase1.mp3 in Resources */,
-				406EC6E3193FA133003A6BE6 /* eyebot.png in Resources */,
+				406EC6E3193FA133003A6BE6 /* alien1.png in Resources */,
 				406EC6D3193FA133003A6BE6 /* exp3_0.png in Resources */,
 				406EC6D4193FA133003A6BE6 /* exp3_1.png in Resources */,
 				406EC6E7193FA133003A6BE6 /* rocket animated.png in Resources */,
