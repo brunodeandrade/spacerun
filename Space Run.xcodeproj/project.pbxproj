@@ -33,6 +33,8 @@
 		CA402690193FA3B10018A0BF /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA40268E193FA3B10018A0BF /* ViewController.m */; };
 		CA402694193FAD500018A0BF /* som_inicio_menor.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CA402693193FAD500018A0BF /* som_inicio_menor.mp3 */; };
 		CA402696193FB9E30018A0BF /* somFase1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CA402695193FB9E30018A0BF /* somFase1.mp3 */; };
+		CA6DA6E31940D4B700424737 /* espaco_back.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6DA6E11940D4B700424737 /* espaco_back.png */; };
+		CA6DA6E41940D4B700424737 /* Space.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6DA6E21940D4B700424737 /* Space.png */; };
 		CA88915119366836002E9EDE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA88915019366836002E9EDE /* Foundation.framework */; };
 		CA88915319366836002E9EDE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA88915219366836002E9EDE /* CoreGraphics.framework */; };
 		CA88915519366836002E9EDE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA88915419366836002E9EDE /* UIKit.framework */; };
@@ -113,6 +115,8 @@
 		CA402691193FA3E10018A0BF /* Inicio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Inicio.h; sourceTree = "<group>"; };
 		CA402693193FAD500018A0BF /* som_inicio_menor.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = som_inicio_menor.mp3; sourceTree = "<group>"; };
 		CA402695193FB9E30018A0BF /* somFase1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = somFase1.mp3; sourceTree = "<group>"; };
+		CA6DA6E11940D4B700424737 /* espaco_back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = espaco_back.png; sourceTree = "<group>"; };
+		CA6DA6E21940D4B700424737 /* Space.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Space.png; sourceTree = "<group>"; };
 		CA88914D19366836002E9EDE /* Space Run.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Space Run.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA88915019366836002E9EDE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		CA88915219366836002E9EDE /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -236,6 +240,8 @@
 			isa = PBXGroup;
 			children = (
 				CAA559AC193D05800097B42B /* ground0.png */,
+				CA6DA6E11940D4B700424737 /* espaco_back.png */,
+				CA6DA6E21940D4B700424737 /* Space.png */,
 				CAA559AD193D05800097B42B /* ground1.png */,
 				CAA559AE193D05800097B42B /* ground2.png */,
 				CAA559AF193D05800097B42B /* ground3.png */,
@@ -461,6 +467,7 @@
 				CA402694193FAD500018A0BF /* som_inicio_menor.mp3 in Resources */,
 				CAC1B30C193E3AFD00A00D36 /* astr1runing5.png in Resources */,
 				CAC1B314193E43C000A00D36 /* nada.png in Resources */,
+				CA6DA6E41940D4B700424737 /* Space.png in Resources */,
 				CAC1B308193E3AFD00A00D36 /* astr1runing1.png in Resources */,
 				CA88917119366836002E9EDE /* Spaceship.png in Resources */,
 				CA91EE23193912EA0060774C /* background.png in Resources */,
@@ -502,6 +509,7 @@
 				CAC1B312193E3DD100A00D36 /* tiro_arma.png in Resources */,
 				406EC6DA193FA133003A6BE6 /* exp3_15.png in Resources */,
 				406EC6D2193FA133003A6BE6 /* asteroid.png in Resources */,
+				CA6DA6E31940D4B700424737 /* espaco_back.png in Resources */,
 				CAA559B6193D05800097B42B /* ground0.png in Resources */,
 				CA88915D19366836002E9EDE /* InfoPlist.strings in Resources */,
 				CAC1B309193E3AFD00A00D36 /* astr1runing2.png in Resources */,
