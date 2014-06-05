@@ -32,9 +32,11 @@
 		CA40268F193FA3B10018A0BF /* Inicio.m in Sources */ = {isa = PBXBuildFile; fileRef = CA40268D193FA3B10018A0BF /* Inicio.m */; };
 		CA402690193FA3B10018A0BF /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA40268E193FA3B10018A0BF /* ViewController.m */; };
 		CA402694193FAD500018A0BF /* som_inicio_menor.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CA402693193FAD500018A0BF /* som_inicio_menor.mp3 */; };
-		CA402696193FB9E30018A0BF /* somFase1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CA402695193FB9E30018A0BF /* somFase1.mp3 */; };
 		CA6DA6E31940D4B700424737 /* espaco_back.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6DA6E11940D4B700424737 /* espaco_back.png */; };
 		CA6DA6E41940D4B700424737 /* Space.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6DA6E21940D4B700424737 /* Space.png */; };
+		CA6DA6E61940DB8D00424737 /* tiro.wav in Resources */ = {isa = PBXBuildFile; fileRef = CA6DA6E51940DB8D00424737 /* tiro.wav */; };
+		CA6DA6E81940E4EB00424737 /* somFase1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CA6DA6E71940E4EB00424737 /* somFase1.mp3 */; };
+		CA6DA6EC1940E58700424737 /* play.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6DA6EB1940E58700424737 /* play.png */; };
 		CA88915119366836002E9EDE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA88915019366836002E9EDE /* Foundation.framework */; };
 		CA88915319366836002E9EDE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA88915219366836002E9EDE /* CoreGraphics.framework */; };
 		CA88915519366836002E9EDE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA88915419366836002E9EDE /* UIKit.framework */; };
@@ -114,9 +116,11 @@
 		CA40268E193FA3B10018A0BF /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		CA402691193FA3E10018A0BF /* Inicio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Inicio.h; sourceTree = "<group>"; };
 		CA402693193FAD500018A0BF /* som_inicio_menor.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = som_inicio_menor.mp3; sourceTree = "<group>"; };
-		CA402695193FB9E30018A0BF /* somFase1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = somFase1.mp3; sourceTree = "<group>"; };
 		CA6DA6E11940D4B700424737 /* espaco_back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = espaco_back.png; sourceTree = "<group>"; };
 		CA6DA6E21940D4B700424737 /* Space.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Space.png; sourceTree = "<group>"; };
+		CA6DA6E51940DB8D00424737 /* tiro.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = tiro.wav; sourceTree = "<group>"; };
+		CA6DA6E71940E4EB00424737 /* somFase1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = somFase1.mp3; sourceTree = "<group>"; };
+		CA6DA6EB1940E58700424737 /* play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = play.png; sourceTree = "<group>"; };
 		CA88914D19366836002E9EDE /* Space Run.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Space Run.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA88915019366836002E9EDE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		CA88915219366836002E9EDE /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -239,6 +243,7 @@
 		C39949261937CAC40018B484 /* Fundos */ = {
 			isa = PBXGroup;
 			children = (
+				CA6DA6EB1940E58700424737 /* play.png */,
 				CAA559AC193D05800097B42B /* ground0.png */,
 				CA6DA6E11940D4B700424737 /* espaco_back.png */,
 				CA6DA6E21940D4B700424737 /* Space.png */,
@@ -260,7 +265,8 @@
 			isa = PBXGroup;
 			children = (
 				CA402693193FAD500018A0BF /* som_inicio_menor.mp3 */,
-				CA402695193FB9E30018A0BF /* somFase1.mp3 */,
+				CA6DA6E51940DB8D00424737 /* tiro.wav */,
+				CA6DA6E71940E4EB00424737 /* somFase1.mp3 */,
 			);
 			name = Sons;
 			sourceTree = "<group>";
@@ -473,7 +479,6 @@
 				CA91EE23193912EA0060774C /* background.png in Resources */,
 				CAA559BC193D05800097B42B /* ground6.png in Resources */,
 				CA88917319366836002E9EDE /* Images.xcassets in Resources */,
-				CA402696193FB9E30018A0BF /* somFase1.mp3 in Resources */,
 				406EC6E1193FA133003A6BE6 /* exp3_8.png in Resources */,
 				406EC6DF193FA133003A6BE6 /* exp3_6.png in Resources */,
 				CAA559BA193D05800097B42B /* ground4.png in Resources */,
@@ -494,10 +499,12 @@
 				406EC6DE193FA133003A6BE6 /* exp3_5.png in Resources */,
 				CAC1B307193E3AFD00A00D36 /* astr1runing0.png in Resources */,
 				406EC6D5193FA133003A6BE6 /* exp3_10.png in Resources */,
+				CA6DA6E61940DB8D00424737 /* tiro.wav in Resources */,
 				406EC6D6193FA133003A6BE6 /* exp3_11.png in Resources */,
 				CAA559B9193D05800097B42B /* ground3.png in Resources */,
 				CA88916619366836002E9EDE /* Main_iPhone.storyboard in Resources */,
 				406EC6DD193FA133003A6BE6 /* exp3_4.png in Resources */,
+				CA6DA6E81940E4EB00424737 /* somFase1.mp3 in Resources */,
 				406EC6E3193FA133003A6BE6 /* eyebot.png in Resources */,
 				406EC6D3193FA133003A6BE6 /* exp3_0.png in Resources */,
 				406EC6D4193FA133003A6BE6 /* exp3_1.png in Resources */,
@@ -507,6 +514,7 @@
 				CAC1B30F193E3AFD00A00D36 /* astr1runing8.png in Resources */,
 				406EC6E0193FA133003A6BE6 /* exp3_7.png in Resources */,
 				CAC1B312193E3DD100A00D36 /* tiro_arma.png in Resources */,
+				CA6DA6EC1940E58700424737 /* play.png in Resources */,
 				406EC6DA193FA133003A6BE6 /* exp3_15.png in Resources */,
 				406EC6D2193FA133003A6BE6 /* asteroid.png in Resources */,
 				CA6DA6E31940D4B700424737 /* espaco_back.png in Resources */,

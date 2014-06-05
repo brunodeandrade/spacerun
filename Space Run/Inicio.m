@@ -29,6 +29,7 @@ static inline CGPoint CGPointAdd(const CGPoint a, const CGPoint b)
 
 CGPoint _velocity;
 SKSpriteNode *sp;
+SKSpriteNode *play;
 
 -(id)initWithSize:(CGSize)size{
     if(self = [super initWithSize:size]){
@@ -56,7 +57,16 @@ SKSpriteNode *sp;
         [self addChild:sp];
         [sp setScale:0.4];
         
+        play = [SKSpriteNode spriteNodeWithImageNamed:@"play"];
+        play.anchorPoint = CGPointZero;
+        play.position = CGPointMake(self.size.width/2.95, self.size.height/2.4);
+        play.name = @"play";
+        play.alpha = 0;
+        [self addChild:play];
+        [play setScale:0.4];
         
+        [self apareceLetra:sp duracao:1];
+        [self apareceLetra:play duracao:3];
         
     }
     return self;
@@ -92,10 +102,10 @@ SKSpriteNode *sp;
 }
 
 
--(void) apareceLetra:(SKSpriteNode *) sprite{
+-(void) apareceLetra:(SKSpriteNode *) sprite duracao:(float) duracao{
     //actionTiro = [SKAction moveToX:astr.position.x*4 duration:0.5];
     //sprite.position = CGPointMake(self.size.width/3.4, self.size.height/2);
-    SKAction *espera = [SKAction waitForDuration:1];
+    SKAction *espera = [SKAction waitForDuration:duracao];
     SKAction *fadeIn = [SKAction fadeInWithDuration:3];
     [sprite runAction:[SKAction sequence:@[espera,fadeIn]]];
 }
@@ -114,7 +124,7 @@ SKSpriteNode *sp;
     }
     _lastUpdateTime = currentTime;
     //if (foi == 0) {
-        [self apareceLetra:sp];
+    
         foi = 1;
 //    }
 }
@@ -123,16 +133,30 @@ SKSpriteNode *sp;
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
         
-    // 1
-    SKScene * comecaJogo = [[MyScene alloc] initWithSize:self.size];
+    
+    UITouch *touch = [touches anyObject];
+    CGPoint location = [touch locationInNode:self];
+    SKNode *node = [self nodeAtPoint:location];
+    
+    
     // 2
     //[comecaJogo setScale:0.4];
-    comecaJogo.scaleMode = SKSceneScaleModeAspectFill;
     
-    SKTransition *reveal = [SKTransition fadeWithDuration:3];
-    // 3
-    [self.view presentScene:comecaJogo transition:reveal];
-    [_backgroundMusicPlayer stop];
+    
+    
+    //if fire button touched, bring the rain
+    if ([node.name isEqualToString:@"play"]) {
+        SKScene * comecaJogo = [[MyScene alloc] initWithSize:self.size];
+        comecaJogo.scaleMode = SKSceneScaleModeAspectFill;
+        SKTransition *reveal = [SKTransition fadeWithDuration:3];
+        [self.view presentScene:comecaJogo transition:reveal];
+        [_backgroundMusicPlayer stop];
+    }
+    
+    
+    
+    
+    
 }
 
 

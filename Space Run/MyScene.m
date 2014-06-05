@@ -50,7 +50,7 @@ static inline CGFloat ScalarRandomRange(CGFloat min, CGFloat max)
     if(self = [super initWithSize:size]){
         
         
-        [self playBackgroundMusic:@"somFase1.mp3"];
+        [self playBackgroundMusic:@"somFase1.mp3" volume:0.8];
         
         
         //Adiciona background a imagem
@@ -124,16 +124,28 @@ static inline CGFloat ScalarRandomRange(CGFloat min, CGFloat max)
 
 
 
-- (void)playBackgroundMusic:(NSString *)filename
+- (void)playBackgroundMusic:(NSString *)filename volume: (float) vol
 {
     NSError *error;
     NSURL *backgroundMusicURL = [[NSBundle mainBundle] URLForResource:filename withExtension:nil];
     _backgroundMusicPlayer1 = [[AVAudioPlayer alloc] initWithContentsOfURL:backgroundMusicURL error:&error];
     _backgroundMusicPlayer1.numberOfLoops = -1;
-    _backgroundMusicPlayer1.volume = 0.8;
-    _backgroundMusicPlayer1.delegate = self;
+    _backgroundMusicPlayer1.volume = vol;
+    //_backgroundMusicPlayer1.delegate = self;
     [_backgroundMusicPlayer1 prepareToPlay];
     [_backgroundMusicPlayer1 play];
+}
+
+AVAudioPlayer *_somTiro;
+- (void)playTiro:(NSString *)filename volume: (float) vol
+{
+    NSError *error;
+    NSURL *backgroundMusicURL = [[NSBundle mainBundle] URLForResource:filename withExtension:nil];
+    _somTiro = [[AVAudioPlayer alloc] initWithContentsOfURL:backgroundMusicURL error:&error];
+    _somTiro.numberOfLoops = 0;
+    _somTiro.volume = vol;
+    [_somTiro prepareToPlay];
+    [_somTiro play];
 }
 
 
@@ -314,6 +326,11 @@ static inline CGFloat ScalarRandomRange(CGFloat min, CGFloat max)
         [tiro removeFromParent];
     }];
     
+    /*SKAction *somTiro = [SKAction playSoundFileNamed:@"tiro.wav"
+                                      waitForCompletion:NO];
+
+    [self runAction:somTiro];*/
+    [self playTiro:@"tiro.wav" volume:0.15];
     
 }
 
