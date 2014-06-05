@@ -21,6 +21,9 @@ int pulou = 0;
 int pulando = 0;
 int caindo = 0;
 AVAudioPlayer *_backgroundMusicPlayer1;
+float verificador = 0, x = 0;
+int qtdInimigos = 0.5;
+float _velocidadeMeteoro = 6;
 
 
 @implementation MyScene
@@ -185,12 +188,12 @@ AVAudioPlayer *_somTiro;
 - (void)spawnEnemy {
     SKSpriteNode *enemy = [SKSpriteNode spriteNodeWithImageNamed:@"asteroid"];
     enemy.name = @"asteroid";
-    enemy.position = CGPointMake(self.size.width + enemy.size.height,
-                                 ScalarRandomRange(enemy.size.height/3,
-                                                   self.size.height-enemy.size.height/3));
+    [enemy setScale:0.4];
+    enemy.position = CGPointMake(enemy.size.width + 300, ScalarRandomRange(enemy.size.height/5,
+                                                                           self.size.height-enemy.size.height/4));
     [self addChild:enemy];
     
-    SKAction *actionMove = [SKAction moveToX:-enemy.size.width/1 duration:2.0];
+    SKAction *actionMove = [SKAction moveToX:-enemy.size.width/1 duration:_velocidadeMeteoro];
     SKAction *actionRemove = [SKAction removeFromParent];
     [enemy runAction:
      [SKAction sequence:@[actionMove, actionRemove]]];
@@ -202,7 +205,7 @@ AVAudioPlayer *_somTiro;
     
     [self enumerateChildNodesWithName:@"gd" usingBlock: ^(SKNode *node, BOOL *stop) {
         SKSpriteNode * gd = (SKSpriteNode *) node;
-        CGPoint gdVelocity = CGPointMake(-75+_velocidade, 0);
+        CGPoint gdVelocity = CGPointMake(-(90+_velocidade), 0);
         CGPoint amtToMove = CGPointMultiplyScalar(gdVelocity, _dt);
         gd.position = CGPointAdd(gd.position, amtToMove);
         
@@ -352,6 +355,36 @@ AVAudioPlayer *_somTiro;
     }
     _lastUpdateTime = currentTime;
     
+    //Defini velocidade do ground
+    verificador ++;
+    if(verificador >= x ){
+        
+        if (_velocidade<350) {
+            _velocidade = _velocidade+15;
+            NSLog(@"%d",_velocidade);
+            
+            if(x>80 && x<160){
+                _velocidadeMeteoro = _velocidadeMeteoro - 0.43;
+                
+            }else if(_velocidade<250){
+                _velocidadeMeteoro = _velocidadeMeteoro - 0.25;
+            }else{
+                _velocidadeMeteoro = _velocidadeMeteoro - 0.09;
+            }
+            [self spawnEnemy];
+            
+        }else{
+            [self spawnEnemy];
+            NSLog(@"entra");
+            
+        }
+        
+        x = x+80;
+    }
+    
+    if(arc4random()% 300 == 2){
+        [self spawnEnemy];
+    }
     
     [self pulaAstronauta:astr velocity:_velocity];
     
@@ -364,7 +397,7 @@ AVAudioPlayer *_somTiro;
     [self enumerateChildNodesWithName:@"asteroid"
     usingBlock:^(SKNode *node, BOOL *stop){
     SKSpriteNode *enemy = (SKSpriteNode *)node;
-    CGRect smallerFrame = CGRectInset(enemy.frame, 20, 20);
+    CGRect smallerFrame = CGRectInset(enemy.frame, 10, 10);
         
     // se ocorrer a colisão, o obstaculo é removido, e ação de som da colisão.
     if (CGRectIntersectsRect(smallerFrame, astr.frame)) {
