@@ -122,6 +122,19 @@ static inline CGFloat ScalarRandomRange(CGFloat min, CGFloat max)
 }
 
 
+- (void) escreveTexto{
+    
+    SKLabelNode * label = [SKLabelNode labelNodeWithFontNamed:@"8bitoperator"];
+    label.text = @"opaaa";
+    label.position = CGPointMake(self.size.width/2,
+                                 (self.size.height)/2);
+    label.fontSize = 20.0;
+    label.verticalAlignmentMode = SKLabelVerticalAlignmentModeCenter;
+    [self addChild:label];
+    
+    
+}
+
 
 - (void)didEvaluateActions {
     [self checkCollisions:@"asteroid" andOther:astr];

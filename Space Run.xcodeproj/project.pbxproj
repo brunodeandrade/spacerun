@@ -121,6 +121,7 @@
 		CA6DA6E51940DB8D00424737 /* tiro.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = tiro.wav; sourceTree = "<group>"; };
 		CA6DA6E71940E4EB00424737 /* somFase1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = somFase1.mp3; sourceTree = "<group>"; };
 		CA6DA6EB1940E58700424737 /* play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = play.png; sourceTree = "<group>"; };
+		CA6DA6F11941011400424737 /* 8bitoperator.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = 8bitoperator.ttf; sourceTree = "<group>"; };
 		CA88914D19366836002E9EDE /* Space Run.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Space Run.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA88915019366836002E9EDE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		CA88915219366836002E9EDE /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -271,6 +272,22 @@
 			name = Sons;
 			sourceTree = "<group>";
 		};
+		CA6DA6EF1941010300424737 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				CA6DA6F01941010900424737 /* Fonts */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		CA6DA6F01941010900424737 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				CA6DA6F11941011400424737 /* 8bitoperator.ttf */,
+			);
+			name = Fonts;
+			sourceTree = "<group>";
+		};
 		CA88914419366835002E9EDE = {
 			isa = PBXGroup;
 			children = (
@@ -305,6 +322,7 @@
 		CA88915819366836002E9EDE /* Space Run */ = {
 			isa = PBXGroup;
 			children = (
+				CA6DA6EF1941010300424737 /* Resources */,
 				CA402692193FAD250018A0BF /* Sons */,
 				C39949251937CABD0018B484 /* Images */,
 				CA88916119366836002E9EDE /* AppDelegate.h */,
