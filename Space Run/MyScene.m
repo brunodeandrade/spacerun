@@ -17,9 +17,11 @@ static const float GRAVIDADE = 20;
 
 SKAction *astronautAnimation;
 SKSpriteNode *astr;
+SKSpriteNode *enemy;
 SKSpriteNode *hud;
 SKSpriteNode *tiro;
 SKSpriteNode *bala;
+NSMutableArray *balas;
 CGPoint _velocity;
 int pulou = 0;
 int pulando = 0;
@@ -164,11 +166,13 @@ static inline CGFloat ScalarRandomRange(CGFloat min, CGFloat max)
 
 
 - (void)didEvaluateActions {
-    [self checkCollisions:@"asteroid" andOther:astr];
-    [self checkCollisions:@"alien" andOther:astr];
-    [self checkCollisions:@"alien" andOther:astr];
-    [self checkCollisions:@"asteroid" andOther:bala];
+    //[self checkCollisions:@"asteroid" andOther:astr];
+    //[self checkCollisions:@"alien" andOther:astr];
+    //[self checkCollisions:@"alien" andOther:astr];
+    for (SKSpriteNode * bala in balas) {
+    //[self checkCollisions:@"bala1" andOther:enemy];
     [self checkCollisions:@"alien" andOther:bala];
+    }
 }
 
 
@@ -232,7 +236,7 @@ AVAudioPlayer *_somTiro;
 
 
 - (void)spawnEnemy {
-    SKSpriteNode *enemy = [SKSpriteNode spriteNodeWithImageNamed:@"asteroid"];
+    enemy = [SKSpriteNode spriteNodeWithImageNamed:@"asteroid"];
     enemy.name = @"asteroid";
     [enemy setScale:0.4];
     enemy.position = CGPointMake(enemy.size.width + 300, ScalarRandomRange(enemy.size.height/5,
@@ -365,6 +369,10 @@ AVAudioPlayer *_somTiro;
     bala.position = CGPointMake(astr.position.x*1.5, astr.position.y);
     bala.anchorPoint = CGPointMake(0.5, 0.5);
     
+    balas = [[NSMutableArray alloc]initWithArray:balas];
+    
+    [balas addObject:bala];
+    
     
     
     NSMutableArray *textures = [NSMutableArray arrayWithCapacity:10];
@@ -465,27 +473,6 @@ AVAudioPlayer *_somTiro;
     // se ocorrer a colisão, o obstaculo é removido, e ação de som da colisão.
     if (CGRectIntersectsRect(smallerFrame, outro.frame)) {
                                    
-//    // Chamada do sprit de colisão.
-//    _explosao = [SKSpriteNode spriteNodeWithImageNamed:@"exp3_0"];
-//    _explosao.position = CGPointMake(100, 100);
-//   [self addChild:_explosao];
-//                                   
-//    // Declaracao e instanciacao do array de sprits (animacao)
-//    NSMutableArray *textures = [NSMutableArray arrayWithCapacity:20];
-//    // 2
-//    for (int i = 0; i < 15; i++) {
-//        NSString *textureName = [NSString stringWithFormat:@"exp3_%d", i];
-//        SKTexture *texture = [SKTexture textureWithImageNamed:textureName];
-//        [textures addObject:texture];
-//    }
-        
-                                   
-//                                   // 4
-//    _explosaoAnimation = [SKAction animateWithTextures:textures timePerFrame:0.5];
-        
-                                   
-                                   
-                                   
     NSLog(@"COLIDIU");
                                    
    [enemy removeFromParent];
@@ -494,6 +481,28 @@ AVAudioPlayer *_somTiro;
                                    
     }
     }];
+    
+    
+    //    // Chamada do sprit de colisão.
+    //    _explosao = [SKSpriteNode spriteNodeWithImageNamed:@"exp3_0"];
+    //    _explosao.position = CGPointMake(100, 100);
+    //   [self addChild:_explosao];
+    //
+    //    // Declaracao e instanciacao do array de sprits (animacao)
+    //    NSMutableArray *textures = [NSMutableArray arrayWithCapacity:20];
+    //    // 2
+    //    for (int i = 0; i < 15; i++) {
+    //        NSString *textureName = [NSString stringWithFormat:@"exp3_%d", i];
+    //        SKTexture *texture = [SKTexture textureWithImageNamed:textureName];
+    //        [textures addObject:texture];
+    //    }
+    
+    
+    //                                   // 4
+    //    _explosaoAnimation = [SKAction animateWithTextures:textures timePerFrame:0.5];
+    
+    
+    
     
 }
 
