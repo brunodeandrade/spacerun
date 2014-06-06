@@ -34,6 +34,7 @@ SKNode *_playerLayerNode;
 SKNode *_hudLayerNode;
 SKLabelNode * label2;
 float pontuacao = 0;
+int contaTiros = 0;
 
 
 @implementation MyScene
@@ -157,12 +158,7 @@ static inline CGFloat ScalarRandomRange(CGFloat min, CGFloat max)
 
 -(void) setupUI{
     
-
-    
-    
-    
 }
-
 
 
 - (void)didEvaluateActions {
@@ -254,8 +250,8 @@ AVAudioPlayer *_somTiro;
     SKSpriteNode *enemy = [SKSpriteNode spriteNodeWithImageNamed:[NSString stringWithFormat:@"alien%d",arc4random()%2]];
     enemy.name = @"alien";
     [enemy setScale:0.8];
-    enemy.position = CGPointMake(enemy.size.width + 300, ScalarRandomRange(enemy.size.height/5,
-                                                                           self.size.height-enemy.size.height/4));
+    enemy.position = CGPointMake(enemy.size.width + 300,260); //ScalarRandomRange(enemy.size.height/5,
+                                                           //                self.size.height-enemy.size.height/4));
     [self addChild:enemy];
     
     SKAction *actionMove = [SKAction moveToX:-enemy.size.width/1 duration:_velocidadeMeteoro-(0.4)];
@@ -364,15 +360,16 @@ AVAudioPlayer *_somTiro;
     //[tiro removeFromParent];
     //[tiro setScale:0.3];
     
+    contaTiros++;
     SKSpriteNode *bala = [SKSpriteNode spriteNodeWithImageNamed:@"tiro1" ];
     [self addChild:bala];
     bala.position = CGPointMake(astr.position.x*1.5, astr.position.y);
     bala.anchorPoint = CGPointMake(0.5, 0.5);
+    bala.name = [NSString stringWithFormat:@"tiro%d",contaTiros];
     
     balas = [[NSMutableArray alloc]initWithArray:balas];
     
     [balas addObject:bala];
-    
     
     
     NSMutableArray *textures = [NSMutableArray arrayWithCapacity:10];
@@ -468,15 +465,20 @@ AVAudioPlayer *_somTiro;
     [self enumerateChildNodesWithName:objeto
     usingBlock:^(SKNode *node, BOOL *stop){
     SKSpriteNode *enemy = (SKSpriteNode *)node;
-    CGRect smallerFrame = CGRectInset(enemy.frame, 10, 10);
+    CGRect smallerFrame = CGRectInset(enemy.frame, 0, 0);
         
     // se ocorrer a colisão, o obstaculo é removido, e ação de som da colisão.
     if (CGRectIntersectsRect(smallerFrame, outro.frame)) {
                                    
     NSLog(@"COLIDIU");
                                    
-   [enemy removeFromParent];
-   [outro removeFromParent];
+    [enemy removeFromParent];
+        
+    [outro removeFromParent];
+    NSLog(@"%@",balas);
+    [balas removeObject:outro];
+        
+   
    //[self runAction:_enemyCollisionSound];
                                    
     }
