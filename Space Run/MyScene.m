@@ -19,7 +19,7 @@ SKAction *astronautAnimation;
 SKSpriteNode *astr;
 SKSpriteNode *enemy;
 SKSpriteNode *hud;
-SKSpriteNode *tiro;
+
 
 NSMutableArray *balas;
 CGPoint _velocity;
@@ -353,6 +353,7 @@ AVAudioPlayer *_somTiro;
 -(void) atira{
     
     SKAction *actionTiro;
+    SKSpriteNode *tiro;
     
     tiro = [SKSpriteNode spriteNodeWithImageNamed:@"tiro_arma"];
     [self addChild:tiro];
@@ -479,7 +480,7 @@ AVAudioPlayer *_somTiro;
     NSLog(@"%@",balas);
     [balas removeObject:outro];
         
-   
+    
    //[self runAction:_enemyCollisionSound];
                                    
     }
