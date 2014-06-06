@@ -165,9 +165,10 @@ static inline CGFloat ScalarRandomRange(CGFloat min, CGFloat max)
     //[self checkCollisions:@"asteroid" andOther:astr];
     //[self checkCollisions:@"alien" andOther:astr];
     //[self checkCollisions:@"alien" andOther:astr];
-    for (SKSpriteNode * bala in balas) {
-    //[self checkCollisions:@"bala1" andOther:enemy];
-    [self checkCollisions:@"alien" andOther:bala];
+    NSMutableArray *balasTemp = [[NSMutableArray alloc] initWithArray:balas];
+    for (SKSpriteNode * bala in balasTemp) {
+        //[self checkCollisions:@"bala1" andOther:enemy];
+        [self checkCollisions:@"alien" andOther:bala];
     }
 }
 
