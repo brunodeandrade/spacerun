@@ -156,7 +156,7 @@ static inline CGFloat ScalarRandomRange(CGFloat min, CGFloat max)
     }
     // 4
     _explosaoAnimation = [SKAction animateWithTextures:textures timePerFrame:0.02];
-    
+    [self playExplosao:@"explosao.wav" volume:0.6];
     SKAction *tiraVestigio = [SKAction runBlock:^{
         [_explosao removeFromParent];
     }];
@@ -223,7 +223,17 @@ AVAudioPlayer *_somTiro;
 }
 
 
-
+AVAudioPlayer *_somExplosao;
+- (void)playExplosao:(NSString *)filename volume: (float) vol
+{
+    NSError *error;
+    NSURL *backgroundMusicURL = [[NSBundle mainBundle] URLForResource:filename withExtension:nil];
+    _somExplosao = [[AVAudioPlayer alloc] initWithContentsOfURL:backgroundMusicURL error:&error];
+    _somExplosao.numberOfLoops = 0;
+    _somExplosao.volume = vol;
+    [_somExplosao prepareToPlay];
+    [_somExplosao play];
+}
 
 
 //Metodo responsavel por mover o background na tela
