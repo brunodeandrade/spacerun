@@ -20,7 +20,7 @@ SKSpriteNode *astr;
 SKSpriteNode *enemy;
 SKSpriteNode *hud;
 SKSpriteNode *tiro;
-SKSpriteNode *bala;
+
 NSMutableArray *balas;
 CGPoint _velocity;
 int pulou = 0;
@@ -364,7 +364,7 @@ AVAudioPlayer *_somTiro;
     //[tiro removeFromParent];
     //[tiro setScale:0.3];
     
-    bala = [SKSpriteNode spriteNodeWithImageNamed:@"tiro1" ];
+    SKSpriteNode *bala = [SKSpriteNode spriteNodeWithImageNamed:@"tiro1" ];
     [self addChild:bala];
     bala.position = CGPointMake(astr.position.x*1.5, astr.position.y);
     bala.anchorPoint = CGPointMake(0.5, 0.5);
@@ -476,7 +476,7 @@ AVAudioPlayer *_somTiro;
     NSLog(@"COLIDIU");
                                    
    [enemy removeFromParent];
-                                   
+   [outro removeFromParent];
    //[self runAction:_enemyCollisionSound];
                                    
     }
