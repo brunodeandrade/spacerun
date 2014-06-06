@@ -7,6 +7,7 @@
 
 #import "MyScene.h"
 #import <AVFoundation/AVFoundation.h>
+#import "RetangleView.h"
 
 //Constante relativa ao movimento do background
 static const float BG_POINTS_PER_SEC = 50;
@@ -16,6 +17,7 @@ static const float GRAVIDADE = 20;
 
 SKAction *astronautAnimation;
 SKSpriteNode *astr;
+SKSpriteNode *hud;
 SKSpriteNode *tiro;
 SKSpriteNode *bala;
 CGPoint _velocity;
@@ -26,6 +28,10 @@ AVAudioPlayer *_backgroundMusicPlayer1;
 float verificador = 0, x = 0;
 int qtdInimigos = 0.5;
 float _velocidadeMeteoro = 6;
+SKNode *_playerLayerNode;
+SKNode *_hudLayerNode;
+SKLabelNode * label2;
+float pontuacao = 0;
 
 
 @implementation MyScene
@@ -111,12 +117,21 @@ static inline CGFloat ScalarRandomRange(CGFloat min, CGFloat max)
         
         [self runAction:[SKAction repeatActionForever:
         [SKAction sequence:@[[SKAction performSelector:@selector(spawnEnemy) onTarget:self],[SKAction waitForDuration:2.0]]]]];
-//        
-//        _enemyCollisionSound =
-//        [SKAction playSoundFileNamed:@"hitCatLady.wav"
-//                   waitForCompletion:NO];
+
         
         //[self escreveTexto];
+        
+        hud = [SKSpriteNode spriteNodeWithImageNamed:@"barraPreta.jpg"];
+        [self addChild:hud];
+        hud.anchorPoint = CGPointZero;
+        hud.position = CGPointMake(0, self.size.height-205);
+        [hud setScale:0.5];
+        
+        
+        
+        [self escreveTexto];
+        [self setupUI];
+        
     }
     return self;
 }
@@ -124,16 +139,28 @@ static inline CGFloat ScalarRandomRange(CGFloat min, CGFloat max)
 
 - (void) escreveTexto{
     
-    SKLabelNode * label = [SKLabelNode labelNodeWithFontNamed:@"Arial"];
-    label.text = @"opaaa";
-    label.position = CGPointMake(self.size.width/2,
-                                 (self.size.height)/2);
-    label.fontSize = 20.0;
-    label.verticalAlignmentMode = SKLabelVerticalAlignmentModeCenter;
-    [self addChild:label];
+    label2 = [SKLabelNode labelNodeWithFontNamed:@"8bitoperator Regular"];
+    label2.text = @"Score:";
+    label2.position = CGPointMake(5,
+                                 (self.size.height) - 205);
+    label2.fontSize = 10.0;
+    label2.color = [UIColor blackColor];
+    label2.verticalAlignmentMode = SKLabelHorizontalAlignmentModeCenter;
+    label2.horizontalAlignmentMode = SKLabelHorizontalAlignmentModeLeft;
+    [self addChild:label2];
+ 
+
+}
+
+
+-(void) setupUI{
+    
+
+    
     
     
 }
+
 
 
 - (void)didEvaluateActions {
@@ -311,7 +338,7 @@ AVAudioPlayer *_somTiro;
     if(newVelocity.y > 0){
         newVelocity.y -= GRAVIDADE;
         pulando = 1;
-        if(newVelocity.y<=0){
+        if(newVelocity.y<=0 || newPosition.y >= limite.y){
             newVelocity.y = -GRAVIDADE;
         }
         
@@ -378,6 +405,7 @@ AVAudioPlayer *_somTiro;
     [self moveMeteoro];
     //Movimenta o solo
     [self moveGround];
+
     
     //Calcula o tempo percorrido por frame
     if (_lastUpdateTime) {
@@ -419,8 +447,11 @@ AVAudioPlayer *_somTiro;
     }
     
     [self pulaAstronauta:astr velocity:_velocity];
-    
     [self caiAstronauta];
+    
+    
+    label2.text = [NSString stringWithFormat:@"Score: %d",(int)pontuacao];
+    pontuacao++;
     
 }
 

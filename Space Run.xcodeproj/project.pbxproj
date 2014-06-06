@@ -37,6 +37,10 @@
 		CA6DA6E61940DB8D00424737 /* tiro.wav in Resources */ = {isa = PBXBuildFile; fileRef = CA6DA6E51940DB8D00424737 /* tiro.wav */; };
 		CA6DA6E81940E4EB00424737 /* somFase1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CA6DA6E71940E4EB00424737 /* somFase1.mp3 */; };
 		CA6DA6EC1940E58700424737 /* play.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6DA6EB1940E58700424737 /* play.png */; };
+		CA6DA6F219410B9000424737 /* 8bitoperator.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CA6DA6F11941011400424737 /* 8bitoperator.ttf */; };
+		CA822E291941DC9600019043 /* RetangleView.m in Sources */ = {isa = PBXBuildFile; fileRef = CA822E281941DC9600019043 /* RetangleView.m */; };
+		CA822E2B1941ECCA00019043 /* barraPreta.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CA822E2A1941ECCA00019043 /* barraPreta.jpg */; };
+		CA822E2E1941ED0500019043 /* Setup.m in Sources */ = {isa = PBXBuildFile; fileRef = CA822E2D1941ED0500019043 /* Setup.m */; };
 		CA88915119366836002E9EDE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA88915019366836002E9EDE /* Foundation.framework */; };
 		CA88915319366836002E9EDE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA88915219366836002E9EDE /* CoreGraphics.framework */; };
 		CA88915519366836002E9EDE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA88915419366836002E9EDE /* UIKit.framework */; };
@@ -122,6 +126,11 @@
 		CA6DA6E71940E4EB00424737 /* somFase1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = somFase1.mp3; sourceTree = "<group>"; };
 		CA6DA6EB1940E58700424737 /* play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = play.png; sourceTree = "<group>"; };
 		CA6DA6F11941011400424737 /* 8bitoperator.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = 8bitoperator.ttf; sourceTree = "<group>"; };
+		CA822E271941DC9600019043 /* RetangleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RetangleView.h; sourceTree = "<group>"; };
+		CA822E281941DC9600019043 /* RetangleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RetangleView.m; sourceTree = "<group>"; };
+		CA822E2A1941ECCA00019043 /* barraPreta.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = barraPreta.jpg; sourceTree = "<group>"; };
+		CA822E2C1941ED0500019043 /* Setup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Setup.h; sourceTree = "<group>"; };
+		CA822E2D1941ED0500019043 /* Setup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Setup.m; sourceTree = "<group>"; };
 		CA88914D19366836002E9EDE /* Space Run.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Space Run.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA88915019366836002E9EDE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		CA88915219366836002E9EDE /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -245,6 +254,7 @@
 			isa = PBXGroup;
 			children = (
 				CA6DA6EB1940E58700424737 /* play.png */,
+				CA822E2A1941ECCA00019043 /* barraPreta.jpg */,
 				CAA559AC193D05800097B42B /* ground0.png */,
 				CA6DA6E11940D4B700424737 /* espaco_back.png */,
 				CA6DA6E21940D4B700424737 /* Space.png */,
@@ -326,6 +336,8 @@
 				CA402692193FAD250018A0BF /* Sons */,
 				C39949251937CABD0018B484 /* Images */,
 				CA88916119366836002E9EDE /* AppDelegate.h */,
+				CA822E271941DC9600019043 /* RetangleView.h */,
+				CA822E281941DC9600019043 /* RetangleView.m */,
 				CA88916219366836002E9EDE /* AppDelegate.m */,
 				CA88916A19366836002E9EDE /* ViewController.h */,
 				CA40268E193FA3B10018A0BF /* ViewController.m */,
@@ -338,6 +350,8 @@
 				CA88917019366836002E9EDE /* Spaceship.png */,
 				CA88917219366836002E9EDE /* Images.xcassets */,
 				CA88915919366836002E9EDE /* Supporting Files */,
+				CA822E2C1941ED0500019043 /* Setup.h */,
+				CA822E2D1941ED0500019043 /* Setup.m */,
 			);
 			path = "Space Run";
 			sourceTree = "<group>";
@@ -483,6 +497,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA6DA6F219410B9000424737 /* 8bitoperator.ttf in Resources */,
 				406EC6E5193FA133003A6BE6 /* fireball.png in Resources */,
 				406EC6D7193FA133003A6BE6 /* exp3_12.png in Resources */,
 				406EC6E2193FA133003A6BE6 /* exp3_9.png in Resources */,
@@ -539,6 +554,7 @@
 				CAA559B6193D05800097B42B /* ground0.png in Resources */,
 				CA88915D19366836002E9EDE /* InfoPlist.strings in Resources */,
 				CAC1B309193E3AFD00A00D36 /* astr1runing2.png in Resources */,
+				CA822E2B1941ECCA00019043 /* barraPreta.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -557,10 +573,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA822E2E1941ED0500019043 /* Setup.m in Sources */,
 				CA88916F19366836002E9EDE /* MyScene.m in Sources */,
 				CA88916319366836002E9EDE /* AppDelegate.m in Sources */,
 				CA40268F193FA3B10018A0BF /* Inicio.m in Sources */,
 				CA88915F19366836002E9EDE /* main.m in Sources */,
+				CA822E291941DC9600019043 /* RetangleView.m in Sources */,
 				CA402690193FA3B10018A0BF /* ViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
