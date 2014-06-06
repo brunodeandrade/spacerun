@@ -502,6 +502,8 @@ AVAudioPlayer *_somTiro;
         
     [outro removeFromParent];
     NSLog(@"%@",balas);
+        
+        
     [self explosao : outro];
     [balas removeObject:outro];
         
