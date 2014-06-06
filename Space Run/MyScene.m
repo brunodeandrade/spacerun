@@ -139,6 +139,30 @@ static inline CGFloat ScalarRandomRange(CGFloat min, CGFloat max)
     return self;
 }
 
+- (void) explosao : (SKSpriteNode *)ball{
+    
+    // Chamada do sprit de colisão.
+    _explosao = [SKSpriteNode spriteNodeWithImageNamed:@"exp3_0"];
+    _explosao.position = CGPointMake(ball.position.x, ball.position.y);
+    [self addChild:_explosao];
+    
+    // Declaracao e instanciacao do array de sprits (animacao)
+    NSMutableArray *textures = [NSMutableArray arrayWithCapacity:20];
+    // 2
+    for (int i = 0; i < 15; i++) {
+        NSString *textureName = [NSString stringWithFormat:@"exp3_%d", i];
+        SKTexture *texture = [SKTexture textureWithImageNamed:textureName];
+        [textures addObject:texture];
+    }
+    // 4
+    _explosaoAnimation = [SKAction animateWithTextures:textures timePerFrame:0.02];
+    
+    SKAction *tiraVestigio = [SKAction runBlock:^{
+        [_explosao removeFromParent];
+    }];
+    [_explosao runAction: [SKAction sequence:@[_explosaoAnimation,tiraVestigio]]];
+    
+}
 
 - (void) escreveTexto{
     
@@ -478,6 +502,7 @@ AVAudioPlayer *_somTiro;
         
     [outro removeFromParent];
     NSLog(@"%@",balas);
+    [self explosao : outro];
     [balas removeObject:outro];
         
     
