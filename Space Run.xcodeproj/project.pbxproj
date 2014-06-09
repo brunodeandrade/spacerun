@@ -70,6 +70,7 @@
 		CAA559BD193D05800097B42B /* ground7.png in Resources */ = {isa = PBXBuildFile; fileRef = CAA559B3193D05800097B42B /* ground7.png */; };
 		CAA559BE193D05800097B42B /* ground8.png in Resources */ = {isa = PBXBuildFile; fileRef = CAA559B4193D05800097B42B /* ground8.png */; };
 		CAA559BF193D05800097B42B /* ground9.png in Resources */ = {isa = PBXBuildFile; fileRef = CAA559B5193D05800097B42B /* ground9.png */; };
+		CAB64696194636FD006F8A0E /* pegouBala.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CAB64695194636FD006F8A0E /* pegouBala.mp3 */; };
 		CAC1B307193E3AFD00A00D36 /* astr1runing0.png in Resources */ = {isa = PBXBuildFile; fileRef = CAC1B2FE193E3AFD00A00D36 /* astr1runing0.png */; };
 		CAC1B308193E3AFD00A00D36 /* astr1runing1.png in Resources */ = {isa = PBXBuildFile; fileRef = CAC1B2FF193E3AFD00A00D36 /* astr1runing1.png */; };
 		CAC1B309193E3AFD00A00D36 /* astr1runing2.png in Resources */ = {isa = PBXBuildFile; fileRef = CAC1B300193E3AFD00A00D36 /* astr1runing2.png */; };
@@ -167,6 +168,7 @@
 		CAA559B3193D05800097B42B /* ground7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ground7.png; sourceTree = "<group>"; };
 		CAA559B4193D05800097B42B /* ground8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ground8.png; sourceTree = "<group>"; };
 		CAA559B5193D05800097B42B /* ground9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ground9.png; sourceTree = "<group>"; };
+		CAB64695194636FD006F8A0E /* pegouBala.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = pegouBala.mp3; sourceTree = "<group>"; };
 		CAC1B2FE193E3AFD00A00D36 /* astr1runing0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = astr1runing0.png; sourceTree = "<group>"; };
 		CAC1B2FF193E3AFD00A00D36 /* astr1runing1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = astr1runing1.png; sourceTree = "<group>"; };
 		CAC1B300193E3AFD00A00D36 /* astr1runing2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = astr1runing2.png; sourceTree = "<group>"; };
@@ -279,6 +281,7 @@
 			children = (
 				CA402693193FAD500018A0BF /* som_inicio_menor.mp3 */,
 				CA6DA6E51940DB8D00424737 /* tiro.wav */,
+				CAB64695194636FD006F8A0E /* pegouBala.mp3 */,
 				CA92C19E19425E2E008EB4AD /* explosao.wav */,
 				CA6DA6E71940E4EB00424737 /* somFase1.mp3 */,
 			);
@@ -535,6 +538,7 @@
 				CAA559B8193D05800097B42B /* ground2.png in Resources */,
 				406EC6DE193FA133003A6BE6 /* exp3_5.png in Resources */,
 				CAC1B307193E3AFD00A00D36 /* astr1runing0.png in Resources */,
+				CAB64696194636FD006F8A0E /* pegouBala.mp3 in Resources */,
 				406EC6D5193FA133003A6BE6 /* exp3_10.png in Resources */,
 				CA6DA6E61940DB8D00424737 /* tiro.wav in Resources */,
 				406EC6D6193FA133003A6BE6 /* exp3_11.png in Resources */,

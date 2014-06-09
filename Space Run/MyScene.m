@@ -67,7 +67,7 @@ static inline CGFloat ScalarRandomRange(CGFloat min, CGFloat max)
     if(self = [super initWithSize:size]){
         
         
-        //[self playBackgroundMusic:@"somFase1.mp3" volume:0.8];
+        [self playBackgroundMusic:@"somFase1.mp3" volume:0.8];
         
         
         //Adiciona background a imagem
@@ -239,6 +239,24 @@ AVAudioPlayer *_somTiro;
     [_somTiro prepareToPlay];
     [_somTiro play];
 }
+
+
+
+AVAudioPlayer *_somMunicao;
+- (void)playMunicao:(NSString *)filename volume: (float) vol
+{
+    NSError *error;
+    NSURL *backgroundMusicURL = [[NSBundle mainBundle] URLForResource:filename withExtension:nil];
+    _somMunicao = [[AVAudioPlayer alloc] initWithContentsOfURL:backgroundMusicURL error:&error];
+    _somMunicao.numberOfLoops = 0;
+    _somMunicao.volume = vol;
+    [_somMunicao prepareToPlay];
+    [_somMunicao play];
+}
+
+
+
+
 
 
 AVAudioPlayer *_somExplosao;
@@ -603,7 +621,7 @@ AVAudioPlayer *_somExplosao;
                                // se ocorrer a colisão, o obstaculo é removido, e ação de som da colisão.
     if (CGRectIntersectsRect(smallerFrame, outro.frame)) {
                                    
-        
+        [self playMunicao:@"pegouBala.mp3" volume:1];
         [enemy removeFromParent];
         
         quantidadeTiros += 15;
