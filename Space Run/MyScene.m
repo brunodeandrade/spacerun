@@ -203,13 +203,13 @@ static inline CGFloat ScalarRandomRange(CGFloat min, CGFloat max)
 
 
 - (void)didEvaluateActions {
-    //[self checkCollisions:@"astr" andOther:alien];
+   // [self checkCollisions:@"astr" andOther:_alien];
     //[self checkCollisions:@"alien" andOther:astr];
     //[self checkCollisions:@"alien" andOther:astr];
-    [self checkCollisionsMunicao:@"municao" andOther:astr];
+    //[self checkCollisionsMunicao:@"municao" andOther:astr];
     NSMutableArray *balasTemp = [[NSMutableArray alloc] initWithArray:balas];
     for (SKSpriteNode * bala in balasTemp) {
-        //[self checkCollisions:@"bala1" andOther:enemy];
+        [self checkCollisions:@"bala1" andOther:enemy];
         [self checkCollisions:@"alien" andOther:bala];
     }
 }
@@ -528,10 +528,10 @@ AVAudioPlayer *_somExplosao;
             }else{
                 _velocidadeMeteoro = _velocidadeMeteoro - 0.09;
             }
-         //   [self spawnAlien];
+            [self spawnAlien];
             
         }else{
-       //     [self spawnAlien];
+            [self spawnAlien];
             NSLog(@"entra");
             
         }
