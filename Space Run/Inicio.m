@@ -33,7 +33,6 @@ SKSpriteNode *play;
 
 -(id)initWithSize:(CGSize)size{
     if(self = [super initWithSize:size]){
-        NSLog(@"Tamanho inicio: %@",NSStringFromCGSize(self.size));
        self.backgroundColor = [SKColor whiteColor];
         
         //Adiciona background a imagem

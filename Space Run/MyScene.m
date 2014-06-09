@@ -111,7 +111,6 @@ static inline CGFloat ScalarRandomRange(CGFloat min, CGFloat max)
         
         CGSize mySize = astr.size;
         
-        NSLog(@"Size: %@",NSStringFromCGSize(mySize));
         
         astr.position = CGPointMake((self.size.width / 2) - 120, (self.size.height / 2)-28);
         
@@ -203,8 +202,8 @@ static inline CGFloat ScalarRandomRange(CGFloat min, CGFloat max)
 
 
 - (void)didEvaluateActions {
-    [self checkCollisions:@"alien" andOther:astr];
-    [self checkCollisions:@"asteroid"andOther:astr];
+//    [self checkCollisions:@"alien" andOther:astr];
+//    [self checkCollisions:@"asteroid"andOther:astr];
     [self checkCollisionsMunicao:@"municao" andOther:astr];
     NSMutableArray *balasTemp = [[NSMutableArray alloc] initWithArray:balas];
     for (SKSpriteNode * bala in balasTemp) {
@@ -303,10 +302,10 @@ AVAudioPlayer *_somExplosao;
     municao = [SKSpriteNode spriteNodeWithImageNamed:@"tiro1"];
     municao.name = @"municao";
     [municao setScale:2];
-    municao.position = CGPointMake(municao.size.width + 100, ScalarRandomRange(municao.size.height/5, self.size.height-municao.size.height/2));
+    municao.position = CGPointMake(self.size.width + 100, ScalarRandomRange(municao.size.height/5, self.size.height-municao.size.height/2));
     [self addChild:municao];
     
-    SKAction *actionMove = [SKAction moveToX:-municao.size.width/1 duration:_velocidadeMeteoro];
+    SKAction *actionMove = [SKAction moveToX:-municao.size.width/1 duration:2];
     SKAction *actionRemove = [SKAction removeFromParent];
     [municao runAction:
      [SKAction sequence:@[actionMove, actionRemove]]];
@@ -517,7 +516,6 @@ AVAudioPlayer *_somExplosao;
         
         if (_velocidade<350) {
             _velocidade = _velocidade+15;
-            NSLog(@"%d",_velocidade);
             
             if(x>80 && x<160){
                 _velocidadeMeteoro = _velocidadeMeteoro - 0.43;
@@ -531,7 +529,6 @@ AVAudioPlayer *_somExplosao;
             
         }else{
             [self spawnAlien];
-            NSLog(@"entra");
             
         }
         
@@ -568,12 +565,10 @@ AVAudioPlayer *_somExplosao;
     // se ocorrer a colisão, o obstaculo é removido, e ação de som da colisão.
     if (CGRectIntersectsRect(smallerFrame, outro.frame)) {
                                    
-    NSLog(@"COLIDIU");
                                    
     [enemy removeFromParent];
         
     [outro removeFromParent];
-    NSLog(@"%@",balas);
         
     pontuacao += 100;
     [self explosao : outro];
