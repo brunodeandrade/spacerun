@@ -10,6 +10,8 @@
 
 @interface GameOver : SKScene
 
-- (id)initWithSize:(CGSize)size won:(BOOL)won;
+
+@property SKSpriteNode * score;
+@property SKSpriteNode * bestScore;
 
 @end

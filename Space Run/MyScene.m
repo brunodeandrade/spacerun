@@ -8,6 +8,7 @@
 #import "MyScene.h"
 #import <AVFoundation/AVFoundation.h>
 #import "RetangleView.h"
+#import "GameOver.h"
 
 //Constante relativa ao movimento do background
 static const float BG_POINTS_PER_SEC = 50;
@@ -202,8 +203,9 @@ static inline CGFloat ScalarRandomRange(CGFloat min, CGFloat max)
 
 
 - (void)didEvaluateActions {
-//    [self checkCollisions:@"alien" andOther:astr];
-//    [self checkCollisions:@"asteroid"andOther:astr];
+
+    [self checkCollisionsAstronauta:@"asteroid" andOther:astr];
+    [self checkCollisionsAstronauta:@"alien" andOther:astr];
     [self checkCollisionsMunicao:@"municao" andOther:astr];
     NSMutableArray *balasTemp = [[NSMutableArray alloc] initWithArray:balas];
     for (SKSpriteNode * bala in balasTemp) {
@@ -621,6 +623,31 @@ AVAudioPlayer *_somExplosao;
         quantidadeTiros += 15;
         
         }
+    }];
+    
+}
+
+- (void)checkCollisionsAstronauta:(NSString *)objeto andOther : (SKSpriteNode *) outro {
+    
+    [self enumerateChildNodesWithName:objeto
+                           usingBlock:^(SKNode *node, BOOL *stop){
+    SKSpriteNode *enemy = (SKSpriteNode *)node;
+    CGRect smallerFrame = CGRectInset(enemy.frame, 0, 0);
+                               
+    // se ocorrer a colisão, o obstaculo é removido, e ação de som da colisão.
+  if (CGRectIntersectsRect(smallerFrame, outro.frame)) {
+                                   
+ [enemy removeFromParent];
+//if ([node.name isEqualToString:@"play"]) {
+SKScene * gameOver = [[GameOver alloc] initWithSize:self.size];
+gameOver.scaleMode = SKSceneScaleModeAspectFill;
+SKTransition *reveal = [SKTransition fadeWithDuration:1];
+                                   
+[self.view presentScene:gameOver transition:reveal];
+[_backgroundMusicPlayer1 stop];
+                               }
+                               
+                               
     }];
     
 }
