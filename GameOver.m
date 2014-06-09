@@ -27,9 +27,8 @@
         
         SKSpriteNode * bg = [SKSpriteNode spriteNodeWithImageNamed: @"GAME OVER"];
         bg.anchorPoint = CGPointZero;
-        bg.position = CGPointMake(self.size.width, self.size.height);
+        bg.position = CGPointMake(200, 100);
         bg.name = @"bg";
-        
         
         
         [self addChild:bg];
@@ -37,13 +36,9 @@
         
         
         _score = [SKSpriteNode spriteNodeWithImageNamed:@"SCORE"];
-        
         _score.anchorPoint = CGPointZero;
-        
         _score.position = CGPointMake(self.size.width/3.0, self.size.height/2);
-        
         _score.name = @"score";
-        
         _score.alpha = 0;
         
         
