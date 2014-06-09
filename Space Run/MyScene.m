@@ -156,7 +156,7 @@ static inline CGFloat ScalarRandomRange(CGFloat min, CGFloat max)
     }
     // 4
     _explosaoAnimation = [SKAction animateWithTextures:textures timePerFrame:0.02];
-    [self playExplosao:@"explosao.wav" volume:0.6];
+    [self playExplosao:@"explosao.wav" volume:0.7];
     SKAction *tiraVestigio = [SKAction runBlock:^{
         [_explosao removeFromParent];
     }];
