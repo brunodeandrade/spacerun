@@ -18,6 +18,7 @@ static const float GRAVIDADE = 20;
 SKAction *astronautAnimation;
 SKSpriteNode *astr;
 SKSpriteNode *enemy;
+SKSpriteNode *municao;
 SKSpriteNode *hud;
 
 
@@ -33,8 +34,10 @@ float _velocidadeMeteoro = 6;
 SKNode *_playerLayerNode;
 SKNode *_hudLayerNode;
 SKLabelNode * label2;
+SKLabelNode * label3;
 float pontuacao = 0;
 int contaTiros = 0;
+int quantidadeTiros = 15;
 
 
 @implementation MyScene
@@ -64,7 +67,7 @@ static inline CGFloat ScalarRandomRange(CGFloat min, CGFloat max)
     if(self = [super initWithSize:size]){
         
         
-        [self playBackgroundMusic:@"somFase1.mp3" volume:0.8];
+        //[self playBackgroundMusic:@"somFase1.mp3" volume:0.8];
         
         
         //Adiciona background a imagem
@@ -164,7 +167,6 @@ static inline CGFloat ScalarRandomRange(CGFloat min, CGFloat max)
         [explosao removeFromParent];
     }];
     [explosao runAction: [SKAction sequence:@[_explosaoAnimation,tiraVestigio]]];
-    
 }
 
 - (void) escreveTexto{
@@ -178,7 +180,19 @@ static inline CGFloat ScalarRandomRange(CGFloat min, CGFloat max)
     label2.verticalAlignmentMode = SKLabelHorizontalAlignmentModeCenter;
     label2.horizontalAlignmentMode = SKLabelHorizontalAlignmentModeLeft;
     [self addChild:label2];
- 
+    
+    
+    label3 = [SKLabelNode labelNodeWithFontNamed:@"8bitoperator Regular"];
+    label3.text = [NSString stringWithFormat:@"Ammo: %d",quantidadeTiros];
+    label3.position = CGPointMake(120,
+                                  (self.size.height) - 205);
+    label3.fontSize = 10.0;
+    label3.color = [UIColor blackColor];
+    label3.verticalAlignmentMode = SKLabelHorizontalAlignmentModeCenter;
+    label3.horizontalAlignmentMode = SKLabelHorizontalAlignmentModeLeft;
+    [self addChild:label3];
+
+
 
 }
 
@@ -192,6 +206,7 @@ static inline CGFloat ScalarRandomRange(CGFloat min, CGFloat max)
     //[self checkCollisions:@"asteroid" andOther:astr];
     //[self checkCollisions:@"alien" andOther:astr];
     //[self checkCollisions:@"alien" andOther:astr];
+    [self checkCollisionsMunicao:@"municao" andOther:astr];
     NSMutableArray *balasTemp = [[NSMutableArray alloc] initWithArray:balas];
     for (SKSpriteNode * bala in balasTemp) {
         //[self checkCollisions:@"bala1" andOther:enemy];
@@ -266,9 +281,27 @@ AVAudioPlayer *_somExplosao;
 //}
 
 
+
+- (void)spawnMunicao {
+    municao = [SKSpriteNode spriteNodeWithImageNamed:@"tiro1"];
+    municao.name = @"municao";
+    [municao setScale:2];
+    municao.position = CGPointMake(municao.size.width + 100, ScalarRandomRange(municao.size.height/5, self.size.height-municao.size.height/2));
+    [self addChild:municao];
+    
+    SKAction *actionMove = [SKAction moveToX:-municao.size.width/1 duration:_velocidadeMeteoro];
+    SKAction *actionRemove = [SKAction removeFromParent];
+    [municao runAction:
+     [SKAction sequence:@[actionMove, actionRemove]]];
+}
+
+
+
+
+
+
+
 // Adiciona inimigos e obstaculos
-
-
 - (void)spawnEnemy {
     enemy = [SKSpriteNode spriteNodeWithImageNamed:@"asteroid"];
     enemy.name = @"asteroid";
@@ -392,6 +425,8 @@ AVAudioPlayer *_somExplosao;
     SKAction *actionTiro;
     SKSpriteNode *tiro;
     
+
+    
     tiro = [SKSpriteNode spriteNodeWithImageNamed:@"tiro_arma"];
     [self addChild:tiro];
     tiro.position = CGPointMake(astr.position.x*1.4, astr.position.y);
@@ -488,6 +523,10 @@ AVAudioPlayer *_somExplosao;
     
     if(arc4random()% 300 == 2){
         [self spawnEnemy];
+        [self spawnMunicao];
+    }
+    else if( arc4random() %300 == 3){
+        
     }
     
     [self pulaAstronauta:astr velocity:_velocity];
@@ -496,6 +535,9 @@ AVAudioPlayer *_somExplosao;
     
     label2.text = [NSString stringWithFormat:@"Score: %d",(int)pontuacao];
     pontuacao++;
+    
+    label3.text = [NSString stringWithFormat:@"Ammo: %d",quantidadeTiros];
+
     
 }
 
@@ -551,6 +593,31 @@ AVAudioPlayer *_somExplosao;
 }
 
 
+- (void)checkCollisionsMunicao:(NSString *)objeto andOther : (SKSpriteNode *) outro {
+    
+    [self enumerateChildNodesWithName:objeto
+                           usingBlock:^(SKNode *node, BOOL *stop){
+                               SKSpriteNode *enemy = (SKSpriteNode *)node;
+                               CGRect smallerFrame = CGRectInset(enemy.frame, 0, 0);
+                               
+                               // se ocorrer a colisão, o obstaculo é removido, e ação de som da colisão.
+    if (CGRectIntersectsRect(smallerFrame, outro.frame)) {
+                                   
+        
+        [enemy removeFromParent];
+        
+        quantidadeTiros += 15;
+        
+        }
+    }];
+    
+}
+
+
+
+
+
+
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     UITouch *touch = [touches anyObject];
     CGPoint ate = CGPointMake(astr.position.x, astr.position.y+1);
@@ -559,7 +626,10 @@ AVAudioPlayer *_somExplosao;
     if(!pulando && touchLocation.x > self.size.width/2)
         [self moveAteh:ate];
     if(touchLocation.x < self.size.width/2){
-        [self atira];
+        if(quantidadeTiros > 0 ){
+            [self atira];
+            quantidadeTiros--;
+        }
     }
 }
 
