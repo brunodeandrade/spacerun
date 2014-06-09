@@ -71,12 +71,12 @@ static inline CGFloat ScalarRandomRange(CGFloat min, CGFloat max)
         
         
         //Adiciona background a imagem
-        for (int i = 0; i < 2; i++) {
-            SKSpriteNode * bg = [SKSpriteNode spriteNodeWithImageNamed:@"background"];
+        for (int i = 0; i < 9; i++) {
+            SKSpriteNode * bg = [SKSpriteNode spriteNodeWithImageNamed:[NSString stringWithFormat:@"background%d",i]];
             bg.anchorPoint = CGPointZero;
             bg.position = CGPointMake(i * bg.size.width, 0);
             bg.name = @"bg";
-            [bg setScale:0.8];
+            [bg setScale:1];
             [self addChild:bg];
         }
         
@@ -281,7 +281,7 @@ AVAudioPlayer *_somExplosao;
         bg.position = CGPointAdd(bg.position, amtToMove);
         
         if (bg.position.x <= -bg.size.width) {
-            bg.position = CGPointMake(bg.position.x + bg.size.width*2,bg.position.y);
+            bg.position = CGPointMake(bg.position.x + bg.size.width*9,bg.position.y);
         }
     }];
     
