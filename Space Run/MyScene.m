@@ -141,10 +141,13 @@ static inline CGFloat ScalarRandomRange(CGFloat min, CGFloat max)
 
 - (void) explosao : (SKSpriteNode *)ball{
     
+    SKSpriteNode * explosao;
+    
+    
     // Chamada do sprit de colisão.
-    _explosao = [SKSpriteNode spriteNodeWithImageNamed:@"exp3_0"];
-    _explosao.position = CGPointMake(ball.position.x, ball.position.y);
-    [self addChild:_explosao];
+    explosao = [SKSpriteNode spriteNodeWithImageNamed:@"exp3_0"];
+    explosao.position = CGPointMake(ball.position.x, ball.position.y);
+    [self addChild:explosao];
     
     // Declaracao e instanciacao do array de sprits (animacao)
     NSMutableArray *textures = [NSMutableArray arrayWithCapacity:20];
@@ -158,9 +161,9 @@ static inline CGFloat ScalarRandomRange(CGFloat min, CGFloat max)
     _explosaoAnimation = [SKAction animateWithTextures:textures timePerFrame:0.02];
     [self playExplosao:@"explosao.wav" volume:0.7];
     SKAction *tiraVestigio = [SKAction runBlock:^{
-        [_explosao removeFromParent];
+        [explosao removeFromParent];
     }];
-    [_explosao runAction: [SKAction sequence:@[_explosaoAnimation,tiraVestigio]]];
+    [explosao runAction: [SKAction sequence:@[_explosaoAnimation,tiraVestigio]]];
     
 }
 

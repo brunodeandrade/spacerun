@@ -14,7 +14,6 @@
 @property NSTimeInterval  dt;
 @property CGPoint velocity;
 @property int velocidade;
-@property SKSpriteNode * explosao;
 @property SKAction * explosaoAnimation;
 
 @end
