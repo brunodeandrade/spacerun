@@ -203,7 +203,7 @@ static inline CGFloat ScalarRandomRange(CGFloat min, CGFloat max)
 
 
 - (void)didEvaluateActions {
-    //[self checkCollisions:@"asteroid" andOther:astr];
+    //[self checkCollisions:@"astr" andOther:alien];
     //[self checkCollisions:@"alien" andOther:astr];
     //[self checkCollisions:@"alien" andOther:astr];
     [self checkCollisionsMunicao:@"municao" andOther:astr];
@@ -335,20 +335,20 @@ AVAudioPlayer *_somExplosao;
     
 }
 
-- (void)spawnAlien {
-    SKSpriteNode *enemy = [SKSpriteNode spriteNodeWithImageNamed:[NSString stringWithFormat:@"alien%d",arc4random()%2]];
-    enemy.name = @"alien";
-    [enemy setScale:0.8];
-    enemy.position = CGPointMake(enemy.size.width + 300,260); //ScalarRandomRange(enemy.size.height/5,
-                                                           //                self.size.height-enemy.size.height/4));
-    [self addChild:enemy];
-    
-    SKAction *actionMove = [SKAction moveToX:-enemy.size.width/1 duration:_velocidadeMeteoro-(0.4)];
-    SKAction *actionRemove = [SKAction removeFromParent];
-    [enemy runAction:
-     [SKAction sequence:@[actionMove, actionRemove]]];
-    
-}
+//- (void)spawnAlien {
+//    //_alien = [SKSpriteNode spriteNodeWithImageNamed:[NSString stringWithFormat:@"alien%d",arc4random()%2]];
+//   // _alien.name = @"alien";
+//    [enemy setScale:0.8];
+//    enemy.position = CGPointMake(enemy.size.width + 300,260); //ScalarRandomRange(enemy.size.height/5,
+//                                                           //                self.size.height-enemy.size.height/4));
+//    [self addChild:enemy];
+//    
+//    SKAction *actionMove = [SKAction moveToX:-enemy.size.width/1 duration:_velocidadeMeteoro-(0.4)];
+//    SKAction *actionRemove = [SKAction removeFromParent];
+//    [enemy runAction:
+//     [SKAction sequence:@[actionMove, actionRemove]]];
+//    
+//}
 
 //Move o solo no jogo, em tempo diferente ao do background
 -(void)moveGround{
@@ -528,10 +528,10 @@ AVAudioPlayer *_somExplosao;
             }else{
                 _velocidadeMeteoro = _velocidadeMeteoro - 0.09;
             }
-            [self spawnAlien];
+         //   [self spawnAlien];
             
         }else{
-            [self spawnAlien];
+       //     [self spawnAlien];
             NSLog(@"entra");
             
         }

@@ -29,6 +29,7 @@
 		406EC6E5193FA133003A6BE6 /* fireball.png in Resources */ = {isa = PBXBuildFile; fileRef = 406EC6CF193FA133003A6BE6 /* fireball.png */; };
 		406EC6E6193FA133003A6BE6 /* mine.png in Resources */ = {isa = PBXBuildFile; fileRef = 406EC6D0193FA133003A6BE6 /* mine.png */; };
 		406EC6E7193FA133003A6BE6 /* rocket animated.png in Resources */ = {isa = PBXBuildFile; fileRef = 406EC6D1193FA133003A6BE6 /* rocket animated.png */; };
+		40B0207B194638D400607094 /* GameOver.m in Sources */ = {isa = PBXBuildFile; fileRef = 40B0207A194638D400607094 /* GameOver.m */; };
 		CA40268F193FA3B10018A0BF /* Inicio.m in Sources */ = {isa = PBXBuildFile; fileRef = CA40268D193FA3B10018A0BF /* Inicio.m */; };
 		CA402690193FA3B10018A0BF /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA40268E193FA3B10018A0BF /* ViewController.m */; };
 		CA402694193FAD500018A0BF /* som_inicio_menor.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CA402693193FAD500018A0BF /* som_inicio_menor.mp3 */; };
@@ -118,6 +119,8 @@
 		406EC6CF193FA133003A6BE6 /* fireball.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fireball.png; sourceTree = "<group>"; };
 		406EC6D0193FA133003A6BE6 /* mine.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mine.png; sourceTree = "<group>"; };
 		406EC6D1193FA133003A6BE6 /* rocket animated.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "rocket animated.png"; sourceTree = "<group>"; };
+		40B02079194638D400607094 /* GameOver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameOver.h; path = ../GameOver.h; sourceTree = "<group>"; };
+		40B0207A194638D400607094 /* GameOver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameOver.m; path = ../GameOver.m; sourceTree = "<group>"; };
 		CA40268D193FA3B10018A0BF /* Inicio.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Inicio.m; sourceTree = "<group>"; };
 		CA40268E193FA3B10018A0BF /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		CA402691193FA3E10018A0BF /* Inicio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Inicio.h; sourceTree = "<group>"; };
@@ -351,6 +354,8 @@
 				CA88916719366836002E9EDE /* Main_iPad.storyboard */,
 				CA88916D19366836002E9EDE /* MyScene.h */,
 				CA88916E19366836002E9EDE /* MyScene.m */,
+				40B02079194638D400607094 /* GameOver.h */,
+				40B0207A194638D400607094 /* GameOver.m */,
 				CA40268D193FA3B10018A0BF /* Inicio.m */,
 				CA402691193FA3E10018A0BF /* Inicio.h */,
 				CA88917019366836002E9EDE /* Spaceship.png */,
@@ -584,6 +589,7 @@
 				CA822E2E1941ED0500019043 /* Setup.m in Sources */,
 				CA88916F19366836002E9EDE /* MyScene.m in Sources */,
 				CA88916319366836002E9EDE /* AppDelegate.m in Sources */,
+				40B0207B194638D400607094 /* GameOver.m in Sources */,
 				CA40268F193FA3B10018A0BF /* Inicio.m in Sources */,
 				CA88915F19366836002E9EDE /* main.m in Sources */,
 				CA822E291941DC9600019043 /* RetangleView.m in Sources */,
