@@ -335,20 +335,20 @@ AVAudioPlayer *_somExplosao;
     
 }
 
-//- (void)spawnAlien {
-//    //_alien = [SKSpriteNode spriteNodeWithImageNamed:[NSString stringWithFormat:@"alien%d",arc4random()%2]];
-//   // _alien.name = @"alien";
-//    [enemy setScale:0.8];
-//    enemy.position = CGPointMake(enemy.size.width + 300,260); //ScalarRandomRange(enemy.size.height/5,
-//                                                           //                self.size.height-enemy.size.height/4));
-//    [self addChild:enemy];
-//    
-//    SKAction *actionMove = [SKAction moveToX:-enemy.size.width/1 duration:_velocidadeMeteoro-(0.4)];
-//    SKAction *actionRemove = [SKAction removeFromParent];
-//    [enemy runAction:
-//     [SKAction sequence:@[actionMove, actionRemove]]];
-//    
-//}
+- (void)spawnAlien {
+    _alien = [SKSpriteNode spriteNodeWithImageNamed:[NSString stringWithFormat:@"alien%d",arc4random()%2]];
+    _alien.name = @"alien";
+    [_alien setScale:0.8];
+    _alien.position = CGPointMake(enemy.size.width + 300,260); //ScalarRandomRange(enemy.size.height/5,
+                                                           //                self.size.height-enemy.size.height/4));
+    [self addChild:_alien];
+    
+    SKAction *actionMove = [SKAction moveToX:-_alien.size.width/1 duration:_velocidadeMeteoro-(0.4)];
+    SKAction *actionRemove = [SKAction removeFromParent];
+    [_alien runAction:
+     [SKAction sequence:@[actionMove, actionRemove]]];
+    
+}
 
 //Move o solo no jogo, em tempo diferente ao do background
 -(void)moveGround{
