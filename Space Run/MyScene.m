@@ -10,6 +10,7 @@
 #import "RetangleView.h"
 #import "Pontuacao.h"
 #import "GameOver.h"
+//#import "<#header#>"
 
 //Constante relativa ao movimento do background
 static const float BG_POINTS_PER_SEC = 50;
@@ -706,7 +707,16 @@ AVAudioPlayer *_somExplosao;
       GameOver *gameOver = [[GameOver alloc] initWithSize:self.size];
       
       
-      [gameOver setPontuacao:pontuacao];
+      
+      
+      
+      NSNumber *aNumber = [NSNumber numberWithFloat:pontuacao];
+      
+      gameOver.userData = [NSMutableDictionary dictionary];
+      
+      [gameOver.userData setObject:aNumber forKey:@"score"];
+
+      
       gameOver.scaleMode = SKSceneScaleModeAspectFill;
       SKTransition *reveal = [SKTransition fadeWithDuration:1];
                                    

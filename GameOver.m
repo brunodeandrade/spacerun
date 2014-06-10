@@ -52,7 +52,6 @@
         
         
         [self addChild:_score];
-        [self escreveTexto];
         
         
         _bestScore = [SKSpriteNode spriteNodeWithImageNamed:@"best_score"];
@@ -73,11 +72,17 @@ return  self;
 
 - (void) escreveTexto{
     
+    
+    
     SKLabelNode *label2;
     
+    
+    
     label2 = [SKLabelNode labelNodeWithFontNamed:@"8bitoperator Regular"];
-    NSLog(@"Pontuacao : %d", (int) _pontuacao);
-    label2.text = [NSString stringWithFormat:@"%d", (int) _pontuacao];
+    
+    int valor = [[self.userData objectForKey:@"score"] intValue];
+
+    label2.text = [NSString stringWithFormat:@"%d", valor];
     label2.position = CGPointMake(self.size.width/3.0, self.size.height/2.2);
     label2.fontSize = 15.0;
     label2.color = [UIColor blackColor];
@@ -100,6 +105,18 @@ return  self;
     [self addChild:label3];
     
 }
+
+
+-(void) didEvaluateActions{
+    if(_foi == 0){
+        [self escreveTexto];
+        _foi = 1;
+    }
+}
+
+
+
+
 
 
 
