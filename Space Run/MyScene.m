@@ -170,6 +170,53 @@ static inline CGFloat ScalarRandomRange(CGFloat min, CGFloat max)
     [explosao runAction: [SKAction sequence:@[_explosaoAnimation,tiraVestigio]]];
 }
 
+- (void) morteAstronauta : (SKSpriteNode *) enemy{
+    
+    
+    
+    SKSpriteNode * morte;
+    
+    // Chamada do sprit de colisão.
+    
+    morte = [SKSpriteNode spriteNodeWithImageNamed:@"explosion0"];
+    
+    morte.position = CGPointMake(enemy.position.x, enemy.position.y);
+    
+    [self addChild:morte];
+    
+    
+    
+    // Declaracao e instanciacao do array de sprits (animacao)
+    
+    NSMutableArray *textures = [NSMutableArray arrayWithCapacity:20];
+    
+    // 2
+    
+    for (int i = 0; i < 2; i++) {
+        
+        NSString *textureName = [NSString stringWithFormat:@"explosion%d", i];
+        
+        NSLog(@"%d", i);
+        
+        SKTexture *texture = [SKTexture textureWithImageNamed:textureName];
+        
+        [textures addObject:texture];
+        
+    }
+    
+    // 4
+    
+    _morteAnimation = [SKAction animateWithTextures:textures timePerFrame:0.01];
+    
+    [self playExplosao:@"explosao.wav" volume:0.7];
+    
+  [morte runAction: [SKAction repeatAction:_morteAnimation count:3] completion:^{[morte removeFromParent];}];
+
+    
+}
+
+
+
 - (void) escreveTexto{
     
     label2 = [SKLabelNode labelNodeWithFontNamed:@"8bitoperator Regular"];
@@ -637,9 +684,10 @@ AVAudioPlayer *_somExplosao;
                                
     // se ocorrer a colisão, o obstaculo é removido, e ação de som da colisão.
   if (CGRectIntersectsRect(smallerFrame, outro.frame)) {
-                                   
+    
+      [self morteAstronauta:outro];
       [enemy removeFromParent];
-//if ([node.name isEqualToString:@"play"]) {
+
       GameOver *gameOver = [[GameOver alloc] initWithSize:self.size];
       
       
@@ -655,10 +703,6 @@ AVAudioPlayer *_somExplosao;
     }];
     
 }
-
-
-
-
 
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {

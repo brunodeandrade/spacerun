@@ -15,6 +15,7 @@
 @property CGPoint velocity;
 @property int velocidade;
 @property SKAction * explosaoAnimation;
+@property SKAction * morteAnimation;
 @property SKSpriteNode *alien;
 
 @end

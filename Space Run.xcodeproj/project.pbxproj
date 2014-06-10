@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		403048071947934C00EAFD2E /* explosion0.png in Resources */ = {isa = PBXBuildFile; fileRef = 403048041947934C00EAFD2E /* explosion0.png */; };
+		403048081947934C00EAFD2E /* explosion1.png in Resources */ = {isa = PBXBuildFile; fileRef = 403048051947934C00EAFD2E /* explosion1.png */; };
+		403048091947934C00EAFD2E /* explosion2.png in Resources */ = {isa = PBXBuildFile; fileRef = 403048061947934C00EAFD2E /* explosion2.png */; };
 		406EC6D2193FA133003A6BE6 /* asteroid.png in Resources */ = {isa = PBXBuildFile; fileRef = 406EC6BB193FA133003A6BE6 /* asteroid.png */; };
 		406EC6D3193FA133003A6BE6 /* exp3_0.png in Resources */ = {isa = PBXBuildFile; fileRef = 406EC6BD193FA133003A6BE6 /* exp3_0.png */; };
 		406EC6D4193FA133003A6BE6 /* exp3_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 406EC6BE193FA133003A6BE6 /* exp3_1.png */; };
@@ -111,6 +114,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		403048041947934C00EAFD2E /* explosion0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = explosion0.png; sourceTree = "<group>"; };
+		403048051947934C00EAFD2E /* explosion1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = explosion1.png; sourceTree = "<group>"; };
+		403048061947934C00EAFD2E /* explosion2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = explosion2.png; sourceTree = "<group>"; };
 		406EC6BB193FA133003A6BE6 /* asteroid.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = asteroid.png; sourceTree = "<group>"; };
 		406EC6BD193FA133003A6BE6 /* exp3_0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = exp3_0.png; sourceTree = "<group>"; };
 		406EC6BE193FA133003A6BE6 /* exp3_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = exp3_1.png; sourceTree = "<group>"; };
@@ -258,6 +264,9 @@
 		406EC6BC193FA133003A6BE6 /* Explosao */ = {
 			isa = PBXGroup;
 			children = (
+				403048041947934C00EAFD2E /* explosion0.png */,
+				403048051947934C00EAFD2E /* explosion1.png */,
+				403048061947934C00EAFD2E /* explosion2.png */,
 				406EC6BD193FA133003A6BE6 /* exp3_0.png */,
 				406EC6BE193FA133003A6BE6 /* exp3_1.png */,
 				406EC6BF193FA133003A6BE6 /* exp3_10.png */,
@@ -622,16 +631,19 @@
 				CA6DA6E81940E4EB00424737 /* somFase1.mp3 in Resources */,
 				406EC6E3193FA133003A6BE6 /* alien1.png in Resources */,
 				406EC6D3193FA133003A6BE6 /* exp3_0.png in Resources */,
+				403048071947934C00EAFD2E /* explosion0.png in Resources */,
 				406EC6D4193FA133003A6BE6 /* exp3_1.png in Resources */,
 				C32307E719463BEF005A3CC7 /* background8.png in Resources */,
 				406EC6E7193FA133003A6BE6 /* rocket animated.png in Resources */,
 				C32307E619463BEF005A3CC7 /* background7.png in Resources */,
 				406EC6E6193FA133003A6BE6 /* mine.png in Resources */,
 				C32307E519463BEF005A3CC7 /* background6.png in Resources */,
+				403048081947934C00EAFD2E /* explosion1.png in Resources */,
 				CA7A1CD0194772150012BB0F /* pont.png in Resources */,
 				CAC1B30A193E3AFD00A00D36 /* astr1runing3.png in Resources */,
 				CAC1B30F193E3AFD00A00D36 /* astr1runing8.png in Resources */,
 				406EC6E0193FA133003A6BE6 /* exp3_7.png in Resources */,
+				403048091947934C00EAFD2E /* explosion2.png in Resources */,
 				CAC1B312193E3DD100A00D36 /* tiro_arma.png in Resources */,
 				CA7A1CCB194770630012BB0F /* game_over.png in Resources */,
 				CA6DA6EC1940E58700424737 /* play.png in Resources */,
