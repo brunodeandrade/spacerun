@@ -32,7 +32,7 @@ int caindo = 0;
 AVAudioPlayer *_backgroundMusicPlayer1;
 float verificador = 0, x = 0;
 int qtdInimigos = 0.5;
-float _velocidadeMeteoro = 6;
+float _velocidadeMeteoro = 5;
 SKNode *_playerLayerNode;
 SKNode *_hudLayerNode;
 SKLabelNode * label2;
@@ -123,7 +123,7 @@ static inline CGFloat ScalarRandomRange(CGFloat min, CGFloat max)
         
         
         [self runAction:[SKAction repeatActionForever:
-        [SKAction sequence:@[[SKAction performSelector:@selector(spawnEnemy) onTarget:self],[SKAction waitForDuration:2.0]]]]];
+        [SKAction sequence:@[[SKAction performSelector:@selector(spawnAlien) onTarget:self],[SKAction waitForDuration:2]]]]];
 
         
         //[self escreveTexto];
@@ -305,8 +305,6 @@ AVAudioPlayer *_somMunicao;
 
 
 
-
-
 AVAudioPlayer *_somExplosao;
 - (void)playExplosao:(NSString *)filename volume: (float) vol
 {
@@ -351,8 +349,8 @@ AVAudioPlayer *_somExplosao;
 - (void)spawnMunicao {
     municao = [SKSpriteNode spriteNodeWithImageNamed:@"tiro1"];
     municao.name = @"municao";
-    [municao setScale:2];
-    municao.position = CGPointMake(self.size.width + 100, ScalarRandomRange(municao.size.height/5, self.size.height-municao.size.height/2));
+    [municao setScale:1.5];
+    municao.position = CGPointMake(self.size.width + 100, [self decidePosicao]);
     [self addChild:municao];
     
     SKAction *actionMove = [SKAction moveToX:-municao.size.width/1 duration:2];
@@ -363,20 +361,15 @@ AVAudioPlayer *_somExplosao;
 
 
 
-
-
-
-
 // Adiciona inimigos e obstaculos
 - (void)spawnEnemy {
     enemy = [SKSpriteNode spriteNodeWithImageNamed:@"asteroid"];
     enemy.name = @"asteroid";
-    [enemy setScale:0.4];
-    enemy.position = CGPointMake(enemy.size.width + 300, ScalarRandomRange(enemy.size.height/5,
-                                                                           self.size.height-enemy.size.height/4));
+    [enemy setScale:0.3];
+    enemy.position = CGPointMake(enemy.size.width + 300, [self decidePosicao]);
     [self addChild:enemy];
     
-    SKAction *actionMove = [SKAction moveToX:-enemy.size.width/1 duration:_velocidadeMeteoro];
+    SKAction *actionMove = [SKAction moveToX:-enemy.size.width/1 duration:_velocidadeMeteoro-(1.5)];
     SKAction *actionRemove = [SKAction removeFromParent];
     [enemy runAction:
      [SKAction sequence:@[actionMove, actionRemove]]];
@@ -386,12 +379,12 @@ AVAudioPlayer *_somExplosao;
 - (void)spawnAlien {
     _alien = [SKSpriteNode spriteNodeWithImageNamed:[NSString stringWithFormat:@"alien%d",arc4random()%2]];
     _alien.name = @"alien";
-    [_alien setScale:0.8];
-    _alien.position = CGPointMake(enemy.size.width + 300,260); //ScalarRandomRange(enemy.size.height/5,
+    [_alien setScale:0.6];
+    _alien.position = CGPointMake(enemy.size.width + 400,[self decidePosicao]); //ScalarRandomRange(enemy.size.height/5,
                                                            //                self.size.height-enemy.size.height/4));
     [self addChild:_alien];
     
-    SKAction *actionMove = [SKAction moveToX:-_alien.size.width/1 duration:_velocidadeMeteoro-(0.4)];
+    SKAction *actionMove = [SKAction moveToX:-_alien.size.width/1 duration:_velocidadeMeteoro-(1.5)];
     SKAction *actionRemove = [SKAction removeFromParent];
     [_alien runAction:
      [SKAction sequence:@[actionMove, actionRemove]]];
@@ -550,7 +543,7 @@ AVAudioPlayer *_somExplosao;
     [self moveMeteoro];
     //Movimenta o solo
     [self moveGround];
-
+    
     
     //Calcula o tempo percorrido por frame
     if (_lastUpdateTime) {
@@ -568,12 +561,12 @@ AVAudioPlayer *_somExplosao;
             _velocidade = _velocidade+15;
             
             if(x>80 && x<160){
-                _velocidadeMeteoro = _velocidadeMeteoro - 0.43;
+                _velocidadeMeteoro = _velocidadeMeteoro - 0.20;
                 
             }else if(_velocidade<250){
-                _velocidadeMeteoro = _velocidadeMeteoro - 0.25;
+                _velocidadeMeteoro = _velocidadeMeteoro - 0.08;
             }else{
-                _velocidadeMeteoro = _velocidadeMeteoro - 0.09;
+                _velocidadeMeteoro = _velocidadeMeteoro - 0.01;
             }
             [self spawnAlien];
             
@@ -584,12 +577,15 @@ AVAudioPlayer *_somExplosao;
         
         x = x+80;
     }
-    
-    if(arc4random()% 300 == 2){
+    NSLog(@"%f",x);
+    if((arc4random()% 300 == 0)&& verificador > 600){
         [self spawnEnemy];
-        [self spawnMunicao];
     }
-    else if( arc4random() %300 == 3){
+    else if( arc4random() %500 == 1){
+        [self spawnMunicao];
+        if(arc4random() % 100 == 0){
+            [self spawnEnemy];
+        }
         
     }
     
@@ -601,9 +597,28 @@ AVAudioPlayer *_somExplosao;
     pontuacao++;
     
     label3.text = [NSString stringWithFormat:@"Ammo: %d",quantidadeTiros];
-
     
 }
+
+-(CGFloat)decidePosicao{
+    static float cont = 1;
+    
+    
+    if((int)cont % 2 != 0){
+        float posicao = 260 + arc4random() % 3;
+        cont = cont + 0.2;
+        return posicao;
+        
+    }else{
+        float posicao = 291 + arc4random() % (int)(self.size.height-289);
+        cont = cont + 0.5;
+        return posicao;
+        
+    }
+    
+}
+       
+    
 
 - (void)checkCollisions:(NSString *)objeto andOther : (SKSpriteNode *) outro {
     
