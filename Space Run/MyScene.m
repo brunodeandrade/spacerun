@@ -171,7 +171,7 @@ static inline CGFloat ScalarRandomRange(CGFloat min, CGFloat max)
     [explosao runAction: [SKAction sequence:@[_explosaoAnimation,tiraVestigio]]];
 }
 
-- (void) morteAstronauta : (SKSpriteNode *) enemy{
+- (void) morteAstronauta : (SKSpriteNode *) astronauta{
     
     
     
@@ -181,7 +181,7 @@ static inline CGFloat ScalarRandomRange(CGFloat min, CGFloat max)
     
     morte = [SKSpriteNode spriteNodeWithImageNamed:@"explosion0"];
     
-    morte.position = CGPointMake(enemy.position.x, enemy.position.y);
+    morte.position = CGPointMake(astronauta.position.x, astronauta.position.y);
     
     [self addChild:morte];
     
@@ -207,11 +207,32 @@ static inline CGFloat ScalarRandomRange(CGFloat min, CGFloat max)
     
     // 4
     
-    _morteAnimation = [SKAction animateWithTextures:textures timePerFrame:0.01];
+    _morteAnimation = [SKAction animateWithTextures:textures timePerFrame:0.1];
     
     [self playExplosao:@"explosao.wav" volume:0.7];
     
-  [morte runAction: [SKAction repeatAction:_morteAnimation count:3] completion:^{[morte removeFromParent];}];
+    
+    
+    int pont = (int) pontuacao;
+    
+    GameOver *gameOver = [[GameOver alloc] initWithSize:self.size];
+    
+    Persistence *gravar = [[Persistence alloc] init];
+    
+    [gravar gravaRecord:pont];
+    
+    
+    NSNumber *aNumber = [NSNumber numberWithFloat:pont];
+    
+    gameOver.userData = [NSMutableDictionary dictionary];
+    
+    [gameOver.userData setObject:aNumber forKey:@"score"];
+    
+    
+    gameOver.scaleMode = SKSceneScaleModeAspectFill;
+    SKTransition *reveal = [SKTransition fadeWithDuration:4];
+    
+    [morte runAction: [SKAction repeatAction:_morteAnimation count:1] completion:^{[morte removeFromParent]; [astronauta removeFromParent]; [self.view presentScene:gameOver transition:reveal]; [_backgroundMusicPlayer1 stop];}];
 
     
 }
@@ -703,30 +724,7 @@ AVAudioPlayer *_somExplosao;
     
       [self morteAstronauta:outro];
       [enemy removeFromParent];
-      
-      int pont = (int) pontuacao;
-      
-      GameOver *gameOver = [[GameOver alloc] initWithSize:self.size];
-      
-      Persistence *gravar = [[Persistence alloc] init];
-      
-      [gravar gravaRecord:pont];
-      
-      
-      NSNumber *aNumber = [NSNumber numberWithFloat:pont];
-      
-      gameOver.userData = [NSMutableDictionary dictionary];
-      
-      [gameOver.userData setObject:aNumber forKey:@"score"];
-
-      
-      gameOver.scaleMode = SKSceneScaleModeAspectFill;
-      SKTransition *reveal = [SKTransition fadeWithDuration:4];
-                                   
-      [self.view presentScene:gameOver transition:reveal];
-      [_backgroundMusicPlayer1 stop];
                                }
-                               
                                
     }];
     
