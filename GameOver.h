@@ -10,8 +10,10 @@
 
 @interface GameOver : SKScene
 
-
+@property float pontuacao;
 @property SKSpriteNode * score;
 @property SKSpriteNode * bestScore;
+
+
 
 @end

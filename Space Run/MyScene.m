@@ -8,6 +8,7 @@
 #import "MyScene.h"
 #import <AVFoundation/AVFoundation.h>
 #import "RetangleView.h"
+#import "Pontuacao.h"
 #import "GameOver.h"
 
 //Constante relativa ao movimento do background
@@ -637,14 +638,17 @@ AVAudioPlayer *_somExplosao;
     // se ocorrer a colisão, o obstaculo é removido, e ação de som da colisão.
   if (CGRectIntersectsRect(smallerFrame, outro.frame)) {
                                    
- [enemy removeFromParent];
+      [enemy removeFromParent];
 //if ([node.name isEqualToString:@"play"]) {
-SKScene * gameOver = [[GameOver alloc] initWithSize:self.size];
-gameOver.scaleMode = SKSceneScaleModeAspectFill;
-SKTransition *reveal = [SKTransition fadeWithDuration:1];
+      GameOver *gameOver = [[GameOver alloc] initWithSize:self.size];
+      
+      
+      [gameOver setPontuacao:pontuacao];
+      gameOver.scaleMode = SKSceneScaleModeAspectFill;
+      SKTransition *reveal = [SKTransition fadeWithDuration:1];
                                    
-[self.view presentScene:gameOver transition:reveal];
-[_backgroundMusicPlayer1 stop];
+      [self.view presentScene:gameOver transition:reveal];
+      [_backgroundMusicPlayer1 stop];
                                }
                                
                                
