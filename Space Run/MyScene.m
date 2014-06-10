@@ -69,6 +69,11 @@ static inline CGFloat ScalarRandomRange(CGFloat min, CGFloat max)
 -(id)initWithSize:(CGSize)size{
     if(self = [super initWithSize:size]){
         
+        pontuacao = 0;
+        _velocidadeMeteoro = 5;
+        quantidadeTiros = 15;
+        _velocidade = 0;
+        
         
         [self playBackgroundMusic:@"somFase1.mp3" volume:0.8];
         
