@@ -9,6 +9,7 @@
 #import "GameOver.h"
 #import "MyScene.h"
 #import "Pontuacao.h"
+#import "Persistence.h"
 
 @implementation GameOver
 
@@ -91,12 +92,14 @@ return  self;
     [self addChild:label2];
     
     
+    Persistence *ler = [[Persistence alloc] init];
+    int valor1 = (int) [ler leRecord];
     
     SKLabelNode *label3;
     
     label3 = [SKLabelNode labelNodeWithFontNamed:@"8bitoperator Regular"];
     NSLog(@"Pontuacao : %d", (int) _pontuacao);
-    label3.text = [NSString stringWithFormat:@"%d", (int) _pontuacao];
+    label3.text = [NSString stringWithFormat:@"%d", valor1];
     label3.position = CGPointMake(self.size.width/2.8, self.size.height/2.6);
     label3.fontSize = 15.0;
     label3.color = [UIColor blackColor];
@@ -110,11 +113,17 @@ return  self;
 -(void) didEvaluateActions{
     if(_foi == 0){
         [self escreveTexto];
+        
         _foi = 1;
     }
 }
 
-
+-(void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
+    SKScene * comecaJogo = [[MyScene alloc] initWithSize:self.size];
+    comecaJogo.scaleMode = SKSceneScaleModeAspectFill;
+    SKTransition *reveal = [SKTransition fadeWithDuration:3];
+    [self.view presentScene:comecaJogo transition:reveal];
+}
 
 
 

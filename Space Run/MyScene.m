@@ -10,7 +10,7 @@
 #import "RetangleView.h"
 #import "Pontuacao.h"
 #import "GameOver.h"
-//#import "<#header#>"
+#import "Persistence.h"
 
 //Constante relativa ao movimento do background
 static const float BG_POINTS_PER_SEC = 50;
@@ -703,14 +703,17 @@ AVAudioPlayer *_somExplosao;
     
       [self morteAstronauta:outro];
       [enemy removeFromParent];
-
+      
+      int pont = (int) pontuacao;
+      
       GameOver *gameOver = [[GameOver alloc] initWithSize:self.size];
       
+      Persistence *gravar = [[Persistence alloc] init];
+      
+      [gravar gravaRecord:pont];
       
       
-      
-      
-      NSNumber *aNumber = [NSNumber numberWithFloat:pontuacao];
+      NSNumber *aNumber = [NSNumber numberWithFloat:pont];
       
       gameOver.userData = [NSMutableDictionary dictionary];
       
@@ -718,7 +721,7 @@ AVAudioPlayer *_somExplosao;
 
       
       gameOver.scaleMode = SKSceneScaleModeAspectFill;
-      SKTransition *reveal = [SKTransition fadeWithDuration:1];
+      SKTransition *reveal = [SKTransition fadeWithDuration:4];
                                    
       [self.view presentScene:gameOver transition:reveal];
       [_backgroundMusicPlayer1 stop];
