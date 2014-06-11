@@ -14,8 +14,9 @@
 
 //Constante relativa ao movimento do background
 static const float BG_POINTS_PER_SEC = 50;
-static const float ASTR_POINTS_PER_SEC = 480;
-static const float GRAVIDADE = 20;
+//static const float ASTR_POINTS_PER_SEC = 480;
+static const float ASTR_POINTS_PER_SEC = 400;
+static const float GRAVIDADE = 15;
 
 
 SKAction *astronautAnimation;
@@ -488,7 +489,7 @@ AVAudioPlayer *_somExplosao;
     }
     
     if(newVelocity.y < 0 || newPosition.y >= limite.y){
-        newVelocity.y -= GRAVIDADE;
+        newVelocity.y -= GRAVIDADE+10;
     }
     
     //Subindo
