@@ -61,20 +61,14 @@ static inline CGPoint CGPointAdd(const CGPoint a, const CGPoint b)
 }
 
 
-#define ARC4RANDOM_MAX      0x100000000
-static inline CGFloat ScalarRandomRange(CGFloat min, CGFloat max)
-{
-    return floorf(((double)arc4random() / ARC4RANDOM_MAX) * (max - min) + min);
-}
-
 //Metodo de inicializaçao, usado para adicionar sprites ao app(Atentar-se a ordem dos sprites)
 -(id)initWithSize:(CGSize)size{
     if(self = [super initWithSize:size]){
         
         pontuacao = 0;
-        _velocidadeMeteoro = 5;
+        _velocidadeMeteoro = 4;
         quantidadeTiros = 15;
-        _velocidade = 0;
+        _velocidade = 80;
         morreu = 0;
         
         [self playBackgroundMusic:@"somFase1.mp3" volume:0.8];
@@ -117,22 +111,11 @@ static inline CGFloat ScalarRandomRange(CGFloat min, CGFloat max)
         astronautAnimation = [SKAction animateWithTextures:textures timePerFrame:0.1];
         [astr runAction:[SKAction repeatActionForever:astronautAnimation]];
         
-        /*Descobre o tamanho*/
-        
-        CGSize mySize = astr.size;
-        
-        
         astr.position = CGPointMake((self.size.width / 2) - 120, (self.size.height / 2)-28);
         
         astr.anchorPoint = CGPointMake(0.5, 0.5);
      
         [astr setScale:0.3];
-        
-        
-        
-        [self runAction:[SKAction repeatActionForever:
-        [SKAction sequence:@[[SKAction performSelector:@selector(spawnAlien) onTarget:self],[SKAction waitForDuration:2]]]]];
-
         
         //[self escreveTexto];
         
@@ -606,10 +589,14 @@ AVAudioPlayer *_somExplosao;
         x = x+80;
     }
 
-    if((arc4random()% 300 == 0)&& verificador > 600){
+    if(arc4random() % 100 == 13){
+        [self spawnAlien];
+    }
+    
+    if((arc4random()% 300 == 0)){
         [self spawnEnemy];
     }
-    else if( arc4random() %500 == 1){
+    else if( arc4random() %400 == 1){
         [self spawnMunicao];
         if(arc4random() % 100 == 0){
             [self spawnEnemy];
@@ -636,12 +623,12 @@ AVAudioPlayer *_somExplosao;
     
     if((int)cont % 2 != 0){
         float posicao = 260 + arc4random() % 3;
-        cont = cont + 0.2;
+        cont = cont + 1;
         return posicao;
         
     }else{
         float posicao = 291 + arc4random() % (int)(self.size.height-289);
-        cont = cont + 0.5;
+        cont = cont + 1;
         return posicao;
         
     }
@@ -669,34 +656,9 @@ AVAudioPlayer *_somExplosao;
     [self explosao : outro];
     [balas removeObject:outro];
         
-    
-   //[self runAction:_enemyCollisionSound];
                                    
     }
     }];
-    
-    
-    //    // Chamada do sprit de colisão.
-    //    _explosao = [SKSpriteNode spriteNodeWithImageNamed:@"exp3_0"];
-    //    _explosao.position = CGPointMake(100, 100);
-    //   [self addChild:_explosao];
-    //
-    //    // Declaracao e instanciacao do array de sprits (animacao)
-    //    NSMutableArray *textures = [NSMutableArray arrayWithCapacity:20];
-    //    // 2
-    //    for (int i = 0; i < 15; i++) {
-    //        NSString *textureName = [NSString stringWithFormat:@"exp3_%d", i];
-    //        SKTexture *texture = [SKTexture textureWithImageNamed:textureName];
-    //        [textures addObject:texture];
-    //    }
-    
-    
-    //                                   // 4
-    //    _explosaoAnimation = [SKAction animateWithTextures:textures timePerFrame:0.5];
-    
-    
-    
-    
 }
 
 
