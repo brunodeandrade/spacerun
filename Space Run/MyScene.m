@@ -30,6 +30,7 @@ CGPoint _velocity;
 int pulou = 0;
 int pulando = 0;
 int caindo = 0;
+int morreu = 0;
 AVAudioPlayer *_backgroundMusicPlayer1;
 float verificador = 0, x = 0;
 int qtdInimigos = 0.5;
@@ -73,7 +74,7 @@ static inline CGFloat ScalarRandomRange(CGFloat min, CGFloat max)
         _velocidadeMeteoro = 5;
         quantidadeTiros = 15;
         _velocidade = 0;
-        
+        morreu = 0;
         
         [self playBackgroundMusic:@"somFase1.mp3" volume:0.8];
         
@@ -202,7 +203,6 @@ static inline CGFloat ScalarRandomRange(CGFloat min, CGFloat max)
         
         NSString *textureName = [NSString stringWithFormat:@"explosion%d", i];
         
-        NSLog(@"%d", i);
         
         SKTexture *texture = [SKTexture textureWithImageNamed:textureName];
         
@@ -604,7 +604,7 @@ AVAudioPlayer *_somExplosao;
         
         x = x+80;
     }
-    NSLog(@"%f",x);
+
     if((arc4random()% 300 == 0)&& verificador > 600){
         [self spawnEnemy];
     }
@@ -621,7 +621,9 @@ AVAudioPlayer *_somExplosao;
     
     
     label2.text = [NSString stringWithFormat:@"Score: %d",(int)pontuacao];
-    pontuacao++;
+    
+    if(morreu == 0)
+        pontuacao++;
     
     label3.text = [NSString stringWithFormat:@"Ammo: %d",quantidadeTiros];
     
@@ -719,6 +721,8 @@ AVAudioPlayer *_somExplosao;
 
 - (void)checkCollisionsAstronauta:(NSString *)objeto andOther : (SKSpriteNode *) outro {
     
+
+    
     [self enumerateChildNodesWithName:objeto
                            usingBlock:^(SKNode *node, BOOL *stop){
     SKSpriteNode *enemy = (SKSpriteNode *)node;
@@ -726,7 +730,7 @@ AVAudioPlayer *_somExplosao;
                                
     // se ocorrer a colisão, o obstaculo é removido, e ação de som da colisão.
   if (CGRectIntersectsRect(smallerFrame, outro.frame)) {
-    
+      morreu = 1;
       [self morteAstronauta:outro];
       [enemy removeFromParent];
                                }
