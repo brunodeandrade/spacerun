@@ -374,9 +374,9 @@ AVAudioPlayer *_somExplosao;
 
 
 - (void)spawnMunicao {
-    municao = [SKSpriteNode spriteNodeWithImageNamed:@"tiro1"];
+    municao = [SKSpriteNode spriteNodeWithImageNamed:@"tiro3"];
     municao.name = @"municao";
-    [municao setScale:1.5];
+    [municao setScale:0.2];
     municao.position = CGPointMake(self.size.width + 100, [self decidePosicao]);
     [self addChild:municao];
     

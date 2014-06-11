@@ -43,6 +43,7 @@
 		C32307E619463BEF005A3CC7 /* background7.png in Resources */ = {isa = PBXBuildFile; fileRef = C32307DD19463BEF005A3CC7 /* background7.png */; };
 		C32307E719463BEF005A3CC7 /* background8.png in Resources */ = {isa = PBXBuildFile; fileRef = C32307DE19463BEF005A3CC7 /* background8.png */; };
 		C3712CBB194651B300B5407F /* Persistence.m in Sources */ = {isa = PBXBuildFile; fileRef = C3712CBA194651B300B5407F /* Persistence.m */; };
+		C3974A231948C6D0006F28CB /* tiro3.png in Resources */ = {isa = PBXBuildFile; fileRef = C3974A221948C6D0006F28CB /* tiro3.png */; };
 		CA40268F193FA3B10018A0BF /* Inicio.m in Sources */ = {isa = PBXBuildFile; fileRef = CA40268D193FA3B10018A0BF /* Inicio.m */; };
 		CA402690193FA3B10018A0BF /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA40268E193FA3B10018A0BF /* ViewController.m */; };
 		CA402694193FAD500018A0BF /* som_inicio_menor.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CA402693193FAD500018A0BF /* som_inicio_menor.mp3 */; };
@@ -152,6 +153,7 @@
 		C32307DE19463BEF005A3CC7 /* background8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background8.png; sourceTree = "<group>"; };
 		C3712CB9194651B300B5407F /* Persistence.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Persistence.h; sourceTree = "<group>"; };
 		C3712CBA194651B300B5407F /* Persistence.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Persistence.m; sourceTree = "<group>"; };
+		C3974A221948C6D0006F28CB /* tiro3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tiro3.png; sourceTree = "<group>"; };
 		CA40268D193FA3B10018A0BF /* Inicio.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Inicio.m; sourceTree = "<group>"; };
 		CA40268E193FA3B10018A0BF /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		CA402691193FA3E10018A0BF /* Inicio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Inicio.h; sourceTree = "<group>"; };
@@ -496,6 +498,7 @@
 		CAC1B310193E3DB800A00D36 /* Efeitos */ = {
 			isa = PBXGroup;
 			children = (
+				C3974A221948C6D0006F28CB /* tiro3.png */,
 				CAC1B315193E494100A00D36 /* tiro1.png */,
 				CAC1B313193E43C000A00D36 /* nada.png */,
 				CAC1B311193E3DD100A00D36 /* tiro_arma.png */,
@@ -620,6 +623,7 @@
 				CAC1B307193E3AFD00A00D36 /* astr1runing0.png in Resources */,
 				CAB64696194636FD006F8A0E /* pegouBala.mp3 in Resources */,
 				C32307E119463BEF005A3CC7 /* background2.png in Resources */,
+				C3974A231948C6D0006F28CB /* tiro3.png in Resources */,
 				406EC6D5193FA133003A6BE6 /* exp3_10.png in Resources */,
 				C32307E319463BEF005A3CC7 /* background4.png in Resources */,
 				CA6DA6E61940DB8D00424737 /* tiro.wav in Resources */,
