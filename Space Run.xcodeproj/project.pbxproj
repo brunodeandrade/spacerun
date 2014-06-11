@@ -90,6 +90,16 @@
 		CAA559BE193D05800097B42B /* ground8.png in Resources */ = {isa = PBXBuildFile; fileRef = CAA559B4193D05800097B42B /* ground8.png */; };
 		CAA559BF193D05800097B42B /* ground9.png in Resources */ = {isa = PBXBuildFile; fileRef = CAA559B5193D05800097B42B /* ground9.png */; };
 		CAB64696194636FD006F8A0E /* pegouBala.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CAB64695194636FD006F8A0E /* pegouBala.mp3 */; };
+		CAC00C531948DD7A00907E24 /* Credito.m in Sources */ = {isa = PBXBuildFile; fileRef = CAC00C521948DD7A00907E24 /* Credito.m */; };
+		CAC00C591948E0DB00907E24 /* bruno.png in Resources */ = {isa = PBXBuildFile; fileRef = CAC00C551948E0DB00907E24 /* bruno.png */; };
+		CAC00C5A1948E0DB00907E24 /* developers.png in Resources */ = {isa = PBXBuildFile; fileRef = CAC00C561948E0DB00907E24 /* developers.png */; };
+		CAC00C5B1948E0DB00907E24 /* henrique.png in Resources */ = {isa = PBXBuildFile; fileRef = CAC00C571948E0DB00907E24 /* henrique.png */; };
+		CAC00C5C1948E0DB00907E24 /* huallyd.png in Resources */ = {isa = PBXBuildFile; fileRef = CAC00C581948E0DB00907E24 /* huallyd.png */; };
+		CAC00C5E1948E35900907E24 /* credits.png in Resources */ = {isa = PBXBuildFile; fileRef = CAC00C5D1948E35900907E24 /* credits.png */; };
+		CAC00C601948E4D700907E24 /* tudo_desenvolvedores.png in Resources */ = {isa = PBXBuildFile; fileRef = CAC00C5F1948E4D700907E24 /* tudo_desenvolvedores.png */; };
+		CAC00C621948E9DB00907E24 /* sound-effects.png in Resources */ = {isa = PBXBuildFile; fileRef = CAC00C611948E9DB00907E24 /* sound-effects.png */; };
+		CAC00C651948EDD600907E24 /* musicos1.png in Resources */ = {isa = PBXBuildFile; fileRef = CAC00C631948EDD600907E24 /* musicos1.png */; };
+		CAC00C661948EDD600907E24 /* musicos2.png in Resources */ = {isa = PBXBuildFile; fileRef = CAC00C641948EDD600907E24 /* musicos2.png */; };
 		CAC1B307193E3AFD00A00D36 /* astr1runing0.png in Resources */ = {isa = PBXBuildFile; fileRef = CAC1B2FE193E3AFD00A00D36 /* astr1runing0.png */; };
 		CAC1B308193E3AFD00A00D36 /* astr1runing1.png in Resources */ = {isa = PBXBuildFile; fileRef = CAC1B2FF193E3AFD00A00D36 /* astr1runing1.png */; };
 		CAC1B309193E3AFD00A00D36 /* astr1runing2.png in Resources */ = {isa = PBXBuildFile; fileRef = CAC1B300193E3AFD00A00D36 /* astr1runing2.png */; };
@@ -210,6 +220,17 @@
 		CAA559B4193D05800097B42B /* ground8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ground8.png; sourceTree = "<group>"; };
 		CAA559B5193D05800097B42B /* ground9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ground9.png; sourceTree = "<group>"; };
 		CAB64695194636FD006F8A0E /* pegouBala.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = pegouBala.mp3; sourceTree = "<group>"; };
+		CAC00C511948DD7A00907E24 /* Credito.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Credito.h; sourceTree = "<group>"; };
+		CAC00C521948DD7A00907E24 /* Credito.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Credito.m; sourceTree = "<group>"; };
+		CAC00C551948E0DB00907E24 /* bruno.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bruno.png; path = "Game Over/bruno.png"; sourceTree = "<group>"; };
+		CAC00C561948E0DB00907E24 /* developers.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = developers.png; path = "Game Over/developers.png"; sourceTree = "<group>"; };
+		CAC00C571948E0DB00907E24 /* henrique.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = henrique.png; path = "Game Over/henrique.png"; sourceTree = "<group>"; };
+		CAC00C581948E0DB00907E24 /* huallyd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = huallyd.png; path = "Game Over/huallyd.png"; sourceTree = "<group>"; };
+		CAC00C5D1948E35900907E24 /* credits.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = credits.png; sourceTree = "<group>"; };
+		CAC00C5F1948E4D700907E24 /* tudo_desenvolvedores.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tudo_desenvolvedores.png; path = "Game Over/tudo_desenvolvedores.png"; sourceTree = "<group>"; };
+		CAC00C611948E9DB00907E24 /* sound-effects.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sound-effects.png"; sourceTree = "<group>"; };
+		CAC00C631948EDD600907E24 /* musicos1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = musicos1.png; sourceTree = "<group>"; };
+		CAC00C641948EDD600907E24 /* musicos2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = musicos2.png; sourceTree = "<group>"; };
 		CAC1B2FE193E3AFD00A00D36 /* astr1runing0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = astr1runing0.png; sourceTree = "<group>"; };
 		CAC1B2FF193E3AFD00A00D36 /* astr1runing1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = astr1runing1.png; sourceTree = "<group>"; };
 		CAC1B300193E3AFD00A00D36 /* astr1runing2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = astr1runing2.png; sourceTree = "<group>"; };
@@ -311,6 +332,7 @@
 		C39949251937CABD0018B484 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				CAC00C541948E0C900907E24 /* Creditos */,
 				40B0207C19463F7C00607094 /* Game Over */,
 				CA91EE24193913940060774C /* Sprites */,
 				C39949261937CAC40018B484 /* Fundos */,
@@ -436,6 +458,8 @@
 				CA88915919366836002E9EDE /* Supporting Files */,
 				CA822E2C1941ED0500019043 /* Setup.h */,
 				CA822E2D1941ED0500019043 /* Setup.m */,
+				CAC00C511948DD7A00907E24 /* Credito.h */,
+				CAC00C521948DD7A00907E24 /* Credito.m */,
 			);
 			path = "Space Run";
 			sourceTree = "<group>";
@@ -493,6 +517,22 @@
 				CAC1B306193E3AFD00A00D36 /* astr1runing8.png */,
 			);
 			name = Astronauta;
+			sourceTree = "<group>";
+		};
+		CAC00C541948E0C900907E24 /* Creditos */ = {
+			isa = PBXGroup;
+			children = (
+				CAC00C5D1948E35900907E24 /* credits.png */,
+				CAC00C551948E0DB00907E24 /* bruno.png */,
+				CAC00C561948E0DB00907E24 /* developers.png */,
+				CAC00C5F1948E4D700907E24 /* tudo_desenvolvedores.png */,
+				CAC00C571948E0DB00907E24 /* henrique.png */,
+				CAC00C611948E9DB00907E24 /* sound-effects.png */,
+				CAC00C631948EDD600907E24 /* musicos1.png */,
+				CAC00C641948EDD600907E24 /* musicos2.png */,
+				CAC00C581948E0DB00907E24 /* huallyd.png */,
+			);
+			name = Creditos;
 			sourceTree = "<group>";
 		};
 		CAC1B310193E3DB800A00D36 /* Efeitos */ = {
@@ -590,6 +630,7 @@
 				406EC6E2193FA133003A6BE6 /* exp3_9.png in Resources */,
 				CAC1B30E193E3AFD00A00D36 /* astr1runing7.png in Resources */,
 				406EC6DC193FA133003A6BE6 /* exp3_3.png in Resources */,
+				CAC00C621948E9DB00907E24 /* sound-effects.png in Resources */,
 				CA402694193FAD500018A0BF /* som_inicio_menor.mp3 in Resources */,
 				CAC1B30C193E3AFD00A00D36 /* astr1runing5.png in Resources */,
 				CAC1B314193E43C000A00D36 /* nada.png in Resources */,
@@ -608,10 +649,13 @@
 				C32307E219463BEF005A3CC7 /* background3.png in Resources */,
 				CAC1B316193E494100A00D36 /* tiro1.png in Resources */,
 				CAA559BD193D05800097B42B /* ground7.png in Resources */,
+				CAC00C591948E0DB00907E24 /* bruno.png in Resources */,
 				406EC6D8193FA133003A6BE6 /* exp3_13.png in Resources */,
+				CAC00C601948E4D700907E24 /* tudo_desenvolvedores.png in Resources */,
 				406EC6DB193FA133003A6BE6 /* exp3_2.png in Resources */,
 				406EC6D9193FA133003A6BE6 /* exp3_14.png in Resources */,
 				CAA559BE193D05800097B42B /* ground8.png in Resources */,
+				CAC00C5E1948E35900907E24 /* credits.png in Resources */,
 				CAA559BF193D05800097B42B /* ground9.png in Resources */,
 				406EC6E4193FA133003A6BE6 /* alien0.png in Resources */,
 				CA88916919366836002E9EDE /* Main_iPad.storyboard in Resources */,
@@ -630,12 +674,14 @@
 				406EC6D6193FA133003A6BE6 /* exp3_11.png in Resources */,
 				CAA559B9193D05800097B42B /* ground3.png in Resources */,
 				CA88916619366836002E9EDE /* Main_iPhone.storyboard in Resources */,
+				CAC00C5C1948E0DB00907E24 /* huallyd.png in Resources */,
 				C32307DF19463BEF005A3CC7 /* background0.png in Resources */,
 				406EC6DD193FA133003A6BE6 /* exp3_4.png in Resources */,
 				CA6DA6E81940E4EB00424737 /* somFase1.mp3 in Resources */,
 				406EC6E3193FA133003A6BE6 /* alien1.png in Resources */,
 				406EC6D3193FA133003A6BE6 /* exp3_0.png in Resources */,
 				403048071947934C00EAFD2E /* explosion0.png in Resources */,
+				CAC00C661948EDD600907E24 /* musicos2.png in Resources */,
 				406EC6D4193FA133003A6BE6 /* exp3_1.png in Resources */,
 				C32307E719463BEF005A3CC7 /* background8.png in Resources */,
 				406EC6E7193FA133003A6BE6 /* rocket animated.png in Resources */,
@@ -643,8 +689,11 @@
 				406EC6E6193FA133003A6BE6 /* mine.png in Resources */,
 				C32307E519463BEF005A3CC7 /* background6.png in Resources */,
 				403048081947934C00EAFD2E /* explosion1.png in Resources */,
+				CAC00C5B1948E0DB00907E24 /* henrique.png in Resources */,
+				CAC00C651948EDD600907E24 /* musicos1.png in Resources */,
 				CA7A1CD0194772150012BB0F /* pont.png in Resources */,
 				CAC1B30A193E3AFD00A00D36 /* astr1runing3.png in Resources */,
+				CAC00C5A1948E0DB00907E24 /* developers.png in Resources */,
 				CAC1B30F193E3AFD00A00D36 /* astr1runing8.png in Resources */,
 				406EC6E0193FA133003A6BE6 /* exp3_7.png in Resources */,
 				403048091947934C00EAFD2E /* explosion2.png in Resources */,
@@ -682,6 +731,7 @@
 				40B0207B194638D400607094 /* GameOver.m in Sources */,
 				CA40268F193FA3B10018A0BF /* Inicio.m in Sources */,
 				C3712CBB194651B300B5407F /* Persistence.m in Sources */,
+				CAC00C531948DD7A00907E24 /* Credito.m in Sources */,
 				CA88915F19366836002E9EDE /* main.m in Sources */,
 				CA822E291941DC9600019043 /* RetangleView.m in Sources */,
 				CA7A1CD319477B940012BB0F /* Pontuacao.m in Sources */,

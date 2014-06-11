@@ -9,6 +9,7 @@
 #import "Inicio.h"
 #import "MyScene.h"
 #import <AVFoundation/AVFoundation.h>
+#import "Credito.h"
 
 @implementation Inicio
 static const float BG_POINTS_PER_SEC = 30;
@@ -30,6 +31,7 @@ static inline CGPoint CGPointAdd(const CGPoint a, const CGPoint b)
 CGPoint _velocity;
 SKSpriteNode *sp;
 SKSpriteNode *play;
+SKSpriteNode *credits;
 
 -(id)initWithSize:(CGSize)size{
     if(self = [super initWithSize:size]){
@@ -66,6 +68,21 @@ SKSpriteNode *play;
         
         [self apareceLetra:sp duracao:1];
         [self apareceLetra:play duracao:3];
+        
+        
+        credits = [SKSpriteNode spriteNodeWithImageNamed:@"credits"];
+        credits.anchorPoint = CGPointZero;
+        credits.position = CGPointMake(self.size.width/2.6, self.size.height/2.8);
+        credits.name = @"credits";
+        credits.alpha = 0;
+        [self addChild:credits];
+        [credits setScale:0.2];
+        
+        [self apareceLetra:sp duracao:1];
+        [self apareceLetra:play duracao:3];
+        [self apareceLetra:credits duracao:3];
+        
+        
         
     }
     return self;
@@ -152,7 +169,18 @@ SKSpriteNode *play;
         [_backgroundMusicPlayer stop];
     }
     
-    
+    else if ([node.name isEqualToString:@"credits"]){
+        
+        SKScene *creditos = [[Credito alloc] initWithSize:self.size];
+        
+        creditos.scaleMode = SKSceneScaleModeAspectFill;
+        
+        SKTransition *reveal = [SKTransition fadeWithDuration:3];
+        
+        [self.view presentScene:creditos transition:reveal];
+        [_backgroundMusicPlayer stop];
+                
+    }
     
     
     

@@ -121,7 +121,7 @@ return  self;
 -(void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
     SKScene * comecaJogo = [[MyScene alloc] initWithSize:self.size];
     comecaJogo.scaleMode = SKSceneScaleModeAspectFill;
-    SKTransition *reveal = [SKTransition fadeWithDuration:3];
+    SKTransition *reveal = [SKTransition fadeWithDuration:1];
     [self.view presentScene:comecaJogo transition:reveal];
 }
 

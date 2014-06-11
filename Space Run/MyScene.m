@@ -596,7 +596,7 @@ AVAudioPlayer *_somExplosao;
     if((arc4random()% 300 == 0)){
         [self spawnEnemy];
     }
-    else if( arc4random() %400 == 1){
+    else if( arc4random() %400 == 10){
         [self spawnMunicao];
         if(arc4random() % 100 == 0){
             [self spawnEnemy];
