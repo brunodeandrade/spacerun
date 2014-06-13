@@ -44,7 +44,7 @@ float pontuacao = 0;
 int contaTiros = 0;
 int quantidadeTiros = 15;
 Boolean pausado = NO;
-
+int hitsAsteroid;
 
 @implementation MyScene
 
@@ -275,6 +275,7 @@ static inline CGPoint CGPointAdd(const CGPoint a, const CGPoint b)
     for (SKSpriteNode * bala in balasTemp) {
         [self checkCollisions:@"bala1" andOther:enemy];
         [self checkCollisions:@"alien" andOther:bala];
+        [self checkCollisions:@"asteroid" andOther:bala];
     }
 }
 
@@ -694,6 +695,8 @@ AVAudioPlayer *_somExplosao;
     // se ocorrer a colisão, o obstaculo é removido, e ação de som da colisão.
     if (CGRectIntersectsRect(smallerFrame, outro.frame)) {
         
+        if ([objeto isEqualToString:@"alien"]) {
+            
         
         SKSpriteNode * bg = [SKSpriteNode spriteNodeWithImageNamed:[NSString stringWithFormat:@"mais200"]];
         bg.anchorPoint = CGPointZero;
@@ -706,15 +709,28 @@ AVAudioPlayer *_somExplosao;
         
         
     
-                                   
-    [enemy removeFromParent];
+            
+            [enemy removeFromParent];
+            [outro removeFromParent];
         
-    [outro removeFromParent];
+            pontuacao += 200;
+            [self explosao : outro];
+            [balas removeObject:outro];
+    }
+        else if ([objeto isEqualToString:@"asteroid"]){
+            if(hitsAsteroid >= 5){
+                [enemy removeFromParent];
+                [self explosao : outro];
+                [outro removeFromParent];
+                hitsAsteroid = 0;
+            }
+            else {
+                hitsAsteroid++;
+            }
+        }
         
-    pontuacao += 200;
-    [self explosao : outro];
-    [balas removeObject:outro];
-        
+            
+            
                                    
     }
     }];
