@@ -43,6 +43,7 @@ SKLabelNode * label3;
 float pontuacao = 0;
 int contaTiros = 0;
 int quantidadeTiros = 15;
+Boolean pausado = NO;
 
 
 @implementation MyScene
@@ -777,6 +778,7 @@ AVAudioPlayer *_somExplosao;
     if([node.name isEqualToString:@"pause"]){
         
         SKAction *aparece = [SKAction runBlock:^{ [self iniciar:1]; self.scene.view.paused = YES;
+            pausado = YES;
             
         }];
         
@@ -787,11 +789,13 @@ AVAudioPlayer *_somExplosao;
     else if ([node.name isEqualToString:@"play2"]){
         [self iniciar:2];
         
+        pausado = NO;
         self.scene.view.paused = NO;
         
     }
     if (![node.name isEqualToString:@"pause"] && ![node.name isEqualToString:@"play2"]) {
     
+    if (pausado == NO) {
     if(!pulando && touchLocation.x > self.size.width/2)
         [self moveAteh:ate];
     if(touchLocation.x < self.size.width/2){
@@ -801,6 +805,7 @@ AVAudioPlayer *_somExplosao;
         }
     }
     }
+}
 }
 
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
