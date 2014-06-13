@@ -165,8 +165,6 @@ static inline CGPoint CGPointAdd(const CGPoint a, const CGPoint b)
 
 - (void) morteAstronauta : (SKSpriteNode *) astronauta{
     
-    
-    
     SKSpriteNode * morte;
     
     // Chamada do sprit de colisão.
@@ -772,13 +770,10 @@ AVAudioPlayer *_somExplosao;
     SKNode * node = [self nodeAtPoint:touchLocation];
 
     
-    
-    
-    
     if([node.name isEqualToString:@"pause"]){
         
         SKAction *aparece = [SKAction runBlock:^{ [self iniciar:1]; self.scene.view.paused = YES;
-            pausado = YES;
+            pausado = YES; [_backgroundMusicPlayer1 stop];
             
         }];
         
@@ -789,6 +784,9 @@ AVAudioPlayer *_somExplosao;
     else if ([node.name isEqualToString:@"play2"]){
         [self iniciar:2];
         
+        
+        [_backgroundMusicPlayer1 play];
+        
         pausado = NO;
         self.scene.view.paused = NO;
         
@@ -796,12 +794,14 @@ AVAudioPlayer *_somExplosao;
     if (![node.name isEqualToString:@"pause"] && ![node.name isEqualToString:@"play2"]) {
     
     if (pausado == NO) {
+        
     if(!pulando && touchLocation.x > self.size.width/2)
         [self moveAteh:ate];
     if(touchLocation.x < self.size.width/2){
         if(quantidadeTiros > 0 ){
             [self atira];
             quantidadeTiros--;
+            
         }
     }
     }
