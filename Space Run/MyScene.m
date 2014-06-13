@@ -164,6 +164,33 @@ static inline CGPoint CGPointAdd(const CGPoint a, const CGPoint b)
     [explosao runAction: [SKAction sequence:@[_explosaoAnimation,tiraVestigio]]];
 }
 
+- (void) explosaoMeteoro : (SKSpriteNode *)ball{
+    
+    SKSpriteNode * explosao;
+    
+    
+    // Chamada do sprit de colisão.
+    explosao = [SKSpriteNode spriteNodeWithImageNamed:@"expl0"];
+    explosao.position = CGPointMake(ball.position.x, ball.position.y);
+    [self addChild:explosao];
+    
+    // Declaracao e instanciacao do array de sprits (animacao)
+    NSMutableArray *textures = [NSMutableArray arrayWithCapacity:28];
+    // 2
+    for (int i = 0; i < 28; i++) {
+        NSString *textureName = [NSString stringWithFormat:@"expl%d", i];
+        SKTexture *texture = [SKTexture textureWithImageNamed:textureName];
+        [textures addObject:texture];
+    }
+    // 4
+    _explosaoAnimation = [SKAction animateWithTextures:textures timePerFrame:0.02];
+    [self playExplosao:@"explosao.wav" volume:0.7];
+    SKAction *tiraVestigio = [SKAction runBlock:^{
+        [explosao removeFromParent];
+    }];
+    [explosao runAction: [SKAction sequence:@[_explosaoAnimation,tiraVestigio]]];
+}
+
 - (void) morteAstronauta : (SKSpriteNode *) astronauta{
     
     SKSpriteNode * morte;
@@ -348,19 +375,6 @@ AVAudioPlayer *_somExplosao;
     }];
     
 }
-
-//Adiciona obstaculos ao jogo
-//-(void)addObstaculo{
-//    SKSpriteNode * ball =
-//    [SKSpriteNode spriteNodeWithImageNamed:@"meteoro"];
-//    ball.anchorPoint = CGPointZero;
-//    [ball setScale:0.2];
-//    ball.name = @"meteoro";
-//    ball.position = CGPointMake(ball.size.width+(arc4random() % 600)+70, 102);
-//    [self addChild:ball];
-//}
-
-
 
 - (void)spawnMunicao {
     municao = [SKSpriteNode spriteNodeWithImageNamed:@"tiro3"];
@@ -708,9 +722,6 @@ AVAudioPlayer *_somExplosao;
         SKAction *acao = [SKAction fadeOutWithDuration:1];
         [bg runAction:acao];
         
-        
-    
-            
             [enemy removeFromParent];
             [outro removeFromParent];
         
@@ -723,7 +734,7 @@ AVAudioPlayer *_somExplosao;
             if(hitsAsteroid >= 3){
                 [enemy removeFromParent];
                 NSLog(@"Explodiu o asteroid");
-                [self explosao : outro];
+                [self explosaoMeteoro : outro];
                 [outro removeFromParent];
                 [balas removeObject:outro];
                 hitsAsteroid = 0;
