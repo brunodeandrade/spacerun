@@ -595,45 +595,9 @@ AVAudioPlayer *_somExplosao;
     }
     _lastUpdateTime = currentTime;
     
-    //Defini velocidade do ground
-    verificador ++;
-    if(verificador >= x ){
-        
-        if (_velocidade<350) {
-            _velocidade = _velocidade+15;
-            
-            if(x>80 && x<160){
-                _velocidadeMeteoro = _velocidadeMeteoro - 0.20;
-                
-            }else if(_velocidade<250){
-                _velocidadeMeteoro = _velocidadeMeteoro - 0.08;
-            }else{
-                _velocidadeMeteoro = _velocidadeMeteoro - 0.01;
-            }
-            [self spawnAlien];
-            
-        }else{
-            [self spawnAlien];
-            
-        }
-        
-        x = x+80;
-    }
-
-    if(arc4random() % 100 == 13){
-        [self spawnAlien];
-    }
+    [self incrementaVelocidade];
+    [self addObstaculo];
     
-    if((arc4random()% 300 == 0)){
-        [self spawnEnemy];
-    }
-    else if( arc4random() %400 == 10){
-        [self spawnMunicao];
-        if(arc4random() % 100 == 0){
-            [self spawnEnemy];
-        }
-        
-    }
     
     [self pulaAstronauta:astr velocity:_velocity];
     [self caiAstronauta];
@@ -652,21 +616,71 @@ AVAudioPlayer *_somExplosao;
     static float cont = 1;
     
     
-    if((int)cont % 2 != 0){
-        float posicao = 260 + arc4random() % 3;
+    if((int)cont % 2 == 0){
+        float posicao = 250 + arc4random() % 10;
         cont = cont + 1;
         return posicao;
         
     }else{
-        float posicao = 291 + arc4random() % (int)(self.size.height-289);
+        float posicao = 270 + arc4random() % (int)(self.size.height-260);
         cont = cont + 1;
         return posicao;
-        
     }
     
 }
-       
+
+-(void)addObstaculo{
     
+    static int x = 1;
+    
+    if(x % 2 == 0){
+        if(arc4random() % (_velocidade > 300 ? 40 : 50) == 2){
+            [self spawnAlien];
+        }
+    }else{
+        if(arc4random() % (_velocidade > 300 ? 80 : 100) == 2){
+            [self spawnEnemy];
+        }else{
+            if (arc4random() % 300 == 2){
+                [self spawnMunicao];
+            }
+        }
+    }
+    
+    if(quantidadeTiros == 0 ){
+        if(arc4random() % 250 == 2){
+            [self spawnMunicao];
+        }
+    }
+    
+    
+    NSLog(@"Velocidade %d",_velocidade);
+    x++;
+}
+
+-(void)incrementaVelocidade{
+    
+    verificador ++;
+    static int x = 0;
+    if(verificador >= x ){
+        
+        if (_velocidade<350) {
+            _velocidade = _velocidade+15;
+            
+            if(x>80 && x<160){
+                _velocidadeMeteoro = _velocidadeMeteoro - 0.20;
+                
+            }else if(_velocidade<250){
+                _velocidadeMeteoro = _velocidadeMeteoro - 0.08;
+            }else{
+                _velocidadeMeteoro = _velocidadeMeteoro - 0.01;
+            }
+        }
+        
+        x = x+80;
+    }
+    
+}
 
 - (void)checkCollisions:(NSString *)objeto andOther : (SKSpriteNode *) outro {
     
