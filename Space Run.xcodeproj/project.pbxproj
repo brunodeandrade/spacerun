@@ -91,6 +91,7 @@
 		CAA559BD193D05800097B42B /* ground7.png in Resources */ = {isa = PBXBuildFile; fileRef = CAA559B3193D05800097B42B /* ground7.png */; };
 		CAA559BE193D05800097B42B /* ground8.png in Resources */ = {isa = PBXBuildFile; fileRef = CAA559B4193D05800097B42B /* ground8.png */; };
 		CAA559BF193D05800097B42B /* ground9.png in Resources */ = {isa = PBXBuildFile; fileRef = CAA559B5193D05800097B42B /* ground9.png */; };
+		CAB51090194B7F7400F33A63 /* mais200.png in Resources */ = {isa = PBXBuildFile; fileRef = CAB5108F194B7F7400F33A63 /* mais200.png */; };
 		CAB64696194636FD006F8A0E /* pegouBala.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CAB64695194636FD006F8A0E /* pegouBala.mp3 */; };
 		CAC00C531948DD7A00907E24 /* Credito.m in Sources */ = {isa = PBXBuildFile; fileRef = CAC00C521948DD7A00907E24 /* Credito.m */; };
 		CAC00C591948E0DB00907E24 /* bruno.png in Resources */ = {isa = PBXBuildFile; fileRef = CAC00C551948E0DB00907E24 /* bruno.png */; };
@@ -223,6 +224,7 @@
 		CAA559B3193D05800097B42B /* ground7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ground7.png; sourceTree = "<group>"; };
 		CAA559B4193D05800097B42B /* ground8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ground8.png; sourceTree = "<group>"; };
 		CAA559B5193D05800097B42B /* ground9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ground9.png; sourceTree = "<group>"; };
+		CAB5108F194B7F7400F33A63 /* mais200.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mais200.png; sourceTree = "<group>"; };
 		CAB64695194636FD006F8A0E /* pegouBala.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = pegouBala.mp3; sourceTree = "<group>"; };
 		CAC00C511948DD7A00907E24 /* Credito.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Credito.h; sourceTree = "<group>"; };
 		CAC00C521948DD7A00907E24 /* Credito.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Credito.m; sourceTree = "<group>"; };
@@ -347,6 +349,7 @@
 		C39949261937CAC40018B484 /* Fundos */ = {
 			isa = PBXGroup;
 			children = (
+				CAB5108F194B7F7400F33A63 /* mais200.png */,
 				C32307D619463BEF005A3CC7 /* background0.png */,
 				C32307D719463BEF005A3CC7 /* background1.png */,
 				C32307D819463BEF005A3CC7 /* background2.png */,
@@ -710,6 +713,7 @@
 				CA6DA6EC1940E58700424737 /* play.png in Resources */,
 				406EC6DA193FA133003A6BE6 /* exp3_15.png in Resources */,
 				406EC6D2193FA133003A6BE6 /* asteroid.png in Resources */,
+				CAB51090194B7F7400F33A63 /* mais200.png in Resources */,
 				CA6DA6E31940D4B700424737 /* espaco_back.png in Resources */,
 				CAA559B6193D05800097B42B /* ground0.png in Resources */,
 				CA88915D19366836002E9EDE /* InfoPlist.strings in Resources */,

@@ -694,13 +694,25 @@ AVAudioPlayer *_somExplosao;
         
     // se ocorrer a colisão, o obstaculo é removido, e ação de som da colisão.
     if (CGRectIntersectsRect(smallerFrame, outro.frame)) {
-                                   
+        
+        
+        SKSpriteNode * bg = [SKSpriteNode spriteNodeWithImageNamed:[NSString stringWithFormat:@"mais200"]];
+        bg.anchorPoint = CGPointZero;
+        bg.position = CGPointMake(enemy.position.x-15, enemy.position.y+5);
+        bg.name = @"bg";
+        [bg setScale:0.4];
+        [self addChild:bg];
+        SKAction *acao = [SKAction fadeOutWithDuration:1];
+        [bg runAction:acao];
+        
+        
+    
                                    
     [enemy removeFromParent];
         
     [outro removeFromParent];
         
-    pontuacao += 100;
+    pontuacao += 200;
     [self explosao : outro];
     [balas removeObject:outro];
         
@@ -719,7 +731,8 @@ AVAudioPlayer *_somExplosao;
                                
                                // se ocorrer a colisão, o obstaculo é removido, e ação de som da colisão.
     if (CGRectIntersectsRect(smallerFrame, outro.frame)) {
-                                   
+        
+        
         [self playMunicao:@"pegouBala.mp3" volume:1];
         [enemy removeFromParent];
         
