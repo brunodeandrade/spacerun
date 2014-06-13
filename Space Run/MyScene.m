@@ -44,7 +44,7 @@ float pontuacao = 0;
 int contaTiros = 0;
 int quantidadeTiros = 15;
 Boolean pausado = NO;
-int hitsAsteroid;
+int hitsAsteroid = 0;
 
 @implementation MyScene
 
@@ -72,6 +72,7 @@ static inline CGPoint CGPointAdd(const CGPoint a, const CGPoint b)
         _velocidade = 80;
         morreu = 0;
         _dtMeteoro = 0;
+        hitsAsteroid = 0;
         
         [self playBackgroundMusic:@"somFase1.mp3" volume:0.8];
         
@@ -273,7 +274,7 @@ static inline CGPoint CGPointAdd(const CGPoint a, const CGPoint b)
     [self checkCollisionsMunicao:@"municao" andOther:astr];
     NSMutableArray *balasTemp = [[NSMutableArray alloc] initWithArray:balas];
     for (SKSpriteNode * bala in balasTemp) {
-        [self checkCollisions:@"bala1" andOther:enemy];
+        //[self checkCollisions:@"bala1" andOther:enemy];
         [self checkCollisions:@"alien" andOther:bala];
         [self checkCollisions:@"asteroid" andOther:bala];
     }
@@ -657,7 +658,7 @@ AVAudioPlayer *_somExplosao;
         }
     }
     
-    NSLog(@"Velocidade %d",_velocidade);
+   // NSLog(@"Velocidade %d",_velocidade);
     x++;
 }
 
@@ -716,23 +717,29 @@ AVAudioPlayer *_somExplosao;
             pontuacao += 200;
             [self explosao : outro];
             [balas removeObject:outro];
-    }
+            hitsAsteroid = 0;
+        }
         else if ([objeto isEqualToString:@"asteroid"]){
-            if(hitsAsteroid >= 5){
+            if(hitsAsteroid >= 3){
                 [enemy removeFromParent];
+                NSLog(@"Explodiu o asteroid");
                 [self explosao : outro];
                 [outro removeFromParent];
+                [balas removeObject:outro];
                 hitsAsteroid = 0;
             }
             else {
+                [outro removeFromParent];
+                [balas removeObject:outro];
                 hitsAsteroid++;
+                NSLog(@"Somou asteroid");
             }
         }
         
             
             
                                    
-    }
+        }
     }];
 }
 
