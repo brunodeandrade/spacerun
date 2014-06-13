@@ -25,8 +25,8 @@
     // Configure the view.
     SKView * skView = (SKView *)self.view;
     
-    skView.showsFPS = YES;
-    skView.showsNodeCount = YES;
+    skView.showsFPS = NO;
+    skView.showsNodeCount = NO;
     
     // Create and configure the scene.
     SKScene * scene = [Inicio sceneWithSize:skView.bounds.size];
@@ -35,8 +35,8 @@
     
     if(!skView.scene){
         NSLog(@"Sai do Inicio");
-        skView.showsFPS = YES;
-        skView.showsNodeCount = YES;
+        skView.showsFPS = NO;
+        skView.showsNodeCount = NO;
         
         //Criar e configurar cena
         //SKScene *scene = [Inicio sceneWithSize:skView.bounds.size];
