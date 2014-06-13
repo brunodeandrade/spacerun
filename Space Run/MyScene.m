@@ -250,6 +250,14 @@ static inline CGPoint CGPointAdd(const CGPoint a, const CGPoint b)
     label3.verticalAlignmentMode = SKLabelHorizontalAlignmentModeCenter;
     label3.horizontalAlignmentMode = SKLabelHorizontalAlignmentModeLeft;
     [self addChild:label3];
+    
+    
+    _pause = [SKSpriteNode spriteNodeWithImageNamed:@"pause"];
+    _pause.anchorPoint = CGPointZero;
+    _pause.position = CGPointMake(self.size.width/1.2, self.size.height/1.65);
+    _pause.name = @"pause";
+    [self addChild:_pause];
+    
 
 
 
@@ -545,6 +553,29 @@ AVAudioPlayer *_somExplosao;
     
 }
 
+- (void) iniciar : (int) pause {
+    
+    
+    
+    if (pause == 1) {
+        NSLog (@"ENTROU NA PORRA DO INICIAR");
+        
+        _play = [SKSpriteNode spriteNodeWithImageNamed:@"play2"];
+        _play.anchorPoint = CGPointZero;
+        _play.position = CGPointMake(self.size.width/2.8, self.size.height/2.6);
+        _play.name = @"play2";
+        [self addChild:_play];
+        
+    }
+    
+    else {
+        NSLog(@"REMOVEU A PORRA DO INICIAR");
+        [_play removeFromParent];
+    }
+    
+}
+
+
 //Metodo responsavel por executar mudanças a cada frame passado
 -(void)update:(NSTimeInterval)currentTime{
     
@@ -707,7 +738,45 @@ AVAudioPlayer *_somExplosao;
     UITouch *touch = [touches anyObject];
     CGPoint ate = CGPointMake(astr.position.x, astr.position.y+1);
     CGPoint touchLocation = [touch locationInNode:self];
-    //pulou = 1;
+    SKNode * node = [self nodeAtPoint:touchLocation];
+
+    
+    
+    
+    
+    if([node.name isEqualToString:@"pause"]){
+        
+        SKAction *aparece = [SKAction runBlock:^{ [self iniciar:1]; self.scene.view.paused = YES;
+            
+        }];
+        
+        
+        
+        [_pause runAction:aparece];
+        
+        
+        
+    }
+    
+    
+    
+    else if ([node.name isEqualToString:@"play2"]){
+        
+        
+        [self iniciar:2];
+        
+        self.scene.view.paused = NO;
+        
+    }
+    
+    
+    
+    
+    
+    if (![node.name isEqualToString:@"pause"] && ![node.name isEqualToString:@"play2"]) {
+    
+
+    
     if(!pulando && touchLocation.x > self.size.width/2)
         [self moveAteh:ate];
     if(touchLocation.x < self.size.width/2){
@@ -715,6 +784,7 @@ AVAudioPlayer *_somExplosao;
             [self atira];
             quantidadeTiros--;
         }
+    }
     }
 }
 

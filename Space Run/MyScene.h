@@ -17,5 +17,7 @@
 @property SKAction * explosaoAnimation;
 @property SKAction * morteAnimation;
 @property SKSpriteNode *alien;
+@property SKSpriteNode *play;
+@property SKSpriteNode *pause;
 
 @end
