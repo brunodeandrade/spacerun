@@ -12,6 +12,7 @@
 
 @property NSTimeInterval lastUpdateTime;
 @property NSTimeInterval  dt;
+@property NSTimeInterval  dtMeteoro;
 @property CGPoint velocity;
 @property int velocidade;
 @property SKAction * explosaoAnimation;

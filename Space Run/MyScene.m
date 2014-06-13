@@ -70,6 +70,7 @@ static inline CGPoint CGPointAdd(const CGPoint a, const CGPoint b)
         quantidadeTiros = 15;
         _velocidade = 80;
         morreu = 0;
+        _dtMeteoro = 0;
         
         [self playBackgroundMusic:@"somFase1.mp3" volume:0.8];
         
@@ -258,9 +259,6 @@ static inline CGPoint CGPointAdd(const CGPoint a, const CGPoint b)
     _pause.name = @"pause";
     [self addChild:_pause];
     
-
-
-
 }
 
 
@@ -280,8 +278,6 @@ static inline CGPoint CGPointAdd(const CGPoint a, const CGPoint b)
         [self checkCollisions:@"alien" andOther:bala];
     }
 }
-
-
 
 - (void)playBackgroundMusic:(NSString *)filename volume: (float) vol
 {
@@ -382,13 +378,16 @@ AVAudioPlayer *_somExplosao;
 
 // Adiciona inimigos e obstaculos
 - (void)spawnEnemy {
+    
+    static int x = 1;
+    
     enemy = [SKSpriteNode spriteNodeWithImageNamed:@"asteroid"];
     enemy.name = @"asteroid";
     [enemy setScale:0.3];
-    enemy.position = CGPointMake(enemy.size.width + 300, [self decidePosicao]);
+    enemy.position = CGPointMake(self.size.width + (x%2== 0 ? 200 : 0 ) , [self decidePosicao]);
     [self addChild:enemy];
-    
-    SKAction *actionMove = [SKAction moveToX:-enemy.size.width/1 duration:_velocidadeMeteoro-(1.5)];
+    x++;
+    SKAction *actionMove = [SKAction moveToX:-enemy.size.width/1 duration:_velocidadeMeteoro-(x%2== 0 ? 1.5 : 0.5 )];
     SKAction *actionRemove = [SKAction removeFromParent];
     [enemy runAction:
      [SKAction sequence:@[actionMove, actionRemove]]];
@@ -399,7 +398,7 @@ AVAudioPlayer *_somExplosao;
     _alien = [SKSpriteNode spriteNodeWithImageNamed:[NSString stringWithFormat:@"alien%d",arc4random()%2]];
     _alien.name = @"alien";
     [_alien setScale:0.6];
-    _alien.position = CGPointMake(enemy.size.width + 400,[self decidePosicao]); //ScalarRandomRange(enemy.size.height/5,
+    _alien.position = CGPointMake(self.size.width,[self decidePosicao]); //ScalarRandomRange(enemy.size.height/5,
                                                            //                self.size.height-enemy.size.height/4));
     [self addChild:_alien];
     
@@ -617,17 +616,19 @@ AVAudioPlayer *_somExplosao;
     
     
     if((int)cont % 2 == 0){
-        float posicao = 250 + arc4random() % 10;
+        float posicao = 250 + arc4random() % 5;
         cont = cont + 1;
         return posicao;
         
     }else{
-        float posicao = 270 + arc4random() % (int)(self.size.height-260);
+        float posicao = 270 + arc4random() % (int)(self.size.height-270);
         cont = cont + 1;
         return posicao;
     }
     
 }
+
+
 
 -(void)addObstaculo{
     
@@ -638,21 +639,23 @@ AVAudioPlayer *_somExplosao;
             [self spawnAlien];
         }
     }else{
-        if(arc4random() % (_velocidade > 300 ? 80 : 100) == 2){
+        if(arc4random() % (_velocidade > 300 ? 80 : 90) == 2){
+            
             [self spawnEnemy];
-        }else{
-            if (arc4random() % 300 == 2){
-                [self spawnMunicao];
-            }
         }
     }
     
     if(quantidadeTiros == 0 ){
         if(arc4random() % 250 == 2){
-            [self spawnMunicao];
+            
+            if(_dtMeteoro == 0){
+                [self spawnMunicao];
+                
+            }else{
+                
+            }
         }
     }
-    
     
     NSLog(@"Velocidade %d",_velocidade);
     x++;
@@ -764,32 +767,17 @@ AVAudioPlayer *_somExplosao;
             
         }];
         
-        
-        
         [_pause runAction:aparece];
-        
-        
-        
+    
     }
     
-    
-    
     else if ([node.name isEqualToString:@"play2"]){
-        
-        
         [self iniciar:2];
         
         self.scene.view.paused = NO;
         
     }
-    
-    
-    
-    
-    
     if (![node.name isEqualToString:@"pause"] && ![node.name isEqualToString:@"play2"]) {
-    
-
     
     if(!pulando && touchLocation.x > self.size.width/2)
         [self moveAteh:ate];
