@@ -572,7 +572,6 @@ AVAudioPlayer *_somExplosao;
     
     
     if (pause == 1) {
-        NSLog (@"ENTROU NA PORRA DO INICIAR");
         
         _play = [SKSpriteNode spriteNodeWithImageNamed:@"play2"];
         _play.anchorPoint = CGPointZero;
@@ -583,7 +582,6 @@ AVAudioPlayer *_somExplosao;
     }
     
     else {
-        NSLog(@"REMOVEU A PORRA DO INICIAR");
         [_play removeFromParent];
     }
     
@@ -672,7 +670,6 @@ AVAudioPlayer *_somExplosao;
         }
     }
     
-   // NSLog(@"Velocidade %d",_velocidade);
     x++;
 }
 
@@ -746,10 +743,6 @@ AVAudioPlayer *_somExplosao;
                 NSLog(@"Somou asteroid");
             }
         }
-        
-            
-            
-                                   
         }
     }];
 }
@@ -785,7 +778,6 @@ AVAudioPlayer *_somExplosao;
     SKSpriteNode *enemy = (SKSpriteNode *)node;
     CGRect smallerFrame = CGRectInset(enemy.frame, 0, 0);
                                
-    // se ocorrer a colisão, o obstaculo é removido, e ação de som da colisão.
   if (CGRectIntersectsRect(smallerFrame, outro.frame)) {
       morreu = 1;
       [self morteAstronauta:outro];
@@ -843,15 +835,11 @@ AVAudioPlayer *_somExplosao;
 }
 
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
-    //UITouch *touch = [touches anyObject];
-    
-    //[self moveZombieToward:touchLocation];
+
 }
 
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
-    //UITouch *touch = [touches anyObject];
-    //CGPoint touchLocation = [touch locationInNode:self];
-    //[self moveZombieToward:touchLocation];
+
 }
 
 

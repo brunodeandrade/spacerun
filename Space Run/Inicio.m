@@ -10,6 +10,7 @@
 #import "MyScene.h"
 #import <AVFoundation/AVFoundation.h>
 #import "Credito.h"
+#import "Tutorial.h"
 
 @implementation Inicio
 static const float BG_POINTS_PER_SEC = 30;
@@ -32,6 +33,7 @@ CGPoint _velocity;
 SKSpriteNode *sp;
 SKSpriteNode *play;
 SKSpriteNode *credits;
+SKSpriteNode *tutorial;
 
 -(id)initWithSize:(CGSize)size{
     if(self = [super initWithSize:size]){
@@ -83,6 +85,18 @@ SKSpriteNode *credits;
         [self apareceLetra:credits duracao:3];
         
         
+        tutorial = [SKSpriteNode spriteNodeWithImageNamed:@"tutorial1"];
+        tutorial.anchorPoint = CGPointZero;
+        tutorial.position = CGPointMake(self.size.width/1.6, self.size.height/1.6);
+        tutorial.name = @"tutorial";
+        tutorial.alpha = 0;
+        [self addChild:tutorial];
+        [tutorial setScale:0.2];
+        
+        [self apareceLetra:sp duracao:1];
+        [self apareceLetra:play duracao:3];
+        [self apareceLetra:credits duracao:3];
+        [self apareceLetra:tutorial duracao:3];
         
     }
     return self;
@@ -180,6 +194,17 @@ SKSpriteNode *credits;
         [self.view presentScene:creditos transition:reveal];
         [_backgroundMusicPlayer stop];
                 
+    }else if ([node.name isEqualToString:@"tutorial"]){
+        
+        SKScene *tutorial = [[Tutorial alloc] initWithSize:self.size];
+        
+        tutorial.scaleMode = SKSceneScaleModeAspectFill;
+        
+        SKTransition *reveal = [SKTransition fadeWithDuration:3];
+        
+        [self.view presentScene:tutorial transition:reveal];
+        [_backgroundMusicPlayer stop];
+        
     }
     
     

@@ -45,6 +45,9 @@
 		C32307E619463BEF005A3CC7 /* background7.png in Resources */ = {isa = PBXBuildFile; fileRef = C32307DD19463BEF005A3CC7 /* background7.png */; };
 		C32307E719463BEF005A3CC7 /* background8.png in Resources */ = {isa = PBXBuildFile; fileRef = C32307DE19463BEF005A3CC7 /* background8.png */; };
 		C3712CBB194651B300B5407F /* Persistence.m in Sources */ = {isa = PBXBuildFile; fileRef = C3712CBA194651B300B5407F /* Persistence.m */; };
+		C3970896194F7676001D8115 /* tutorial1.png in Resources */ = {isa = PBXBuildFile; fileRef = C3970895194F7676001D8115 /* tutorial1.png */; };
+		C397089B194F7CC5001D8115 /* imgTutorial.png in Resources */ = {isa = PBXBuildFile; fileRef = C397089A194F7CC5001D8115 /* imgTutorial.png */; };
+		C397089E194F7D2E001D8115 /* Tutorial.m in Sources */ = {isa = PBXBuildFile; fileRef = C397089D194F7D2E001D8115 /* Tutorial.m */; };
 		C3972192194B9BB3008682A3 /* expl12.png in Resources */ = {isa = PBXBuildFile; fileRef = C3972175194B9BB3008682A3 /* expl12.png */; };
 		C3972193194B9BB3008682A3 /* expl13.png in Resources */ = {isa = PBXBuildFile; fileRef = C3972176194B9BB3008682A3 /* expl13.png */; };
 		C3972194194B9BB3008682A3 /* expl0.png in Resources */ = {isa = PBXBuildFile; fileRef = C3972177194B9BB3008682A3 /* expl0.png */; };
@@ -101,7 +104,6 @@
 		CA88916619366836002E9EDE /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA88916419366836002E9EDE /* Main_iPhone.storyboard */; };
 		CA88916919366836002E9EDE /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA88916719366836002E9EDE /* Main_iPad.storyboard */; };
 		CA88916F19366836002E9EDE /* MyScene.m in Sources */ = {isa = PBXBuildFile; fileRef = CA88916E19366836002E9EDE /* MyScene.m */; };
-		CA88917119366836002E9EDE /* Spaceship.png in Resources */ = {isa = PBXBuildFile; fileRef = CA88917019366836002E9EDE /* Spaceship.png */; };
 		CA88917319366836002E9EDE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CA88917219366836002E9EDE /* Images.xcassets */; };
 		CA88917A19366836002E9EDE /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA88917919366836002E9EDE /* XCTest.framework */; };
 		CA88917B19366836002E9EDE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA88915019366836002E9EDE /* Foundation.framework */; };
@@ -197,6 +199,10 @@
 		C32307DE19463BEF005A3CC7 /* background8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background8.png; sourceTree = "<group>"; };
 		C3712CB9194651B300B5407F /* Persistence.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Persistence.h; sourceTree = "<group>"; };
 		C3712CBA194651B300B5407F /* Persistence.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Persistence.m; sourceTree = "<group>"; };
+		C3970895194F7676001D8115 /* tutorial1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tutorial1.png; sourceTree = "<group>"; };
+		C397089A194F7CC5001D8115 /* imgTutorial.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = imgTutorial.png; sourceTree = "<group>"; };
+		C397089C194F7D2E001D8115 /* Tutorial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tutorial.h; sourceTree = "<group>"; };
+		C397089D194F7D2E001D8115 /* Tutorial.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tutorial.m; sourceTree = "<group>"; };
 		C3972175194B9BB3008682A3 /* expl12.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = expl12.png; sourceTree = "<group>"; };
 		C3972176194B9BB3008682A3 /* expl13.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = expl13.png; sourceTree = "<group>"; };
 		C3972177194B9BB3008682A3 /* expl0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = expl0.png; sourceTree = "<group>"; };
@@ -263,7 +269,6 @@
 		CA88916A19366836002E9EDE /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		CA88916D19366836002E9EDE /* MyScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyScene.h; sourceTree = "<group>"; };
 		CA88916E19366836002E9EDE /* MyScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyScene.m; sourceTree = "<group>"; };
-		CA88917019366836002E9EDE /* Spaceship.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Spaceship.png; sourceTree = "<group>"; };
 		CA88917219366836002E9EDE /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		CA88917819366836002E9EDE /* Space RunTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Space RunTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA88917919366836002E9EDE /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -393,6 +398,15 @@
 			name = Persistence;
 			sourceTree = "<group>";
 		};
+		C3970892194F72F8001D8115 /* Tutorial */ = {
+			isa = PBXGroup;
+			children = (
+				C397089A194F7CC5001D8115 /* imgTutorial.png */,
+				C3970895194F7676001D8115 /* tutorial1.png */,
+			);
+			name = Tutorial;
+			sourceTree = "<group>";
+		};
 		C3972174194B9BB3008682A3 /* ExplosaoMeteoro */ = {
 			isa = PBXGroup;
 			children = (
@@ -432,6 +446,7 @@
 		C39949251937CABD0018B484 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				C3970892194F72F8001D8115 /* Tutorial */,
 				C3972174194B9BB3008682A3 /* ExplosaoMeteoro */,
 				CAC00C541948E0C900907E24 /* Creditos */,
 				40B0207C19463F7C00607094 /* Game Over */,
@@ -555,13 +570,14 @@
 				40B0207A194638D400607094 /* GameOver.m */,
 				CA40268D193FA3B10018A0BF /* Inicio.m */,
 				CA402691193FA3E10018A0BF /* Inicio.h */,
-				CA88917019366836002E9EDE /* Spaceship.png */,
 				CA88917219366836002E9EDE /* Images.xcassets */,
 				CA88915919366836002E9EDE /* Supporting Files */,
 				CA822E2C1941ED0500019043 /* Setup.h */,
 				CA822E2D1941ED0500019043 /* Setup.m */,
 				CAC00C511948DD7A00907E24 /* Credito.h */,
 				CAC00C521948DD7A00907E24 /* Credito.m */,
+				C397089C194F7D2E001D8115 /* Tutorial.h */,
+				C397089D194F7D2E001D8115 /* Tutorial.m */,
 			);
 			path = "Space Run";
 			sourceTree = "<group>";
@@ -741,7 +757,6 @@
 				CA6DA6E41940D4B700424737 /* Space.png in Resources */,
 				CAC1B308193E3AFD00A00D36 /* astr1runing1.png in Resources */,
 				403DA922194B6A8F004B7454 /* pause.png in Resources */,
-				CA88917119366836002E9EDE /* Spaceship.png in Resources */,
 				C39721AE194B9BB3008682A3 /* expl9.png in Resources */,
 				CA91EE23193912EA0060774C /* background.png in Resources */,
 				CAA559BC193D05800097B42B /* ground6.png in Resources */,
@@ -767,6 +782,7 @@
 				C39721A7194B9BB3008682A3 /* expl28.png in Resources */,
 				406EC6D9193FA133003A6BE6 /* exp3_14.png in Resources */,
 				CAA559BE193D05800097B42B /* ground8.png in Resources */,
+				C3970896194F7676001D8115 /* tutorial1.png in Resources */,
 				CAC00C5E1948E35900907E24 /* credits.png in Resources */,
 				CAA559BF193D05800097B42B /* ground9.png in Resources */,
 				406EC6E4193FA133003A6BE6 /* alien0.png in Resources */,
@@ -823,6 +839,7 @@
 				CAC00C5B1948E0DB00907E24 /* henrique.png in Resources */,
 				CAC00C651948EDD600907E24 /* musicos1.png in Resources */,
 				CA7A1CD0194772150012BB0F /* pont.png in Resources */,
+				C397089B194F7CC5001D8115 /* imgTutorial.png in Resources */,
 				403DA923194B6A8F004B7454 /* play2.png in Resources */,
 				CAC1B30A193E3AFD00A00D36 /* astr1runing3.png in Resources */,
 				C3972194194B9BB3008682A3 /* expl0.png in Resources */,
@@ -866,6 +883,7 @@
 				CA88916319366836002E9EDE /* AppDelegate.m in Sources */,
 				40B0207B194638D400607094 /* GameOver.m in Sources */,
 				CA40268F193FA3B10018A0BF /* Inicio.m in Sources */,
+				C397089E194F7D2E001D8115 /* Tutorial.m in Sources */,
 				C3712CBB194651B300B5407F /* Persistence.m in Sources */,
 				CAC00C531948DD7A00907E24 /* Credito.m in Sources */,
 				CA88915F19366836002E9EDE /* main.m in Sources */,
