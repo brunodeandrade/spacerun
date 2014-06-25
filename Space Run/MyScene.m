@@ -661,12 +661,12 @@ AVAudioPlayer *_somExplosao;
     if(quantidadeTiros == 0 ){
         if(arc4random() % 250 == 2){
             
-            if(_dtMeteoro == 0){
+            //if(_dtMeteoro == 0){
                 [self spawnMunicao];
                 
-            }else{
+            //}else{
                 
-            }
+           // }
         }
     }
     
@@ -728,7 +728,7 @@ AVAudioPlayer *_somExplosao;
             hitsAsteroid = 0;
         }
         else if ([objeto isEqualToString:@"asteroid"]){
-            if(hitsAsteroid >= 3){
+            if(hitsAsteroid >= 2){
                 [enemy removeFromParent];
                 NSLog(@"Explodiu o asteroid");
                 [self explosaoMeteoro : outro];
