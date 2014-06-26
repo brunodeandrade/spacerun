@@ -10,6 +10,8 @@
 		403048071947934C00EAFD2E /* explosion0.png in Resources */ = {isa = PBXBuildFile; fileRef = 403048041947934C00EAFD2E /* explosion0.png */; };
 		403048081947934C00EAFD2E /* explosion1.png in Resources */ = {isa = PBXBuildFile; fileRef = 403048051947934C00EAFD2E /* explosion1.png */; };
 		403048091947934C00EAFD2E /* explosion2.png in Resources */ = {isa = PBXBuildFile; fileRef = 403048061947934C00EAFD2E /* explosion2.png */; };
+		403616A4195C8DCE00A721FA /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 403616A3195C8DCE00A721FA /* FacebookSDK.framework */; };
+		403616A6195C8DF000A721FA /* facebook.png in Resources */ = {isa = PBXBuildFile; fileRef = 403616A5195C8DF000A721FA /* facebook.png */; };
 		403DA922194B6A8F004B7454 /* pause.png in Resources */ = {isa = PBXBuildFile; fileRef = 403DA920194B6A8F004B7454 /* pause.png */; };
 		403DA923194B6A8F004B7454 /* play2.png in Resources */ = {isa = PBXBuildFile; fileRef = 403DA921194B6A8F004B7454 /* play2.png */; };
 		406EC6D2193FA133003A6BE6 /* asteroid.png in Resources */ = {isa = PBXBuildFile; fileRef = 406EC6BB193FA133003A6BE6 /* asteroid.png */; };
@@ -162,6 +164,8 @@
 		403048041947934C00EAFD2E /* explosion0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = explosion0.png; sourceTree = "<group>"; };
 		403048051947934C00EAFD2E /* explosion1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = explosion1.png; sourceTree = "<group>"; };
 		403048061947934C00EAFD2E /* explosion2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = explosion2.png; sourceTree = "<group>"; };
+		403616A3195C8DCE00A721FA /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
+		403616A5195C8DF000A721FA /* facebook.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = facebook.png; sourceTree = "<group>"; };
 		403DA920194B6A8F004B7454 /* pause.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pause.png; sourceTree = "<group>"; };
 		403DA921194B6A8F004B7454 /* play2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = play2.png; sourceTree = "<group>"; };
 		406EC6BB193FA133003A6BE6 /* asteroid.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = asteroid.png; sourceTree = "<group>"; };
@@ -320,6 +324,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CA88915319366836002E9EDE /* CoreGraphics.framework in Frameworks */,
+				403616A4195C8DCE00A721FA /* FacebookSDK.framework in Frameworks */,
 				CA88915519366836002E9EDE /* UIKit.framework in Frameworks */,
 				CA88915719366836002E9EDE /* SpriteKit.framework in Frameworks */,
 				CA88915119366836002E9EDE /* Foundation.framework in Frameworks */,
@@ -382,6 +387,7 @@
 		40B0207C19463F7C00607094 /* Game Over */ = {
 			isa = PBXGroup;
 			children = (
+				403616A5195C8DF000A721FA /* facebook.png */,
 				CA7A1CC7194770630012BB0F /* best_score.png */,
 				CA7A1CCF194772150012BB0F /* pont.png */,
 				CA7A1CC8194770630012BB0F /* game_over.png */,
@@ -538,6 +544,7 @@
 		CA88914F19366836002E9EDE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				403616A3195C8DCE00A721FA /* FacebookSDK.framework */,
 				CA88915019366836002E9EDE /* Foundation.framework */,
 				CA88915219366836002E9EDE /* CoreGraphics.framework */,
 				CA88915419366836002E9EDE /* UIKit.framework */,
@@ -815,6 +822,7 @@
 				C32307DF19463BEF005A3CC7 /* background0.png in Resources */,
 				406EC6DD193FA133003A6BE6 /* exp3_4.png in Resources */,
 				CA6DA6E81940E4EB00424737 /* somFase1.mp3 in Resources */,
+				403616A6195C8DF000A721FA /* facebook.png in Resources */,
 				C3972199194B9BB3008682A3 /* expl15.png in Resources */,
 				406EC6E3193FA133003A6BE6 /* alien1.png in Resources */,
 				406EC6D3193FA133003A6BE6 /* exp3_0.png in Resources */,
@@ -1024,6 +1032,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/Huallyd/Documents/FacebookSDK,
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Space Run/Space Run-Prefix.pch";
 				INFOPLIST_FILE = "Space Run/Space Run-Info.plist";
@@ -1039,6 +1052,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/Huallyd/Documents/FacebookSDK,
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Space Run/Space Run-Prefix.pch";
 				INFOPLIST_FILE = "Space Run/Space Run-Info.plist";

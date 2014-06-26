@@ -12,6 +12,7 @@
 
 @property float pontuacao;
 @property SKSpriteNode * score;
+@property SKSpriteNode * fb;
 @property SKSpriteNode * bestScore;
 @property int foi;
 

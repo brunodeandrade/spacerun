@@ -10,6 +10,8 @@
 #import "MyScene.h"
 #import "Pontuacao.h"
 #import "Persistence.h"
+#import <FacebookSDK/FacebookSDK.h>
+
 
 @implementation GameOver
 
@@ -66,10 +68,18 @@
         _bestScore.alpha = 1;
         
         [self addChild:_bestScore];
+        
+        
+        _fb = [SKSpriteNode spriteNodeWithImageNamed:@"facebook"];
+        _fb.anchorPoint = CGPointZero;
+        _fb.position = CGPointMake(self.size.width/8.8, self.size.height/2.6);
+        _fb.name = @"facebook";
+        
+        [self addChild:_fb];
+        
     }
-return  self;
+    return self;
 }
-
 
 - (void) escreveTexto{
     
@@ -118,11 +128,88 @@ return  self;
     }
 }
 
+- (void)shareWithFacebook{
+    
+    FBLinkShareParams *params = [[FBLinkShareParams alloc] init];
+    
+    
+    
+    params.link = [NSURL URLWithString:@"https://www.facebook.com/app_scoped_user_id/316658155177698/"];
+    
+    
+    
+    
+    
+    // If the Facebook app is installed and we can present the share dialog
+    
+    if ([FBDialogs canPresentShareDialogWithParams:params]) {
+        
+        [FBDialogs presentShareDialogWithLink:params.link
+         
+                                      handler:^(FBAppCall *call, NSDictionary *results, NSError *error) {
+                                          
+                                          if(error) {
+                                              
+                                              // An error occurred, we need to handle the error
+                                              
+                                              // See: https://developers.facebook.com/docs/ios/errors
+                                              
+                                              NSLog(@"Error publishing story: %@", error.description);
+                                              
+                                          } else {
+                                              
+                                              // Success
+                                              
+                                              NSLog(@"result %@, esse é meu resultado!", results);
+                                              
+                                          }
+                                          
+                                      }];
+        
+    } else {
+        
+        [FBDialogs presentShareDialogWithLink:params.link
+         
+                                      handler:^(FBAppCall *call, NSDictionary *results, NSError *error) {
+                                          
+                                          if(error) {
+                                              
+                                          } else {
+                                              
+                                          }
+                                          
+                                      }];
+        
+    }
+    
+}
+
+
+
+
+
 -(void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
+    
+    UITouch * touch = [touches anyObject];
+    
+    CGPoint touchLocation = [touch locationInNode:self];
+    
+    SKNode * node = [self nodeAtPoint:touchLocation];
+    
     SKScene * comecaJogo = [[MyScene alloc] initWithSize:self.size];
+    
     comecaJogo.scaleMode = SKSceneScaleModeAspectFill;
+    
     SKTransition *reveal = [SKTransition fadeWithDuration:1];
+    
     [self.view presentScene:comecaJogo transition:reveal];
+    
+    if([node.name isEqualToString:@"facebook"]){
+        
+        [self shareWithFacebook];
+        
+    }
+    
 }
 
 
