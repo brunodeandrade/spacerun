@@ -10,8 +10,8 @@
 #import "GADBannerView.h"
 
 @interface MyScene : SKScene{
+    //Anuncios
     GADBannerView *bannerView;
-    
 }
 
 @property NSTimeInterval lastUpdateTime;

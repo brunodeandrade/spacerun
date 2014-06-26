@@ -74,6 +74,7 @@ static inline CGPoint CGPointAdd(const CGPoint a, const CGPoint b)
         morreu = 0;
         _dtMeteoro = 0;
         hitsAsteroid = 0;
+        //Apresenta anuncios
         
         SEL showBannerSelector = @selector(showBanner);
         [self playBackgroundMusic:@"somFase1.mp3" volume:0.8];
