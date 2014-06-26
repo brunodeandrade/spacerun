@@ -60,7 +60,9 @@ static inline CGPoint CGPointAdd(const CGPoint a, const CGPoint b)
 {
     return CGPointMake(a.x + b.x, a.y + b.y);
 }
-
+-(float) setResolution: (float) numb{
+    return (numb*self.size.height)/568;
+}
 
 //Metodo de inicializaçao, usado para adicionar sprites ao app(Atentar-se a ordem dos sprites)
 -(id)initWithSize:(CGSize)size{
@@ -93,12 +95,14 @@ static inline CGPoint CGPointAdd(const CGPoint a, const CGPoint b)
             SKSpriteNode * gd =
             [SKSpriteNode spriteNodeWithImageNamed:[NSString stringWithFormat:@"ground%d",i]];
             gd.anchorPoint = CGPointZero;
-            [gd setScale:0.32];
-            gd.position = CGPointMake(i * gd.size.width, 195);
+            [gd setScale:[self setResolution:0.32]];
+            gd.position = CGPointMake(i * gd.size.width, [self setResolution:195]);
             gd.name = @"gd";
             [self addChild:gd];
         }
         
+        NSLog(@"Width: %f",self.size.width);
+        NSLog(@"Height: %f",self.size.height);
         
         astr = [SKSpriteNode spriteNodeWithImageNamed:@"astrruning0"];
         
@@ -114,19 +118,19 @@ static inline CGPoint CGPointAdd(const CGPoint a, const CGPoint b)
         astronautAnimation = [SKAction animateWithTextures:textures timePerFrame:0.1];
         [astr runAction:[SKAction repeatActionForever:astronautAnimation]];
         
-        astr.position = CGPointMake((self.size.width / 2) - 120, (self.size.height / 2)-28);
+        astr.position = CGPointMake((self.size.width / 2) - 120, (self.size.height / 2)-[self setResolution:28]);
         
-        astr.anchorPoint = CGPointMake(0.5, 0.5);
+        astr.anchorPoint = CGPointMake(0.5, [self setResolution:0.5]);
      
-        [astr setScale:0.3];
+        [astr setScale:[self setResolution:0.3]];
         
         //[self escreveTexto];
         
         hud = [SKSpriteNode spriteNodeWithImageNamed:@"barraPreta.jpg"];
         [self addChild:hud];
         hud.anchorPoint = CGPointZero;
-        hud.position = CGPointMake(0, self.size.height-205);
-        [hud setScale:0.5];
+        hud.position = CGPointMake(0, self.size.height - [self setResolution:205]);
+        [hud setScale:[self setResolution:0.5]];
         
         
         
@@ -261,7 +265,7 @@ static inline CGPoint CGPointAdd(const CGPoint a, const CGPoint b)
     label2 = [SKLabelNode labelNodeWithFontNamed:@"8bitoperator Regular"];
     label2.text = @"Score:";
     label2.position = CGPointMake(5,
-                                 (self.size.height) - 205);
+                                 self.size.height - [self setResolution:205]);
     label2.fontSize = 10.0;
     label2.color = [UIColor blackColor];
     label2.verticalAlignmentMode = SKLabelHorizontalAlignmentModeCenter;
@@ -272,7 +276,7 @@ static inline CGPoint CGPointAdd(const CGPoint a, const CGPoint b)
     label3 = [SKLabelNode labelNodeWithFontNamed:@"8bitoperator Regular"];
     label3.text = [NSString stringWithFormat:@"Ammo: %d",quantidadeTiros];
     label3.position = CGPointMake(120,
-                                  (self.size.height) - 205);
+                                  self.size.height - [self setResolution:205]);
     label3.fontSize = 10.0;
     label3.color = [UIColor blackColor];
     label3.verticalAlignmentMode = SKLabelHorizontalAlignmentModeCenter;
@@ -379,7 +383,7 @@ AVAudioPlayer *_somExplosao;
 - (void)spawnMunicao {
     municao = [SKSpriteNode spriteNodeWithImageNamed:@"tiro3"];
     municao.name = @"municao";
-    [municao setScale:0.2];
+    [municao setScale:[self setResolution:0.2]];
     municao.position = CGPointMake(self.size.width + 100, [self decidePosicao]);
     [self addChild:municao];
     
@@ -398,7 +402,7 @@ AVAudioPlayer *_somExplosao;
     
     enemy = [SKSpriteNode spriteNodeWithImageNamed:@"asteroid"];
     enemy.name = @"asteroid";
-    [enemy setScale:0.3];
+    [enemy setScale:[self setResolution:0.3]];
     enemy.position = CGPointMake(self.size.width + (x%2== 0 ? 200 : 0 ) , [self decidePosicao]);
     [self addChild:enemy];
     x++;
@@ -412,7 +416,7 @@ AVAudioPlayer *_somExplosao;
 - (void)spawnAlien {
     _alien = [SKSpriteNode spriteNodeWithImageNamed:[NSString stringWithFormat:@"alien%d",arc4random()%2]];
     _alien.name = @"alien";
-    [_alien setScale:0.6];
+    [_alien setScale:[self setResolution:0.6]];
     _alien.position = CGPointMake(self.size.width,[self decidePosicao]); //ScalarRandomRange(enemy.size.height/5,
                                                            //                self.size.height-enemy.size.height/4));
     [self addChild:_alien];
@@ -477,7 +481,7 @@ AVAudioPlayer *_somExplosao;
 }
 
 - (void)caiAstronauta {
-    int limitEmCima = (self.size.height / 2)-28 + 100;
+    int limitEmCima = (self.size.height / 2)- 28 + 100;
     CGPoint newPosition = astr.position;
     CGPoint newVelocity = _velocity;
     // 2
@@ -486,23 +490,23 @@ AVAudioPlayer *_somExplosao;
     
     
     //Caiu o suficiente
-    if(newPosition.y <= (self.size.height / 2)-28  && newVelocity.y < 0){
+    if(newPosition.y <= ((self.size.height / 2)- [self setResolution:28])  && newVelocity.y < 0){
         newVelocity.y = 0;
-        newPosition.y = (self.size.height / 2)-28;
+        newPosition.y = (self.size.height / 2)- [self setResolution:28];
 
         pulando = 0;
     }
     
     if(newVelocity.y < 0 || newPosition.y >= limite.y){
-        newVelocity.y -= GRAVIDADE+10;
+        newVelocity.y -= [self setResolution:GRAVIDADE]+ [self setResolution:10];
     }
     
     //Subindo
     if(newVelocity.y > 0){
-        newVelocity.y -= GRAVIDADE;
+        newVelocity.y -= [self setResolution:GRAVIDADE];
         pulando = 1;
         if(newVelocity.y<=0 || newPosition.y >= limite.y){
-            newVelocity.y = -GRAVIDADE;
+            newVelocity.y = -[self setResolution:GRAVIDADE];
         }
         
     }
@@ -521,16 +525,16 @@ AVAudioPlayer *_somExplosao;
     
     tiro = [SKSpriteNode spriteNodeWithImageNamed:@"tiro_arma"];
     [self addChild:tiro];
-    tiro.position = CGPointMake(astr.position.x*1.4, astr.position.y);
-    tiro.anchorPoint = CGPointMake(0.5, 0.5);
+    tiro.position = CGPointMake(astr.position.x*1.56, astr.position.y+[self setResolution:3]);
+    tiro.anchorPoint = CGPointMake(0.5, [self setResolution:0.5]);
     //[tiro removeFromParent];
     //[tiro setScale:0.3];
     
     contaTiros++;
     SKSpriteNode *bala = [SKSpriteNode spriteNodeWithImageNamed:@"tiro1" ];
     [self addChild:bala];
-    bala.position = CGPointMake(astr.position.x*1.5, astr.position.y);
-    bala.anchorPoint = CGPointMake(0.5, 0.5);
+    bala.position = CGPointMake(astr.position.x*1.56, astr.position.y+[self setResolution:3]);
+    bala.anchorPoint = CGPointMake(0.5, [self setResolution:0.5]);
     bala.name = [NSString stringWithFormat:@"tiro%d",contaTiros];
     
     balas = [[NSMutableArray alloc]initWithArray:balas];
@@ -631,12 +635,12 @@ AVAudioPlayer *_somExplosao;
     if((int)cont % 2 == 0){
         float posicao = 250 + arc4random() % 5;
         cont = cont + 1;
-        return posicao;
+        return [self setResolution:posicao];
         
     }else{
         float posicao = 270 + arc4random() % (int)(self.size.height-270);
         cont = cont + 1;
-        return posicao;
+        return [self setResolution:posicao];
     }
     
 }
@@ -712,9 +716,9 @@ AVAudioPlayer *_somExplosao;
         
         SKSpriteNode * bg = [SKSpriteNode spriteNodeWithImageNamed:[NSString stringWithFormat:@"mais200"]];
         bg.anchorPoint = CGPointZero;
-        bg.position = CGPointMake(enemy.position.x-15, enemy.position.y+5);
+        bg.position = CGPointMake(enemy.position.x-15, enemy.position.y+ [self setResolution:5]);
         bg.name = @"bg";
-        [bg setScale:0.4];
+        [bg setScale:[self setResolution:0.4]];
         [self addChild:bg];
         SKAction *acao = [SKAction fadeOutWithDuration:1];
         [bg runAction:acao];

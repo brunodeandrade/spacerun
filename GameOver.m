@@ -84,7 +84,7 @@ return  self;
     int valor = [[self.userData objectForKey:@"score"] intValue];
 
     label2.text = [NSString stringWithFormat:@"%d", valor];
-    label2.position = CGPointMake(self.size.width/3.0, self.size.height/2.2);
+    label2.position = CGPointMake(self.size.width/2.5, self.size.height/2.2);
     label2.fontSize = 15.0;
     label2.color = [UIColor blackColor];
     label2.verticalAlignmentMode = SKLabelHorizontalAlignmentModeCenter;

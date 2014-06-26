@@ -27,7 +27,7 @@ AVAudioPlayer *backgroundMusicPlayer1;
         
         SKSpriteNode * developers = [SKSpriteNode spriteNodeWithImageNamed: @"developers"];
         developers.anchorPoint = CGPointZero;
-        developers.position = CGPointMake(self.size.width/4,150);
+        developers.position = CGPointMake(self.size.width/4,100);
         developers.name = @"developers";
         developers.alpha = 1;
         
@@ -37,7 +37,7 @@ AVAudioPlayer *backgroundMusicPlayer1;
         
         SKSpriteNode * tudo = [SKSpriteNode spriteNodeWithImageNamed: @"tudo_desenvolvedores"];
         tudo.anchorPoint = CGPointZero;
-        tudo.position = CGPointMake(self.size.width/15,100);
+        tudo.position = CGPointMake(self.size.width/15,50);
         tudo.name = @"desenvolvedores";
         tudo.alpha = 1;
         [self addChild:tudo];
@@ -46,7 +46,7 @@ AVAudioPlayer *backgroundMusicPlayer1;
         
         SKSpriteNode * sounds = [SKSpriteNode spriteNodeWithImageNamed: @"sound-effects"];
         sounds.anchorPoint = CGPointZero;
-        sounds.position = CGPointMake(self.size.width/5,100);
+        sounds.position = CGPointMake(self.size.width/5,50);
         sounds.name = @"sounds";
         sounds.alpha = 1;
         [self addChild:sounds];
@@ -55,7 +55,7 @@ AVAudioPlayer *backgroundMusicPlayer1;
         
         SKSpriteNode * musicos1 = [SKSpriteNode spriteNodeWithImageNamed: @"musicos1"];
         musicos1.anchorPoint = CGPointZero;
-        musicos1.position = CGPointMake(self.size.width/5,100);
+        musicos1.position = CGPointMake(self.size.width/5,50);
         musicos1.name = @"musicos1";
         musicos1.alpha = 1;
         [self addChild:musicos1];
@@ -64,7 +64,7 @@ AVAudioPlayer *backgroundMusicPlayer1;
         
         SKSpriteNode * musicos2 = [SKSpriteNode spriteNodeWithImageNamed: @"musicos2"];
         musicos2.anchorPoint = CGPointZero;
-        musicos2.position = CGPointMake(0,100);
+        musicos2.position = CGPointMake(0,50);
         musicos2.name = @"musicos2";
         musicos2.alpha = 1;
         [self addChild:musicos2];
@@ -73,7 +73,7 @@ AVAudioPlayer *backgroundMusicPlayer1;
         
         SKSpriteNode *sp = [SKSpriteNode spriteNodeWithImageNamed:@"Space"];
         sp.anchorPoint = CGPointZero;
-        sp.position = CGPointMake(self.size.width/3.4, 100);
+        sp.position = CGPointMake(self.size.width/3.4, 50);
         sp.name = @"Space";
         sp.alpha = 1;
         [self addChild:sp];
