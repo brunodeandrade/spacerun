@@ -63,6 +63,18 @@ static inline CGPoint CGPointAdd(const CGPoint a, const CGPoint b)
     return (numb*self.size.height)/568;
 }
 
+-(void)showBanner{
+    
+    bannerView= [[GADBannerView alloc] initWithAdSize:kGADAdSizeFullBanner];
+    bannerView.adUnitID = @"ca-app-pub-1022918531959852/2494797920";
+    bannerView.rootViewController = self;
+    [self.view addSubview: bannerView];
+    GADRequest *request = [GADRequest request];
+    request.testDevices = [NSArray arrayWithObjects:@"Simulator",@"Device", nil];
+    [bannerView setFrame:CGRectMake(35,275, bannerView.bounds.size.width+50, bannerView.bounds.size.height)];
+    [bannerView loadRequest:request];
+}
+
 //Metodo de inicializaçao, usado para adicionar sprites ao app(Atentar-se a ordem dos sprites)
 -(id)initWithSize:(CGSize)size{
     if(self = [super initWithSize:size]){
@@ -76,9 +88,8 @@ static inline CGPoint CGPointAdd(const CGPoint a, const CGPoint b)
         hitsAsteroid = 0;
         //Apresenta anuncios
         
-        SEL showBannerSelector = @selector(showBanner);
         [self playBackgroundMusic:@"somFase1.mp3" volume:0.8];
-        [self performSelector:showBannerSelector withObject:nil afterDelay:0.5];
+        [self performSelector:@selector(showBanner) withObject:nil afterDelay:0.4];
         
         
         //Adiciona background a imagem
@@ -141,18 +152,6 @@ static inline CGPoint CGPointAdd(const CGPoint a, const CGPoint b)
         
     }
     return self;
-}
-
--(void)showBanner{
-    
-    bannerView= [[GADBannerView alloc] initWithAdSize:kGADAdSizeFullBanner];
-    bannerView.adUnitID = @"ca-app-pub-1022918531959852/2494797920";
-    bannerView.rootViewController = self;
-    [self.view addSubview: bannerView];
-    GADRequest *request = [GADRequest request];
-    request.testDevices = [NSArray arrayWithObjects:@"Simulator",@"Device", nil];
-    [bannerView setFrame:CGRectMake(35,275, bannerView.bounds.size.width+50, bannerView.bounds.size.height)];
-    [bannerView loadRequest:request];
 }
 
 - (void) explosao : (SKSpriteNode *)ball{
