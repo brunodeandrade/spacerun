@@ -97,6 +97,7 @@
 		CA6DA6E81940E4EB00424737 /* somFase1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CA6DA6E71940E4EB00424737 /* somFase1.mp3 */; };
 		CA6DA6EC1940E58700424737 /* play.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6DA6EB1940E58700424737 /* play.png */; };
 		CA6DA6F219410B9000424737 /* 8bitoperator.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CA6DA6F11941011400424737 /* 8bitoperator.ttf */; };
+		CA7076BE195CB2CE003DA5C0 /* libGoogleAdMobAds.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CA7076BD195CB2CE003DA5C0 /* libGoogleAdMobAds.a */; };
 		CA7A1CCA194770630012BB0F /* best_score.png in Resources */ = {isa = PBXBuildFile; fileRef = CA7A1CC7194770630012BB0F /* best_score.png */; };
 		CA7A1CCB194770630012BB0F /* game_over.png in Resources */ = {isa = PBXBuildFile; fileRef = CA7A1CC8194770630012BB0F /* game_over.png */; };
 		CA7A1CD0194772150012BB0F /* pont.png in Resources */ = {isa = PBXBuildFile; fileRef = CA7A1CCF194772150012BB0F /* pont.png */; };
@@ -290,6 +291,7 @@
 		CA6DA6E71940E4EB00424737 /* somFase1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = somFase1.mp3; sourceTree = "<group>"; };
 		CA6DA6EB1940E58700424737 /* play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = play.png; sourceTree = "<group>"; };
 		CA6DA6F11941011400424737 /* 8bitoperator.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = 8bitoperator.ttf; sourceTree = "<group>"; };
+		CA7076BD195CB2CE003DA5C0 /* libGoogleAdMobAds.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libGoogleAdMobAds.a; path = "Space Run/anuncios/libGoogleAdMobAds.a"; sourceTree = "<group>"; };
 		CA7A1CC7194770630012BB0F /* best_score.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = best_score.png; sourceTree = "<group>"; };
 		CA7A1CC8194770630012BB0F /* game_over.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = game_over.png; sourceTree = "<group>"; };
 		CA7A1CCF194772150012BB0F /* pont.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pont.png; sourceTree = "<group>"; };
@@ -366,6 +368,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA7076BE195CB2CE003DA5C0 /* libGoogleAdMobAds.a in Frameworks */,
 				C32B0B55195C9EC3005C0324 /* SystemConfiguration.framework in Frameworks */,
 				C32B0B53195C9EB9005C0324 /* StoreKit.framework in Frameworks */,
 				C32B0B51195C9EAC005C0324 /* MessageUI.framework in Frameworks */,
@@ -662,6 +665,7 @@
 		CA88914F19366836002E9EDE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CA7076BD195CB2CE003DA5C0 /* libGoogleAdMobAds.a */,
 				C32B0B54195C9EC3005C0324 /* SystemConfiguration.framework */,
 				C32B0B52195C9EB9005C0324 /* StoreKit.framework */,
 				C32B0B50195C9EAC005C0324 /* MessageUI.framework */,
@@ -1167,14 +1171,7 @@
 				GCC_PREFIX_HEADER = "Space Run/Space Run-Prefix.pch";
 				INFOPLIST_FILE = "Space Run/Space Run-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"/Users/henriquepru/Downloads/GoogleMobileAdsSdkiOS-6.9.3",
-					"$(PROJECT_DIR)/Space",
-					Run,
-					"$(PROJECT_DIR)/Space",
-					Run/anuncios,
-				);
+				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/Space Run/anuncios";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
@@ -1196,14 +1193,7 @@
 				GCC_PREFIX_HEADER = "Space Run/Space Run-Prefix.pch";
 				INFOPLIST_FILE = "Space Run/Space Run-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"/Users/henriquepru/Downloads/GoogleMobileAdsSdkiOS-6.9.3",
-					"$(PROJECT_DIR)/Space",
-					Run,
-					"$(PROJECT_DIR)/Space",
-					Run/anuncios,
-				);
+				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/Space Run/anuncios";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
