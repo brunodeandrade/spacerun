@@ -831,7 +831,7 @@ AVAudioPlayer *_somExplosao;
         if(quantidadeTiros > 0 ){
             [self atira];
             quantidadeTiros--;
-            
+        //
         }
     }
     }
