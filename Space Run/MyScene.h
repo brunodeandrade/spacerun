@@ -7,8 +7,12 @@
 //
 
 #import <SpriteKit/SpriteKit.h>
+#import "GADBannerView.h"
 
-@interface MyScene : SKScene
+@interface MyScene : SKScene{
+    //Anuncios
+    GADBannerView *bannerView;
+}
 
 @property NSTimeInterval lastUpdateTime;
 @property NSTimeInterval  dt;
@@ -20,5 +24,7 @@
 @property SKSpriteNode *alien;
 @property SKSpriteNode *play;
 @property SKSpriteNode *pause;
+
+-(void)showBanner;
 
 @end
