@@ -46,9 +46,8 @@ int quantidadeTiros = 15;
 Boolean pausado = NO;
 int hitsAsteroid = 0;
 
+
 @implementation MyScene
-
-
 
 
 static inline CGPoint CGPointMultiplyScalar(const CGPoint a,const CGFloat b)
@@ -76,7 +75,9 @@ static inline CGPoint CGPointAdd(const CGPoint a, const CGPoint b)
         _dtMeteoro = 0;
         hitsAsteroid = 0;
         
+        SEL showBannerSelector = @selector(showBanner);
         [self playBackgroundMusic:@"somFase1.mp3" volume:0.8];
+        [self performSelector:showBannerSelector withObject:nil afterDelay:0.5];
         
         
         //Adiciona background a imagem
@@ -139,6 +140,18 @@ static inline CGPoint CGPointAdd(const CGPoint a, const CGPoint b)
         
     }
     return self;
+}
+
+-(void)showBanner{
+    
+    bannerView= [[GADBannerView alloc] initWithAdSize:kGADAdSizeFullBanner];
+    bannerView.adUnitID = @"ca-app-pub-1022918531959852/2494797920";
+    bannerView.rootViewController = self;
+    [self.view addSubview: bannerView];
+    GADRequest *request = [GADRequest request];
+    request.testDevices = [NSArray arrayWithObjects:@"Simulator",@"Device", nil];
+    [bannerView setFrame:CGRectMake(35,275, bannerView.bounds.size.width+50, bannerView.bounds.size.height)];
+    [bannerView loadRequest:request];
 }
 
 - (void) explosao : (SKSpriteNode *)ball{
@@ -223,7 +236,7 @@ static inline CGPoint CGPointAdd(const CGPoint a, const CGPoint b)
         SKTexture *texture = [SKTexture textureWithImageNamed:textureName];
         
         [textures addObject:texture];
-        
+        [bannerView removeFromSuperview];
     }
     
     // 4
