@@ -11,6 +11,10 @@
 #import "Pontuacao.h"
 #import "Persistence.h"
 #import <FacebookSDK/FacebookSDK.h>
+#import <Social/Social.h>
+#import <Accounts/Accounts.h>
+
+
 
 
 @implementation GameOver
@@ -92,6 +96,7 @@
     label2 = [SKLabelNode labelNodeWithFontNamed:@"8bitoperator Regular"];
     
     int valor = [[self.userData objectForKey:@"score"] intValue];
+    _pont = valor;
 
     label2.text = [NSString stringWithFormat:@"%d", valor];
     label2.position = CGPointMake(self.size.width/2.5, self.size.height/2.2);
@@ -128,61 +133,48 @@
     }
 }
 
-- (void)shareWithFacebook{
-    
-    FBLinkShareParams *params = [[FBLinkShareParams alloc] init];
-    
-    
-    
-    params.link = [NSURL URLWithString:@"https://www.facebook.com/app_scoped_user_id/316658155177698/"];
+
+-(void)shareWithFacebook{
     
     
     
+    NSString *serviceType = SLServiceTypeFacebook;
+    //NSString *serviceType = SLServiceTypeTwitter;
+    //if([SLComposeViewController isAvailableForServiceType:serviceType]) {
     
+    SLComposeViewController *controller = [SLComposeViewController composeViewControllerForServiceType:serviceType];
     
-    // If the Facebook app is installed and we can present the share dialog
-    
-    if ([FBDialogs canPresentShareDialogWithParams:params]) {
+    SLComposeViewControllerCompletionHandler myBlock = ^(SLComposeViewControllerResult result){
+        if (result == SLComposeViewControllerResultCancelled) {
+            //NSLog(@"ResultCancelled");
+        } else
+        {
+            //NSLog(@"Success");
+        }
         
-        [FBDialogs presentShareDialogWithLink:params.link
-         
-                                      handler:^(FBAppCall *call, NSDictionary *results, NSError *error) {
-                                          
-                                          if(error) {
-                                              
-                                              // An error occurred, we need to handle the error
-                                              
-                                              // See: https://developers.facebook.com/docs/ios/errors
-                                              
-                                              NSLog(@"Error publishing story: %@", error.description);
-                                              
-                                          } else {
-                                              
-                                              // Success
-                                              
-                                              NSLog(@"result %@, esse é meu resultado!", results);
-                                              
-                                          }
-                                          
-                                      }];
+        [controller dismissViewControllerAnimated:YES completion:Nil];
         
-    } else {
-        
-        [FBDialogs presentShareDialogWithLink:params.link
-         
-                                      handler:^(FBAppCall *call, NSDictionary *results, NSError *error) {
-                                          
-                                          if(error) {
-                                              
-                                          } else {
-                                              
-                                          }
-                                          
-                                      }];
-        
-    }
+    };
+    
+    controller.completionHandler = myBlock;
+    
+    NSString *stringGeral = [NSString stringWithFormat:@"This is my score in Space Run: %d ", _pont];
+
+    [controller setInitialText: stringGeral];
+    //[controller addURL:[NSURL URLWithString:@"www.SpaceRun.com"]];
+    [controller addImage:[UIImage imageNamed:@"screen.png"]];
+    
+    UIViewController *vc = self.view.window.rootViewController;
+    [vc presentViewController: controller animated: YES completion:nil];
+    
+    //}
+    /*else{
+     
+     NSLog(@"UnAvailable");
+     }*/
     
 }
+
 
 
 

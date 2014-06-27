@@ -15,6 +15,5 @@
 @property SKSpriteNode * fb;
 @property SKSpriteNode * bestScore;
 @property int foi;
-
-
+@property int pont;
 @end

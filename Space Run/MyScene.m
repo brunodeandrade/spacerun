@@ -248,6 +248,8 @@ static inline CGPoint CGPointAdd(const CGPoint a, const CGPoint b)
     
     
     int pont = (int) pontuacao;
+    _pontuacaoAtual = pont;
+    
     
     GameOver *gameOver = [[GameOver alloc] initWithSize:self.size];
     
@@ -794,7 +796,8 @@ AVAudioPlayer *_somExplosao;
                            usingBlock:^(SKNode *node, BOOL *stop){
     SKSpriteNode *enemy = (SKSpriteNode *)node;
     CGRect smallerFrame = CGRectInset(enemy.frame, 0, 0);
-                               
+      
+                        
   if (CGRectIntersectsRect(smallerFrame, outro.frame)) {
       morreu = 1;
       [self morteAstronauta:outro];

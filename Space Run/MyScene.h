@@ -24,6 +24,7 @@
 @property SKSpriteNode *alien;
 @property SKSpriteNode *play;
 @property SKSpriteNode *pause;
+@property int pontuacaoAtual;
 
 -(void)showBanner;
 

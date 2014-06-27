@@ -37,6 +37,8 @@
 		406EC6E6193FA133003A6BE6 /* mine.png in Resources */ = {isa = PBXBuildFile; fileRef = 406EC6D0193FA133003A6BE6 /* mine.png */; };
 		406EC6E7193FA133003A6BE6 /* rocket animated.png in Resources */ = {isa = PBXBuildFile; fileRef = 406EC6D1193FA133003A6BE6 /* rocket animated.png */; };
 		40B0207B194638D400607094 /* GameOver.m in Sources */ = {isa = PBXBuildFile; fileRef = 40B0207A194638D400607094 /* GameOver.m */; };
+		40CE417B195DECE400B63042 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40CE417A195DECE400B63042 /* Social.framework */; };
+		40CE417D195DEDD200B63042 /* libGoogleAdMobAds.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 40CE417C195DEDD200B63042 /* libGoogleAdMobAds.a */; };
 		C32307DF19463BEF005A3CC7 /* background0.png in Resources */ = {isa = PBXBuildFile; fileRef = C32307D619463BEF005A3CC7 /* background0.png */; };
 		C32307E019463BEF005A3CC7 /* background1.png in Resources */ = {isa = PBXBuildFile; fileRef = C32307D719463BEF005A3CC7 /* background1.png */; };
 		C32307E119463BEF005A3CC7 /* background2.png in Resources */ = {isa = PBXBuildFile; fileRef = C32307D819463BEF005A3CC7 /* background2.png */; };
@@ -201,6 +203,8 @@
 		406EC6D1193FA133003A6BE6 /* rocket animated.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "rocket animated.png"; sourceTree = "<group>"; };
 		40B02079194638D400607094 /* GameOver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameOver.h; path = ../GameOver.h; sourceTree = "<group>"; };
 		40B0207A194638D400607094 /* GameOver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameOver.m; path = ../GameOver.m; sourceTree = "<group>"; };
+		40CE417A195DECE400B63042 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		40CE417C195DEDD200B63042 /* libGoogleAdMobAds.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libGoogleAdMobAds.a; path = "Space Run/anuncios/libGoogleAdMobAds.a"; sourceTree = "<group>"; };
 		C32307D619463BEF005A3CC7 /* background0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background0.png; sourceTree = "<group>"; };
 		C32307D719463BEF005A3CC7 /* background1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background1.png; sourceTree = "<group>"; };
 		C32307D819463BEF005A3CC7 /* background2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background2.png; sourceTree = "<group>"; };
@@ -368,6 +372,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				40CE417B195DECE400B63042 /* Social.framework in Frameworks */,
 				CA7076BE195CB2CE003DA5C0 /* libGoogleAdMobAds.a in Frameworks */,
 				C32B0B55195C9EC3005C0324 /* SystemConfiguration.framework in Frameworks */,
 				C32B0B53195C9EB9005C0324 /* StoreKit.framework in Frameworks */,
@@ -381,6 +386,7 @@
 				CA88915519366836002E9EDE /* UIKit.framework in Frameworks */,
 				CA88915719366836002E9EDE /* SpriteKit.framework in Frameworks */,
 				CA88915119366836002E9EDE /* Foundation.framework in Frameworks */,
+				40CE417D195DEDD200B63042 /* libGoogleAdMobAds.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -665,7 +671,9 @@
 		CA88914F19366836002E9EDE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				40CE417A195DECE400B63042 /* Social.framework */,
 				CA7076BD195CB2CE003DA5C0 /* libGoogleAdMobAds.a */,
+				40CE417C195DEDD200B63042 /* libGoogleAdMobAds.a */,
 				C32B0B54195C9EC3005C0324 /* SystemConfiguration.framework */,
 				C32B0B52195C9EB9005C0324 /* StoreKit.framework */,
 				C32B0B50195C9EAC005C0324 /* MessageUI.framework */,
