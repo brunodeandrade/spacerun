@@ -56,13 +56,6 @@
       "idiom" : "ipad",
       "filename" : "Icon-76@2x.png",
       "scale" : "2x"
-    },
-    {
-      "size" : "29x29",
-      "idiom" : "iphone",
-      "filename" : "background.png",
-      "unassigned" : true,
-      "scale" : "1x"
     }
   ],
   "info" : {

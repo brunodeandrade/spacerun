@@ -38,7 +38,6 @@
 		406EC6E7193FA133003A6BE6 /* rocket animated.png in Resources */ = {isa = PBXBuildFile; fileRef = 406EC6D1193FA133003A6BE6 /* rocket animated.png */; };
 		40B0207B194638D400607094 /* GameOver.m in Sources */ = {isa = PBXBuildFile; fileRef = 40B0207A194638D400607094 /* GameOver.m */; };
 		40CE417B195DECE400B63042 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40CE417A195DECE400B63042 /* Social.framework */; };
-		40CE417D195DEDD200B63042 /* libGoogleAdMobAds.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 40CE417C195DEDD200B63042 /* libGoogleAdMobAds.a */; };
 		C32307DF19463BEF005A3CC7 /* background0.png in Resources */ = {isa = PBXBuildFile; fileRef = C32307D619463BEF005A3CC7 /* background0.png */; };
 		C32307E019463BEF005A3CC7 /* background1.png in Resources */ = {isa = PBXBuildFile; fileRef = C32307D719463BEF005A3CC7 /* background1.png */; };
 		C32307E119463BEF005A3CC7 /* background2.png in Resources */ = {isa = PBXBuildFile; fileRef = C32307D819463BEF005A3CC7 /* background2.png */; };
@@ -90,6 +89,7 @@
 		C39721AD194B9BB3008682A3 /* expl8.png in Resources */ = {isa = PBXBuildFile; fileRef = C3972190194B9BB3008682A3 /* expl8.png */; };
 		C39721AE194B9BB3008682A3 /* expl9.png in Resources */ = {isa = PBXBuildFile; fileRef = C3972191194B9BB3008682A3 /* expl9.png */; };
 		C3974A231948C6D0006F28CB /* tiro3.png in Resources */ = {isa = PBXBuildFile; fileRef = C3974A221948C6D0006F28CB /* tiro3.png */; };
+		CA3B6A181961DE14000B1E3F /* libGoogleAdMobAds.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CA3B6A171961DE14000B1E3F /* libGoogleAdMobAds.a */; };
 		CA40268F193FA3B10018A0BF /* Inicio.m in Sources */ = {isa = PBXBuildFile; fileRef = CA40268D193FA3B10018A0BF /* Inicio.m */; };
 		CA402690193FA3B10018A0BF /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA40268E193FA3B10018A0BF /* ViewController.m */; };
 		CA402694193FAD500018A0BF /* som_inicio_menor.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CA402693193FAD500018A0BF /* som_inicio_menor.mp3 */; };
@@ -99,7 +99,6 @@
 		CA6DA6E81940E4EB00424737 /* somFase1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CA6DA6E71940E4EB00424737 /* somFase1.mp3 */; };
 		CA6DA6EC1940E58700424737 /* play.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6DA6EB1940E58700424737 /* play.png */; };
 		CA6DA6F219410B9000424737 /* 8bitoperator.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CA6DA6F11941011400424737 /* 8bitoperator.ttf */; };
-		CA7076BE195CB2CE003DA5C0 /* libGoogleAdMobAds.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CA7076BD195CB2CE003DA5C0 /* libGoogleAdMobAds.a */; };
 		CA7A1CCA194770630012BB0F /* best_score.png in Resources */ = {isa = PBXBuildFile; fileRef = CA7A1CC7194770630012BB0F /* best_score.png */; };
 		CA7A1CCB194770630012BB0F /* game_over.png in Resources */ = {isa = PBXBuildFile; fileRef = CA7A1CC8194770630012BB0F /* game_over.png */; };
 		CA7A1CD0194772150012BB0F /* pont.png in Resources */ = {isa = PBXBuildFile; fileRef = CA7A1CCF194772150012BB0F /* pont.png */; };
@@ -204,7 +203,6 @@
 		40B02079194638D400607094 /* GameOver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameOver.h; path = ../GameOver.h; sourceTree = "<group>"; };
 		40B0207A194638D400607094 /* GameOver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameOver.m; path = ../GameOver.m; sourceTree = "<group>"; };
 		40CE417A195DECE400B63042 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
-		40CE417C195DEDD200B63042 /* libGoogleAdMobAds.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libGoogleAdMobAds.a; path = "Space Run/anuncios/libGoogleAdMobAds.a"; sourceTree = "<group>"; };
 		C32307D619463BEF005A3CC7 /* background0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background0.png; sourceTree = "<group>"; };
 		C32307D719463BEF005A3CC7 /* background1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background1.png; sourceTree = "<group>"; };
 		C32307D819463BEF005A3CC7 /* background2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background2.png; sourceTree = "<group>"; };
@@ -285,6 +283,7 @@
 		C3972190194B9BB3008682A3 /* expl8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = expl8.png; sourceTree = "<group>"; };
 		C3972191194B9BB3008682A3 /* expl9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = expl9.png; sourceTree = "<group>"; };
 		C3974A221948C6D0006F28CB /* tiro3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tiro3.png; sourceTree = "<group>"; };
+		CA3B6A171961DE14000B1E3F /* libGoogleAdMobAds.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libGoogleAdMobAds.a; path = "Space Run/anuncios/libGoogleAdMobAds.a"; sourceTree = "<group>"; };
 		CA40268D193FA3B10018A0BF /* Inicio.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Inicio.m; sourceTree = "<group>"; };
 		CA40268E193FA3B10018A0BF /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		CA402691193FA3E10018A0BF /* Inicio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Inicio.h; sourceTree = "<group>"; };
@@ -295,7 +294,6 @@
 		CA6DA6E71940E4EB00424737 /* somFase1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = somFase1.mp3; sourceTree = "<group>"; };
 		CA6DA6EB1940E58700424737 /* play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = play.png; sourceTree = "<group>"; };
 		CA6DA6F11941011400424737 /* 8bitoperator.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = 8bitoperator.ttf; sourceTree = "<group>"; };
-		CA7076BD195CB2CE003DA5C0 /* libGoogleAdMobAds.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libGoogleAdMobAds.a; path = "Space Run/anuncios/libGoogleAdMobAds.a"; sourceTree = "<group>"; };
 		CA7A1CC7194770630012BB0F /* best_score.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = best_score.png; sourceTree = "<group>"; };
 		CA7A1CC8194770630012BB0F /* game_over.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = game_over.png; sourceTree = "<group>"; };
 		CA7A1CCF194772150012BB0F /* pont.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pont.png; sourceTree = "<group>"; };
@@ -373,7 +371,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				40CE417B195DECE400B63042 /* Social.framework in Frameworks */,
-				CA7076BE195CB2CE003DA5C0 /* libGoogleAdMobAds.a in Frameworks */,
 				C32B0B55195C9EC3005C0324 /* SystemConfiguration.framework in Frameworks */,
 				C32B0B53195C9EB9005C0324 /* StoreKit.framework in Frameworks */,
 				C32B0B51195C9EAC005C0324 /* MessageUI.framework in Frameworks */,
@@ -384,9 +381,9 @@
 				C32B0B4B195C9E80005C0324 /* AdSupport.framework in Frameworks */,
 				403616A4195C8DCE00A721FA /* FacebookSDK.framework in Frameworks */,
 				CA88915519366836002E9EDE /* UIKit.framework in Frameworks */,
+				CA3B6A181961DE14000B1E3F /* libGoogleAdMobAds.a in Frameworks */,
 				CA88915719366836002E9EDE /* SpriteKit.framework in Frameworks */,
 				CA88915119366836002E9EDE /* Foundation.framework in Frameworks */,
-				40CE417D195DEDD200B63042 /* libGoogleAdMobAds.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -671,9 +668,8 @@
 		CA88914F19366836002E9EDE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CA3B6A171961DE14000B1E3F /* libGoogleAdMobAds.a */,
 				40CE417A195DECE400B63042 /* Social.framework */,
-				CA7076BD195CB2CE003DA5C0 /* libGoogleAdMobAds.a */,
-				40CE417C195DEDD200B63042 /* libGoogleAdMobAds.a */,
 				C32B0B54195C9EC3005C0324 /* SystemConfiguration.framework */,
 				C32B0B52195C9EB9005C0324 /* StoreKit.framework */,
 				C32B0B50195C9EAC005C0324 /* MessageUI.framework */,
@@ -857,6 +853,9 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "Bruno Rodrigues de Andrade";
 				TargetAttributes = {
+					CA88914C19366836002E9EDE = {
+						DevelopmentTeam = P89U3B7Z7T;
+					};
 					CA88917719366836002E9EDE = {
 						TestTargetID = CA88914C19366836002E9EDE;
 					};
@@ -1170,11 +1169,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					/Users/Huallyd/Documents/FacebookSDK,
-					"$(PROJECT_DIR)",
-				);
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Space Run/Space Run-Prefix.pch";
 				INFOPLIST_FILE = "Space Run/Space Run-Info.plist";
@@ -1182,7 +1178,9 @@
 				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/Space Run/anuncios";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "6B9C2A1F-F7D7-4EED-BC01-A9A9266CF68E";
 				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1192,11 +1190,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					/Users/Huallyd/Documents/FacebookSDK,
-					"$(PROJECT_DIR)",
-				);
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Space Run/Space Run-Prefix.pch";
 				INFOPLIST_FILE = "Space Run/Space Run-Info.plist";
@@ -1204,7 +1199,9 @@
 				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/Space Run/anuncios";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "6B9C2A1F-F7D7-4EED-BC01-A9A9266CF68E";
 				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

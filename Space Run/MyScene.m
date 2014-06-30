@@ -65,7 +65,7 @@ static inline CGPoint CGPointAdd(const CGPoint a, const CGPoint b)
 
 -(void)showBanner{
     
-    bannerView= [[GADBannerView alloc] initWithAdSize:kGADAdSizeFullBanner];
+    bannerView= [[GADBannerView alloc] initWithAdSize:kGADAdSizeBanner];
     bannerView.adUnitID = @"ca-app-pub-1022918531959852/2494797920";
     bannerView.rootViewController = self;
     [self.view addSubview: bannerView];

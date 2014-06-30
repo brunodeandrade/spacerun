@@ -11,7 +11,7 @@
 @implementation Pontuacao
 
 +(void) setScore:(float)score{
-    float scoreAtual = score;
+    //float scoreAtual = score;
 }
 
 

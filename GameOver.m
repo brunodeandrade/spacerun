@@ -188,6 +188,12 @@
     
     SKNode * node = [self nodeAtPoint:touchLocation];
     
+    if([node.name isEqualToString:@"facebook"]){
+        
+        [self shareWithFacebook];
+        
+    }else{
+    
     SKScene * comecaJogo = [[MyScene alloc] initWithSize:self.size];
     
     comecaJogo.scaleMode = SKSceneScaleModeAspectFill;
@@ -195,12 +201,9 @@
     SKTransition *reveal = [SKTransition fadeWithDuration:1];
     
     [self.view presentScene:comecaJogo transition:reveal];
-    
-    if([node.name isEqualToString:@"facebook"]){
-        
-        [self shareWithFacebook];
-        
     }
+    
+    
     
 }
 

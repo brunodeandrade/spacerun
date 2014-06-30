@@ -110,7 +110,7 @@ SKSpriteNode *tutorial;
     _backgroundMusicPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:backgroundMusicURL error:&error];
     _backgroundMusicPlayer.numberOfLoops = -1;
     _backgroundMusicPlayer.volume = 0.8;
-    _backgroundMusicPlayer.delegate = self;
+    //_backgroundMusicPlayer.delegate = self;
     [_backgroundMusicPlayer prepareToPlay];
     [_backgroundMusicPlayer play];
 }

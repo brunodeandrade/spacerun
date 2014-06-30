@@ -146,7 +146,7 @@ AVAudioPlayer *backgroundMusicPlayer1;
     backgroundMusicPlayer1 = [[AVAudioPlayer alloc] initWithContentsOfURL:backgroundMusicURL error:&error];
     backgroundMusicPlayer1.numberOfLoops = -1;
     backgroundMusicPlayer1.volume = 0.8;
-    backgroundMusicPlayer1.delegate = self;
+    //backgroundMusicPlayer1.delegate = self;
     [backgroundMusicPlayer1 prepareToPlay];
     [backgroundMusicPlayer1 play];
 }
